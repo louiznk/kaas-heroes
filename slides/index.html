@@ -251,16 +251,15 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Un petit didacticiel pour acquérir les connaissances de l'aventurier débutant</h3>
-						<p class="small">Dans ce quizz éducatif les bonnes réponses sont primées</p>
-						<p>Question 1/5: Qu'est ce qu'un Node</p>			
+						<p class="small">Dans ce quizz éducatif les bonnes réponses sont primées. Elles sont valable pour une installation de k8s "standard" (sans configuration spécifique ou hack quelconque)</p>
+						<p>Question 1/5: Qu'est ce qu'un Node ?</p>			
 						<ul>
 							<li><a href="#/4/2">A: Un truc en JS, mais moi je touche pas au JS donc je suis pas sûr</a></li>
-							<li><a href="#/4/2">B: C'est un container applicatif qui tourne dans une vm</a></li>
+							<li><a href="#/4/2">B: C'est un container applicatif qui tourne dans une machine</a></li>
 							<li><a href="#/4/2">C: Comme le disque (C:)</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/2', 1, 1)">D: C'est une machine qui fait partie d'un cluster</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/2', 1, 1)">D: C'est une machine du cluster k8s</a></li>
 						</ul>
-						<aside class="notes">
-							Plusieurs réponses sont possibles						
+						<aside class="notes">					
 						</aside>
 					</section>
 					<!-- 2 -->
@@ -275,56 +274,23 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Win 💪</h3>
 						<br />
-						<a href="#/4/1">Revenir</a> ou 
 						<a href="#/5">Aller à l'épreuve 2</a>
 						<aside class="notes">
 						</aside>
 					</section>
-<!-- 5 -->
-				<section data-background-image="images/livre.png" data-background-size="60%">
-					<!-- 0 -->
-					<section>
-						<h3>Un petit didacticiel pour acquérir les connaissances de l'aventurier débutant</h3>
-						<p class="small">Dans ce quizz éducatif les bonnes réponses sont primées</p>
-						<p>Question 1/5: Qu'est ce qu'un Node</p>			
-						<ul>
-							<li><a href="#/4/1">A: Un truc en JS, mais moi je touche pas au JS donc je suis pas sûr</a></li>
-							<li><a href="#/4/1">B: C'est un container applicatif qui tourne dans une vm</a></li>
-							<li><a href="#/4/1">C: Comme le disque (C:)</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/2', 1, 1)">D: C'est une machine qui fait partie d'un cluster</a></li>
-						</ul>
-						<aside class="notes">
-							Plusieurs réponses sont possibles						
-						</aside>
-					</section>
-					<!-- 1 -->
-					<section>
-						<h3>Fail 🎃</h3>
-						<br />
-						<a href="#/5">Aller à l'épreuve 2</a>
-						<aside class="notes">
-						</aside>
-					</section>
-					<!-- 2 -->
-					<section>
-						<h3>Win 💪</h3>
-						<br />
-						<a href="#/5">Aller à l'épreuve 2</a>
-						<aside class="notes">
-						</aside>
-					</section>
+
 				<!-- 5 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
 					<!-- 0 -->
 					<section>
 						<h3>Question 2/5: Qu'est qu'un Namespace ?</h3>
 						<ul>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/6/1', 1, 1)">A: Une façon de séparer les ressources k8s</a></li>
-							<li><a href="#/4/2">B: TODO</a></li>
-							<li><a href="#/4/2">C: TODO</a></li>
-							<li><a href="#/4/2">D: TODO</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/5/2', 1, 1)">A: Une façon de séparer les ressources dans un cluster k8s</a></li>
+							<li><a href="#/5/1">B: Une façon de séparer les ressources dans Linux</a></li>
+							<li><a href="#/5/2">C: Le nom d'un amas de constellation dans l'univers de Star Trek</a></li>
+							<li><a href="#/5/2">D: Un mot anglais pour désigner le besoin d'espace quand vos proches voisins ont mangé des pattes au pistou<a></li>
 						</ul>
-							Plusieurs réponses sont possibles						
+							Plusieurs réponses sont possibles, mais même si la réponse B est juste elle ne rapporte rien				
 						</aside>
 					</section>
 					<!-- 1 -->
@@ -348,14 +314,33 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 6 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
 					<section>
-						<h3>Quelles ressources ne sont pas communes aux pods dans un même cluster ?</h3>
+						<h3>Question 3/5:Quelles ressources ne sont pas mutualisé/mutualisable entre pods qui tourne dans un même Node ?</h3>
 						<p>
 							<ul>
-							<li><a href="#/TODO">A: TODO</a></li>
-							<li><a href="#/TODO">B: TODO</a></li>
+							<li><a href="#/6/1">A: Les processeur</a></li>
+							<li><a href="#/6/1">B: La RAM</a></li>
+							<li><a href="#/6/1">C: Le kernel</a></li>
+							<li><a href="#/6/1">D: Les empty dir</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/6/2', 1, 1)">E: L'adresse IP</a></li>
 							</ul>
 						</p>
 						<br />
+						<aside class="notes">
+						</aside>
+					</section>
+					<!-- 1 -->
+					<section>
+						<h3>Fail 🎃</h3>
+						<br />
+						<a href="#/7>Aller à l'épreuve 4</a>
+						<aside class="notes">
+						</aside>
+					</section>
+					<!-- 2 -->
+					<section>
+						<h3>Win 💪</h3>
+						<br />
+						<a href="#/7>Aller à l'épreuve 4</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -365,14 +350,34 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 7 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
 					<section>
-						<h3>Est ce que je peux depuis un pod ?</h3>
+						<h3>Question 4/5: Est ce que je peux depuis un Pod ?</h3>
 						<p>
 							<ul>
-							<li><a href="#/TODO">A: TODO requetes cross namespace</a></li>
-							<li><a href="#/TODO">B: TODO</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">A: Faire des requetes vers un pod dans le namespace ?</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: Faire des requetes vers un pod dans un autre namespace ?</a></li>
+							<li><a href="#/7/1">C: Partager l'ip d'un pod pod dans le namespace ?</a></li>
+							<li><a href="#/7/1">D: Devenir groot sur le Node ?</a></li>
 							</ul>
 						</p>
 						<br />
+						<aside class="notes">
+							Plusieurs réponses sont possibles
+						</aside>
+					</section>
+			<!-- 1 -->
+					<section>
+						<h3>Fail 🎃</h3>
+						<br /><a href="#/7">Revenir</a> ou 
+						<a href="#/8>aller à l'épreuve 5</a>
+						<aside class="notes">
+						</aside>
+					</section>
+					<!-- 2 -->
+					<section>
+						<h3>Win 💪</h3>
+						<br />
+						<br /><a href="#/7">Revenir</a> ou 
+						<a href="#/8>aller à l'épreuve 5</a>
 						<aside class="notes">
 						</aside>
 					</section>
