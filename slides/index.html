@@ -332,7 +332,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Fail 🎃</h3>
 						<br />
-						<a href="#/7>Aller à l'épreuve 4</a>
+						<a href="#/7">Aller à l'épreuve 4</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -340,7 +340,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Win 💪</h3>
 						<br />
-						<a href="#/7>Aller à l'épreuve 4</a>
+						<a href="#/7">Aller à l'épreuve 4</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -364,11 +364,11 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							Plusieurs réponses sont possibles
 						</aside>
 					</section>
-			<!-- 1 -->
+					<!-- 1 -->
 					<section>
 						<h3>Fail 🎃</h3>
 						<br /><a href="#/7">Revenir</a> ou 
-						<a href="#/8>aller à l'épreuve 5</a>
+						<a href="#/8">aller à l'épreuve 5</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -377,7 +377,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Win 💪</h3>
 						<br />
 						<br /><a href="#/7">Revenir</a> ou 
-						<a href="#/8>aller à l'épreuve 5</a>
+						<a href="#/8">aller à l'épreuve 5</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -387,84 +387,71 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 8 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
 					<section>
-						<h3>Est ce que je peux limiter les ressources utiliser par les pods</h3>
+						<h3>Question 5/5: Est ce que je peux restreindre les ressources utiliser par les pods ?</h3>
 						<p>
 							<ul>
-							<li><a href="#/TODO">A: TODO limit</a></li>
-							<li><a href="#/TODO">B: TODO quota</a></li>
-							<li><a href="#/TODO">C: TODO via gate keeper</a></li>
-							<li><a href="#/TODO">D: TODO ...</a></li>
+							<li><a href="#/8/2">A: Oui, l'article 47-1 ça peut tout faire</a></li>
+							<li><a href="#/8/2">B: Non, vive l'anarchie</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/8/2', 1, 1)">C: Oui, les quota et les limites ça existe aussi dans kube</a></li>
+							<li><a href="#/8/2">D: Vous voulez pas un wisky avant ?</a></li>
 							</ul>
 						</p>
 						<br />
 						<aside class="notes">
 						</aside>
+					<!-- 1 -->
+					<section>
+						<h3>Fail 🎃</h3>
+						<a href="#/9">c'est, bon on y va ?</a>
+						<aside class="notes">
+						</aside>
+					</section>
+					<!-- 2 -->
+					<section>
+						<h3>Win 💪</h3>
+						<br />
+						<a href="#/9">c'est, bon on y va ?</a>
+						<aside class="notes">
+						</aside>
+					</section>
 					</section>
 				</section>
 
 
 				<!-- 9 -->
-				<section data-background-image="images/livre.png" data-background-size="60%">
+				<section data-background-image="images/labo.png" data-background-size="60%">
 					<section>
-						<h3>Comment je gère les montés de version du cluster ?</h3>
+						<h3>Un cluster à manager implique de grandes responsabilités</h3>
+						<citation>
+						Sur un cluster partagé, de nombreux défis, tu devras affronter
+						</citation>
+						En plus des problématiques précédentes, il faut aussi réfléchir à
 						<p>
-							<ul>
-							<li><a href="#/TODO">A: TODO</a></li>
-							<li><a href="#/TODO">B: TODO</a></li>
+							<ul>								
+								<li>Comment gérer les montés de version du/des clusters ?</li>
+								<li>Est ce que l'on éviter d'avoir règles d'ingress en conflit? </li>
+								<li>Est ce que l'on permettre aux projets d'avoir des ressources globales pour le cluster (CRD, ....)? </li>
+								<li>...</li>
 							</ul>
 						</p>
-						<br />
+						<a href="#/10">retourner à la taverne pour choisir votre approche</a>
 						<aside class="notes">
 						</aside>
 					</section>
 				</section>
-
 
 				<!-- 10 -->
-				<section data-background-image="images/livre.png" data-background-size="60%">
-					<section>
-						<h3>Comment je peux empécher des applications différentes d'avoir des conflits sur les résolutions de DNS/path exposés ?</h3>
-						<p>
-							<ul>
-							<li><a href="#/TODO">A: TODO</a></li>
-							<li><a href="#/TODO">B: TODO</a></li>
-							</ul>
-						</p>
-						<br />
-						<aside class="notes">
-						</aside>
-					</section>
-				</section>
-
-
-				<!-- 11 -->
-				<section data-background-image="images/livre.png" data-background-size="60%">
-					<section>
-						<h3>Comment je permet aux différents projet d'installer des composants customs (CRD, ...) ?</h3>
-						<p>
-							<ul>
-							<li><a href="#/TODO">A: TODO</a></li>
-							<li><a href="#/TODO">B: TODO</a></li>
-							</ul>
-						</p>
-						<br />
-						<aside class="notes">
-						</aside>
-					</section>
-				</section>
-
-
-
-				<!-- 12 -->
 				<section>
-					<!-- 12.0 -->
+					<!-- 10.0 -->
 					<section data-background-image="images/tavern.png" data-background-size="75%">
 						<h3>Choisisser votre héros</h3>
-						Vous allez pouvoir incarner l'un des 3 personnages présent dans l'auberge pour accomplir cette aventure.
+						Vous allez pouvoir incarner l'un des 3 personnages présent dans l'auberge pour accomplir cette aventure.<br />
+						Chacun d'eux a des caractéristiques et capacités différentes.
+						<!-- TODO Image des 3 perso en vignette -->
 						<aside class="notes">
 						</aside>
 					</section>
-					<!-- 12.1 -->
+					<!-- 10.1 -->
 					<section>
 						<h3>Kiosk, le hobit roublard</h3>
 						<img src="images/TODO.png" /> 
@@ -477,7 +464,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<aside class="notes">
 						</aside>
 					</section>
-					<!-- 12.2 -->
+					<!-- 10.2 -->
 					<section>
 						<h3>Vcluster, la magicienne elfe</h3>
 						<img src="images/TODO.png" /> 
@@ -490,7 +477,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<aside class="notes">
 						</aside>
 					</section>
-					<!-- 12.3 -->
+					<!-- 10.3 -->
 					<section>
 						<h3>Capi, le guerrier nain</h3>
 						<img src="images/TODO.png" /> 
@@ -503,9 +490,16 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<aside class="notes">
 						</aside>
 					</section>
-					<!-- 12.4 -->
+					<!-- 10.4 -->
 					<section>
 						<h3>Qui serez vous dans cette aventure ?</h3>
+						<table>
+							<tr>
+								<td><a href="#/11"><img src="images/pj-kiosk.png" /></a></td>
+								<td><a href="#/12"><img src="images/pj-vcluster.png" /></a></td>
+								<td><a href="#/13"><img src="images/pj-capi.png" /></a></td>
+							</tr>
+						</table>
 						<img src="images/TODO.png" /> 
 						<!--
 							Faire une image avec les trois personnages et 3 choix en bas
@@ -516,21 +510,31 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 				</section>
 				
-				<!-- 13 -->
+				<!-- 11 -->
 				<section>
 					<!-- 0 -->
 					<section data-background-image="images/tavern.png" data-background-size="75%">
 						<h3>Kiosk, le hobit roublard</h3>
 						<br />
-						Capacités
-						<ul>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-						<br />
-						<br />
-						
+						<table>
+							<tr>
+								<td>Forces</td>
+								<td>Faiblesses</td>
+							</tr>
+							<tr>
+								<td>Très Rapide à mettre en place</td>
+								<td>Faible isolation</td>
+							</tr>
+							<tr>
+								<td>Légèreté</td>
+								<td>Ressources clusters sont partagés (version de kube, ingress, crd, ...)</td>
+							</tr>
+							<tr>
+								<td>Simplicité</td>
+								<td>Gestion des droits limités</td>
+							</tr>
+						</table>
+
 						<aside class="notes">
 						</aside>
 					</section>
@@ -562,20 +566,30 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				</section>
 
 
-				<!-- 14 -->
+				<!-- 12 -->
 				<section>
 					<!-- 0 -->
 					<section data-background-image="images/tavern.png" data-background-size="75%">
 						<h3>Vcluster, la magicienne elfe</h3>
 						<br />
-						Capacités
-						<ul>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-						<br />
-						<br />
+						<table>
+							<tr>
+								<td>Forces</td>
+								<td>Faiblesses</td>
+							</tr>
+							<tr>
+								<td>A son propre controle plane (qui peut être dans une version de kubernetes)</td>
+								<td>Infrastructure partagé</td>
+							</tr>
+							<tr>
+								<td>Rapide à mettre en place</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Légèreté</td>
+								<td></td>
+							</tr>
+						</table>
 						
 						<aside class="notes">
 						</aside>
@@ -608,20 +622,30 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				</section>
 
 
-				<!-- 15 -->
+				<!-- 13 -->
 				<section>
 					<!-- 0 -->
 					<section data-background-image="images/tavern.png" data-background-size="75%">
 						<h3>Capi, le guerrier nain</h3>
 						<br />
-						Capacités
-						<ul>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-						<br />
-						<br />
+						<table>
+							<tr>
+								<td>Forces</td>
+								<td>Faiblesses</td>
+							</tr>
+							<tr>
+								<td>Isolation compléte !</td>
+								<td>Demande plus d'infrastructure</td>
+							</tr>
+							<tr>
+								<td>Projet prométeur</td>
+								<td>Lent à mettre en place</td>
+							</tr>
+							<tr>
+								<td>Un grand nombre de provider</td>
+								<td>Encore en alpha</td>
+							</tr>
+						</table>
 						
 						<aside class="notes">
 						</aside>
