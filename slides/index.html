@@ -495,7 +495,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Qui serez vous dans cette aventure ?</h3>
 						<table>
 							<tr>
-								<td><a href="#/11"><img src="images/pj-kiosk.png" /></a></td>
+								<td><a href="#/11"><img src="images/pj-capsule.png" /></a></td>
 								<td><a href="#/12"><img src="images/pj-vcluster.png" /></a></td>
 								<td><a href="#/13"><img src="images/pj-capi.png" /></a></td>
 							</tr>
@@ -514,7 +514,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<section>
 					<!-- 0 -->
 					<section data-background-image="images/tavern.png" data-background-size="75%">
-						<h3>Kiosk, le hobit roublard</h3>
+						<h3>Capsule, le hobit roublard</h3>
 						<br />
 						<table>
 							<tr>
@@ -536,31 +536,68 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						</table>
 
 						<aside class="notes">
+							
+						</aside>
+					</section>
+					
+					<!-- 1 -->
+					<section>
+						<h3>Architecture</h3>
+						Capsule offre du multinent au sein d'un cluster en s'appuyant sur les namespaces, en utilisant notamment les règles RBAC et les Network Policies et les Resources Quotas
+						<img src="https://capsule.clastix.io/assets/static/capsule-operator.d853076.ce76636fce3e3130134a6f768700f6f7.svg" />
+						<!-- TODO local image -->
+						<div class="small">source : https://capsule.clastix.io/docs/</div>
+						       
+						<aside class="notes">														
 						</aside>
 					</section>
 
-					<!-- 1 -->
-					<section>
-						<h3>Initialisation</h3>
-						<aside class="notes">
-						</aside>
-					</section>
 					<!-- 2 -->
 					<section>
-						<h3>Instanciation</h3>
+						<h3>Initialisation</h3>
+						La première étape consiste à installer l'operator avec ces CRDs<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/2', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
+							https://capsule.clastix.io/docs/general/getting-started
 						</aside>
 					</section>
 					<!-- 3 -->
 					<section>
-						<h3>Tests</h3>
+						<h3>Instanciation du Tenant</h3>
+						<ul>
+							<li>Créer le "Tenant" (Tenant.capsule.clastix.io/v1beta2)</li>
+							<li>Créer le user du "Tenant" avec son kubeconfig</li>
+						</ul><br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 						</aside>
 					</section>
 					<!-- 4 -->
 					<section>
-						<h3>Limitations</h3>
+						<h3>Mise en place de ArgoCD</h3>
+						Compte tenu de l'architecture il est compliqué d'avoir un ArgoCD dédié par Tenant, le plus simple est d'avoir un ArgoCD capable de deployé dans les différents Tenant.<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
+							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
+							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
+						</aside>
+					</section>
+					<!-- 5 -->
+					<section>						
+						<h3>Déployer l'application de test</h3>
+						En utilisant l'Ingress Controller commun au cluster<br>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Cliquez</a> quand vous aurez finit
+						<aside class="notes">
+						</aside>
+					</section>
+					<!-- 6 -->
+					<section>
+						<h3>Limitations</h3>
+						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais....
+						<aside class="notes">
+							Parlez des forces et faiblesses et des risques sur l'isolation et les mises à jours et les ressources partagées.
+							Regarder la partie avancé : https://capsule.clastix.io/docs/general/mtb/#allow-self-service-management-of-roles (permet d'avoir par tenant ses netpol, ...)
 						</aside>
 					</section>
 				</section>
