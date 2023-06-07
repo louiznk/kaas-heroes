@@ -546,7 +546,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						Capsule offre du multinent au sein d'un cluster en s'appuyant sur les namespaces, en utilisant notamment les règles RBAC et les Network Policies et les Resources Quotas
 						<img src="https://capsule.clastix.io/assets/static/capsule-operator.d853076.ce76636fce3e3130134a6f768700f6f7.svg" />
 						<!-- TODO local image -->
-						<div class="small">source : https://capsule.clastix.io/docs/</div>
+						<div class="small">source: https://capsule.clastix.io/docs/</div>
 						       
 						<aside class="notes">														
 						</aside>
@@ -599,7 +599,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Limitations</h3>
 						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais d'autres voies existent et sécurisent plus pour votre cluster....<br />
-						<a href="#/14">Allez faiter votre succès</a>
+						<a href="#/14">Allez fêter votre premier pseudo kube as a service</a>
 						<aside class="notes">
 							Parlez des forces et faiblesses et des risques sur l'isolation et les mises à jours et les ressources partagées.
 							Regarder la partie avancé : https://capsule.clastix.io/docs/general/mtb/#allow-self-service-management-of-roles (permet d'avoir par tenant ses netpol, ...)
@@ -644,7 +644,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						Les nodes et le network sont par contre partagés et les pods du vcluster sont une "projection" des pod qui concretement sont lancés dans le namespace hôe
 						<img src="https://www.vcluster.com/docs/media/diagrams/vcluster-architecture.svg" />
 						<!-- TODO local image -->
-						<div class="small">source : https://www.vcluster.com/docs/what-are-virtual-clusters</div>
+						<div class="small">source: https://www.vcluster.com/docs/what-are-virtual-clusters</div>
 						       
 						<aside class="notes">														
 							On peut choisir différentes distribution de k8s pour nos vclusters
@@ -691,7 +691,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Limitations</h3>
 						Bravo vous avez réussit à mettre en place un système léger permettant en réutilisant votre infrastructure d'offrir des clusters aux autres projets, vous avez cependant quelques ressources communes mais rien de bloquant<br />
-						<a href="#/14">Allez faiter votre succès</a>
+						<a href="#/14">Allez fêter votre premier kube as a service</a>
 						<aside class="notes">
 							Les ressources communes sont les nodes et le réseau mais : l'on peut avoir des quotas, de networkpolicy et l'on peut même avoir des nodes spécialisés. La seul choses que l'on ne peut pas vraiement avoir en dédié c'est le CNI.
 							Regarder la partie avancé : https://www.vcluster.com/docs/operator/security#advanced-isolation
@@ -728,9 +728,25 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						</table>
 						
 						<aside class="notes">
+							Capi pour Cluster API<br />
+							CAPI peut être vu comme une approche portable pour boostraper l'infrastructure et l'installation des clusters. Une sorte de complément à kubeadm qui l'on peut brancher à différents providers d'infrastructure et que l'on peut utiliser avec kubeadm ou autre chose.
 						</aside>
 					</section>
-
+					
+					<!-- 1 -->
+					<section>
+						<h3>Architecture</h3>
+						La Cluster API permet d'installer un cluster en créant une infrastructure chez différents providers.<br />
+						Cela s'appuie sur un cluster kube d'administration qui sera en capacité de piloter l'infrastructure cible (créer des vm, vpc, ...) et bootstraper le cluster dans cette infrastructure.<br />
+						Il y aura de nouveaux CRDs pour définir au sein de ce cluster l'infrastruture et les clusters. Cela permettra de gérer des Cluster comme l'on gère un Deployement (ou presque).<br />
+						<img src="https://cluster-api.sigs.k8s.io/images/management-cluster.svg" />
+						<!-- TODO local image -->
+						<div class="small">source: https://cluster-api.sigs.k8s.io/user/concepts.html</div>
+						<aside class="notes">
+							
+						</aside>
+					</section>
+					
 					<!-- 1 -->
 					<section>
 						<h3>Initialisation</h3>
