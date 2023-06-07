@@ -556,11 +556,12 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Initialisation</h3>
 						La première étape consiste à installer l'operator avec ces CRDs<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/2', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							https://capsule.clastix.io/docs/general/getting-started
 						</aside>
 					</section>
+					
 					<!-- 3 -->
 					<section>
 						<h3>Instanciation du Tenant</h3>
@@ -568,33 +569,37 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							<li>Créer le "Tenant" (Tenant.capsule.clastix.io/v1beta2)</li>
 							<li>Créer le user du "Tenant" avec son kubeconfig</li>
 						</ul><br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 						</aside>
 					</section>
+					
 					<!-- 4 -->
 					<section>
 						<h3>Mise en place de ArgoCD</h3>
 						Compte tenu de l'architecture il est compliqué d'avoir un ArgoCD dédié par Tenant, le plus simple est d'avoir un ArgoCD capable de deployé dans les différents Tenant.<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/5', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
 							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
 							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
 						</aside>
 					</section>
+					
 					<!-- 5 -->
 					<section>						
 						<h3>Déployer l'application de test</h3>
 						En utilisant l'Ingress Controller commun au cluster<br>
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Cliquez</a> quand vous aurez finit
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/6', 1, 1)">Cliquez</a> quand vous aurez finit
 						<aside class="notes">
 						</aside>
 					</section>
+					
 					<!-- 6 -->
 					<section>
 						<h3>Limitations</h3>
-						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais....
+						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais d'autres voies existent et sécurisent plus pour votre cluster....<br />
+						<a href="#/14">Allez faiter votre succès</a>
 						<aside class="notes">
 							Parlez des forces et faiblesses et des risques sur l'isolation et les mises à jours et les ressources partagées.
 							Regarder la partie avancé : https://capsule.clastix.io/docs/general/mtb/#allow-self-service-management-of-roles (permet d'avoir par tenant ses netpol, ...)
@@ -631,28 +636,66 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<aside class="notes">
 						</aside>
 					</section>
-
+					
 					<!-- 1 -->
 					<section>
-						<h3>Initialisation</h3>
-						<aside class="notes">
+						<h3>Architecture</h3>
+						Vcluster permet d'avoir dans un namespace dédié du "host" cluster un (ou plusieurs) "virtual" cluster. Ce virtual cluster à son control plane et ses propres ressources.<br />
+						Les nodes et le network sont par contre partagés et les pods du vcluster sont une "projection" des pod qui concretement sont lancés dans le namespace hôe
+						<img src="https://www.vcluster.com/docs/media/diagrams/vcluster-architecture.svg" />
+						<!-- TODO local image -->
+						<div class="small">source : https://www.vcluster.com/docs/what-are-virtual-clusters</div>
+						       
+						<aside class="notes">														
+							On peut choisir différentes distribution de k8s pour nos vclusters
 						</aside>
 					</section>
+
 					<!-- 2 -->
 					<section>
 						<h3>Instanciation</h3>
+						Au commencement il y a eu la ligne de commande....<br /> 
+						Elle s'appelait vcluster.... <br />
+						Et elle créa son premier virtual cluster<br />
+						<div class="small">Note: pour ceux qui préfère on peut utiliser Helm</div>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/2', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
+							On pourrait aussi utiliser Helm
+							Ici on va pour se simplifier la partie réseau (exposition de l'IngressController) utiliser un ingress controller commun, mais ce n'est pas obligé
 						</aside>
 					</section>
+					
 					<!-- 3 -->
 					<section>
-						<h3>Tests</h3>
+						<h3>Mise en place de ArgoCD</h3>
+						Compte tenu de l'architecture on peut avoir un ArgoCD dédié par Tenant.
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
+							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
+							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
 						</aside>
 					</section>
+					
 					<!-- 4 -->
 					<section>
+						<h3>Tests</h3>
+						En utilisant l'Ingress Controller commun au cluster, mais ce n'est pas une obligation, c'est un raccourci<br>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">Cliquez</a> quand vous aurez finit
+						<aside class="notes">
+							Il faudrait installer un ingress controller et l'exposer à l'extérieur
+						</aside>
+					</section>
+					
+					<!-- 5 -->
+					<section>
 						<h3>Limitations</h3>
+						Bravo vous avez réussit à mettre en place un système léger permettant en réutilisant votre infrastructure d'offrir des clusters aux autres projets, vous avez cependant quelques ressources communes mais rien de bloquant<br />
+						<a href="#/14">Allez faiter votre succès</a>
+						<aside class="notes">
+							Les ressources communes sont les nodes et le réseau mais : l'on peut avoir des quotas, de networkpolicy et l'on peut même avoir des nodes spécialisés. La seul choses que l'on ne peut pas vraiement avoir en dédié c'est le CNI.
+							Regarder la partie avancé : https://www.vcluster.com/docs/operator/security#advanced-isolation
+						</aside>
 						<aside class="notes">
 						</aside>
 					</section>
