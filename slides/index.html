@@ -175,26 +175,38 @@
 				</section>
 				<!-- 2 -->
 				<section data-background-image="images/tavern.png" data-background-size="65%">
-					<h3>Un nouveau départ vers l'aventure</h3>
 					<!-- 
 						TODO : refaire la taverne
 
 						style médieval, une agréable taverne, propre, lumineuse où il fait bon vivre, les nains, elfes, humains et hobbits y sont bien et de bonne humeur. 
 						Il y a a boire et à manger, un sanglier est en train de cuire sur une broche.
 						Un barde est train de racconter une histoire.
-
 					-->
-					<br />
-					Il était une fois le vaste royaume de <b>Kubernetes</b>, dans ce royaume existait un petit namespace qui avait pour capitale <b>le site</b> (et pas le sith).<br /><br />
+					<section>
+						<h3>Un nouvelle aventure</h3>
+						<br />
+						Il était une fois le vaste royaume de <b>Kubernetes</b>, dans ce royaume existait un petit namespace qui avait pour capitale <b>le site</b> (et pas le sith).<br /><br />
 
-					Ce nouveau territoire inspire et fait des envieux dans le royaume de l'infrastructure. La guilde des décideurs a décider que ce royaume sera occupé par ses armées d'applications legacy !<br />
+						Ce nouveau territoire inspire et fait des envieux dans le royaume de l'infrastructure...
+						
+						<aside class="notes">
+							Vous avez un sprint soit moins de 50 min pour résoudre cela... 
+						</aside>
+					</section>
+					<section>
+						<h3>Contenir l'invasion du Legacy</h3>
+						<br />
+						La guilde des décideurs a décider que ce royaume sera occupé par... ses armées d'applications Legacy !<br />
 
-					Comment allez vous faire pour protéger votre site tout en répondant aux attentes de cette puissante guilde ?
-
-					
-					<aside class="notes">
-						Vous avez un sprint soit moins de 50 min pour résoudre cela... 
-					</aside>
+						Tout en obeissant à la guilde des décideurs il va falloir protéger vos clusters et votre site qui vous ont demandé tant d'effort<br />
+						<br />
+						C'est décider, vous ne laisserez pas le général Legacy piller les ressources vos clusters<br />
+						<br />
+						<a href="#/3">Aller demander conseil à Gandalf</a>
+						<aside class="notes">
+							Vous avez un sprint soit moins de 50 min pour résoudre cela... 
+						</aside>
+					</section>
 				</section>
 				<!-- 3 -->
 				<section data-background-image="images/labo.png" data-background-size="65%">
@@ -203,11 +215,12 @@
 					-->
 					<h3>Les conseils de Gandalf</h3>
 					<br />
-					Vous allez trouver votre mentor et ami Gandalf:<br />
+					Vous allez trouver votre mentor et ami Gandalf dans son laboratoire.<br />
+					🧙‍♂️<br />
 					<pre>
-	Heberger des applications dans votre cluster n'est pas sans risques.
+	Jeune ami, héberger des applications Legacy dans un cluster n'est pas sans risques.
 
-	Je vais t'aider mais d'abord, j'aimerai savoir si tu as conscience des dangers que cela represente.
+	Rassures toi, je vais t'aider, mais avant, j'aimerai que tu prennes conscience des dangers qui t'attendent.
 					</pre>
 				</section>
 				
@@ -240,10 +253,11 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 -->
 					<!-- 0 -->
 					<section>
-						<h3>Formation accéléré</h3>
-						Avant de te lancer je vais t'éprouver un peu.<br />
+						<h3>Formation accélérée</h3>
 						<br />
-						<a href="#/4/1">Tenter de répondre aux questions de Gandalf</a>
+						Avant de ce lancer Gandalf va vous éprouver.<br />
+						<br />
+						<a href="#/4/1">Tentez de répondre aux questions de Gandalf</a>
 						<aside class="notes">
 							Il vous pose quelques questions en regardant un livre
 						</aside>
@@ -251,13 +265,14 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Un petit didacticiel pour acquérir les connaissances de l'aventurier débutant</h3>
-						<p class="small">Dans ce quizz éducatif les bonnes réponses sont primées. Elles sont valable pour une installation de k8s "standard" (sans configuration spécifique ou hack quelconque)</p>
+						<p class="small">Dans ce quizz éducatif les bonnes réponses sont primées. <br />
+							Pour le contexte vous utilisez un k8s "standard" (sans configuration et sécurisation spécifiques)</p>
 						<p>Question 1/5: Qu'est ce qu'un Node ?</p>			
 						<ul>
 							<li><a href="#/4/2">A: Un truc en JS, mais moi je touche pas au JS donc je suis pas sûr</a></li>
 							<li><a href="#/4/2">B: C'est un container applicatif qui tourne dans une machine</a></li>
 							<li><a href="#/4/2">C: Comme le disque (C:)</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/2', 1, 1)">D: C'est une machine du cluster k8s</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/3', 1, 1)">D: C'est une machine du cluster k8s</a></li>
 						</ul>
 						<aside class="notes">					
 						</aside>
@@ -278,6 +293,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<aside class="notes">
 						</aside>
 					</section>
+				</section>
 
 				<!-- 5 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
@@ -286,10 +302,12 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Question 2/5: Qu'est qu'un Namespace ?</h3>
 						<ul>
 							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/5/2', 1, 1)">A: Une façon de séparer les ressources dans un cluster k8s</a></li>
-							<li><a href="#/5/1">B: Une façon de séparer les ressources dans Linux</a></li>
-							<li><a href="#/5/2">C: Le nom d'un amas de constellation dans l'univers de Star Trek</a></li>
-							<li><a href="#/5/2">D: Un mot anglais pour désigner le besoin d'espace quand vos proches voisins ont mangé des pattes au pistou<a></li>
+							<li><a href="#/5/2">B: Une façon de séparer les ressources dans Linux</a></li>
+							<li><a href="#/5/1">C: Le nom d'un amas de constellations dans l'univers de Star Trek</a></li>
+							<li><a href="#/5/1">D: Un mot anglais pour désigner le besoin d'espace quand vos proches voisins ont mangé des pattes au pistou</a></li>
 						</ul>
+
+						<aside class="notes">
 							Plusieurs réponses sont possibles, mais même si la réponse B est juste elle ne rapporte rien				
 						</aside>
 					</section>
@@ -314,14 +332,14 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 6 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
 					<section>
-						<h3>Question 3/5:Quelles ressources ne sont pas mutualisé/mutualisable entre pods qui tourne dans un même Node ?</h3>
+						<h3>Question 3/5: Quelles ressources ne sont pas partagés/partageables entre Pods d'un même Node ?</h3>
 						<p>
 							<ul>
-							<li><a href="#/6/1">A: Les processeur</a></li>
-							<li><a href="#/6/1">B: La RAM</a></li>
-							<li><a href="#/6/1">C: Le kernel</a></li>
-							<li><a href="#/6/1">D: Les empty dir</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/6/2', 1, 1)">E: L'adresse IP</a></li>
+								<li><a href="#/6/1">A: Les processeurs</a></li>
+								<li><a href="#/6/1">B: La RAM</a></li>
+								<li><a href="#/6/1">C: Le kernel</a></li>
+								<li><a href="#/6/2">D: Le whisky</a></li>
+								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/6/2', 1, 1)">E: L'adresse IP</a></li>
 							</ul>
 						</p>
 						<br />
@@ -350,14 +368,15 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 7 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
 					<section>
-						<h3>Question 4/5: Est ce que je peux depuis un Pod ?</h3>
+						<h3>Question 4/5: Est-ce qu'un Pod peut ?</h3>
 						<p>
 							<ul>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">A: Faire des requetes vers un pod dans le namespace ?</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: Faire des requetes vers un pod dans un autre namespace ?</a></li>
-							<li><a href="#/7/1">C: Partager l'ip d'un pod pod dans le namespace ?</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">A: Faire des requêtes vers un autre pod dans le namespace ?</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: Faire des requêtes vers un pod dans un autre namespace ?</a></li>
+							<li><a href="#/7/1">C: Partager l'ip d'un pod dans le namespace ?</a></li>
 							<li><a href="#/7/1">D: Devenir groot sur le Node ?</a></li>
-							</ul>
+							</ul><br />
+							(2 réponses)
 						</p>
 						<br />
 						<aside class="notes">
@@ -367,7 +386,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Fail 🎃</h3>
-						<br /><a href="#/7">Revenir</a> ou 
+						<br /><a href="#/7">Revenir</a> pour votre seconde réponse ou 
 						<a href="#/8">aller à l'épreuve 5</a>
 						<aside class="notes">
 						</aside>
@@ -376,7 +395,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Win 💪</h3>
 						<br />
-						<br /><a href="#/7">Revenir</a> ou 
+						<br /><a href="#/7">Revenir</a> pour votre seconde réponse ou 
 						<a href="#/8">aller à l'épreuve 5</a>
 						<aside class="notes">
 						</aside>
@@ -387,22 +406,24 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 8 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
 					<section>
-						<h3>Question 5/5: Est ce que je peux restreindre les ressources utiliser par les pods ?</h3>
+						<h3>Question 5/5: Est-ce que je peux restreindre les ressources utilisées par les pods ?</h3>
 						<p>
 							<ul>
-							<li><a href="#/8/2">A: Oui, l'article 47-1 ça peut tout faire</a></li>
-							<li><a href="#/8/2">B: Non, vive l'anarchie</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/8/2', 1, 1)">C: Oui, les quota et les limites ça existe aussi dans kube</a></li>
-							<li><a href="#/8/2">D: Vous voulez pas un wisky avant ?</a></li>
+							<li><a href="#/8/1">A: Oui, grâce à l'article 47-1</a></li>
+							<li><a href="#/8/1">B: Non, kube c'est l'anarchie</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/8/2', 1, 1)">C: Oui, les quotas et les limites ça existe aussi dans kube</a></li>
+							<li><a href="#/8/2">D: Vous voulez pas un whisky avant ?</a></li>
 							</ul>
 						</p>
 						<br />
 						<aside class="notes">
 						</aside>
+					</section>
+
 					<!-- 1 -->
 					<section>
 						<h3>Fail 🎃</h3>
-						<a href="#/9">c'est, bon on y va ?</a>
+						<a href="#/9">Et sachez que</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -410,7 +431,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Win 💪</h3>
 						<br />
-						<a href="#/9">c'est, bon on y va ?</a>
+						<a href="#/9">Et sachez que</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -422,19 +443,17 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<section data-background-image="images/labo.png" data-background-size="60%">
 					<section>
 						<h3>Un cluster à manager implique de grandes responsabilités</h3>
-						<citation>
-						Sur un cluster partagé, de nombreux défis, tu devras affronter
-						</citation>
-						En plus des problématiques précédentes, il faut aussi réfléchir à
+						<br />
+						En plus des problématiques précédentes, il faut aussi réfléchir
 						<p>
 							<ul>								
-								<li>Comment gérer les montés de version du/des clusters ?</li>
-								<li>Est ce que l'on éviter d'avoir règles d'ingress en conflit? </li>
-								<li>Est ce que l'on permettre aux projets d'avoir des ressources globales pour le cluster (CRD, ....)? </li>
+								<li>À la gestion des montées de version des clusters</li>
+								<li>Aux conflits possible sur les ressources partager comme les urls pour les Ingress </li>
+								<li>Aux ressources des projets qui seraient globales pour le cluster (CRD, ....)? </li>
 								<li>...</li>
 							</ul>
 						</p>
-						<a href="#/10">retourner à la taverne pour choisir votre approche</a>
+						<a href="#/10">Retournez à la taverne pour commencer l'aventure</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -444,8 +463,13 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<section>
 					<!-- 10.0 -->
 					<section data-background-image="images/tavern.png" data-background-size="75%">
-						<h3>Choisisser votre héros</h3>
-						Vous allez pouvoir incarner l'un des 3 personnages présent dans l'auberge pour accomplir cette aventure.<br />
+						<h3>De retour à la taverne</h3>
+						<br />
+						Heureusement, il y a des héros en devenir parmis vous.<br />
+						<br />
+						Mais vous pouvez choisir un seul compagnon pour vous accompagner dans cette aventure.<br />
+						Choissez bien parmis les 3 personnages prêt à vous suivre<br />
+						<br />
 						Chacun d'eux a des caractéristiques et capacités différentes.
 						<!-- TODO Image des 3 perso en vignette -->
 						<aside class="notes">
@@ -518,16 +542,16 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<br />
 						<table>
 							<tr>
-								<td>Forces</td>
-								<td>Faiblesses</td>
+								<td><b>Forces</b></td>
+								<td><b>Faiblesses</b></td>
 							</tr>
 							<tr>
-								<td>Très Rapide à mettre en place</td>
+								<td>Très Rapide</td>
 								<td>Faible isolation</td>
 							</tr>
 							<tr>
 								<td>Légèreté</td>
-								<td>Ressources clusters sont partagés (version de kube, ingress, crd, ...)</td>
+								<td>Beaucoup de ressources clusters partagés</td>
 							</tr>
 							<tr>
 								<td>Simplicité</td>
@@ -543,7 +567,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Architecture</h3>
-						Capsule offre du multinent au sein d'un cluster en s'appuyant sur les namespaces, en utilisant notamment les règles RBAC et les Network Policies et les Resources Quotas
+						Capsule offre du multitenant au sein d'un cluster en s'appuyant sur les namespaces.<br /> Il utilise notamment les règles RBAC, les Network Policies et les Resources Quotas pour protéger les tenants.<br />
 						<img src="https://capsule.clastix.io/assets/static/capsule-operator.d853076.ce76636fce3e3130134a6f768700f6f7.svg" />
 						<!-- TODO local image -->
 						<div class="small">source: https://capsule.clastix.io/docs/</div>
@@ -555,7 +579,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 2 -->
 					<section>
 						<h3>Initialisation</h3>
-						La première étape consiste à installer l'operator avec ces CRDs<br />
+						La première étape consiste à installer l'operator avec ses CRDs<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							https://capsule.clastix.io/docs/general/getting-started
@@ -577,10 +601,11 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 4 -->
 					<section>
 						<h3>Mise en place de ArgoCD</h3>
-						Compte tenu de l'architecture il est compliqué d'avoir un ArgoCD dédié par Tenant, le plus simple est d'avoir un ArgoCD capable de deployé dans les différents Tenant.<br />
+						Compte tenu de l'architecture il est trop compliqué d'avoir un ArgoCD dédié par Tenant, le plus simple est d'avoir un ArgoCD capable de deployer dans les différents Tenant.<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/5', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
+							Apparment Flux s'intégre dans des tenants Capsules<br />
 							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
 							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
 						</aside>
@@ -590,7 +615,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>						
 						<h3>Déployer l'application de test</h3>
 						En utilisant l'Ingress Controller commun au cluster<br>
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/6', 1, 1)">Cliquez</a> quand vous aurez finit
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/6', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -616,38 +641,43 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<br />
 						<table>
 							<tr>
-								<td>Forces</td>
-								<td>Faiblesses</td>
+								<td><b>Forces</b></td>
+								<td><b>Faiblesses</b></td>
 							</tr>
 							<tr>
-								<td>A son propre controle plane (qui peut être dans une version de kubernetes)</td>
-								<td>Infrastructure partagé</td>
+								<td>1 tenant = 1 controle plane</td>
+								<td>Réseau partagé</td>
 							</tr>
 							<tr>
 								<td>Rapide à mettre en place</td>
-								<td></td>
+								<td>Le cluster hôte a accès aux vclusters</td>
 							</tr>
 							<tr>
-								<td>Légèreté</td>
+								<td>Bonne isolation (à la carte)</td>
 								<td></td>
 							</tr>
 						</table>
 						
 						<aside class="notes">
+							L'infrastructure est partagé par défaut mais ont peut avoir des Nodes dédiés (le mode d'isolation le plus fort)
 						</aside>
 					</section>
 					
 					<!-- 1 -->
 					<section>
 						<h3>Architecture</h3>
-						Vcluster permet d'avoir dans un namespace dédié du "host" cluster un (ou plusieurs) "virtual" cluster. Ce virtual cluster à son control plane et ses propres ressources.<br />
-						Les nodes et le network sont par contre partagés et les pods du vcluster sont une "projection" des pod qui concretement sont lancés dans le namespace hôe
+						Vcluster permet d'avoir dans un namespace dédié du "host" cluster un (ou plusieurs) "virtual" cluster. <br />
+						Ce virtual cluster à son control plane et ses propres ressources.<br />
+						Le network est partagé et l'on peut voir les pods du vcluster comme une "projection" des pods sur hôte<br />
 						<img src="https://www.vcluster.com/docs/media/diagrams/vcluster-architecture.svg" />
 						<!-- TODO local image -->
 						<div class="small">source: https://www.vcluster.com/docs/what-are-virtual-clusters</div>
 						       
-						<aside class="notes">														
-							On peut choisir différentes distribution de k8s pour nos vclusters
+						<aside class="notes">
+							Les nodes sont par défaut partagés mais l'on peut avoir des nodes dédié aux vcluster via un mécanisme s'appuyant sur les nodeSelector (en transparent pour les vclusters)<br />
+							Certaines ressources sont synchroniser sur l'hôte d'autres non, c'est souvent paramétrable<br />
+							Précision importante : si chaque vcluster a son control plane, le scheduler est par défaut globale (mais on peut changer cela)<br />
+							On peut choisir différentes distribution de k8s pour nos vclusters.
 						</aside>
 					</section>
 
@@ -657,8 +687,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						Au commencement il y a eu la ligne de commande....<br /> 
 						Elle s'appelait vcluster.... <br />
 						Et elle créa son premier virtual cluster<br />
-						<div class="small">Note: pour ceux qui préfère on peut utiliser Helm</div>
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/2', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<br />
+						<div class="small">ℹ️ pour ceux qui préfèrent il est possible d'utiliser Helm en lieu est place de la ligne de commande, c'est même mieux en terme de pratiques</div>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							On pourrait aussi utiliser Helm
 							Ici on va pour se simplifier la partie réseau (exposition de l'IngressController) utiliser un ingress controller commun, mais ce n'est pas obligé
@@ -668,7 +699,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 3 -->
 					<section>
 						<h3>Mise en place de ArgoCD</h3>
-						Compte tenu de l'architecture on peut avoir un ArgoCD dédié par Tenant.
+						Compte tenu de l'architecture on peut avoir un ArgoCD dédié par Tenant.<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
@@ -680,8 +711,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 4 -->
 					<section>
 						<h3>Tests</h3>
-						En utilisant l'Ingress Controller commun au cluster, mais ce n'est pas une obligation, c'est un raccourci<br>
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">Cliquez</a> quand vous aurez finit
+						En utilisant l'Ingress Controller commun au cluster, mais ce n'est pas une obligation, c'est un raccourci.<br>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
 							Il faudrait installer un ingress controller et l'exposer à l'extérieur
 						</aside>
@@ -690,7 +721,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 5 -->
 					<section>
 						<h3>Limitations</h3>
-						Bravo vous avez réussit à mettre en place un système léger permettant en réutilisant votre infrastructure d'offrir des clusters aux autres projets, vous avez cependant quelques ressources communes mais rien de bloquant<br />
+						🪄 Bravo vous avez réussit à mettre en place un système léger, qui réutilise votre infrastructure et vous permet d'offrir des clusters dédiés aux autres projets.<br />
+						<br />
+						Vous avez cependant quelques ressources communes mais rien de bloquant<br />
 						<a href="#/14">Allez fêter votre premier kube as a service</a>
 						<aside class="notes">
 							Les ressources communes sont les nodes et le réseau mais : l'on peut avoir des quotas, de networkpolicy et l'on peut même avoir des nodes spécialisés. La seul choses que l'on ne peut pas vraiement avoir en dédié c'est le CNI.
@@ -710,8 +743,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<br />
 						<table>
 							<tr>
-								<td>Forces</td>
-								<td>Faiblesses</td>
+								<td><b>Forces</b></td>
+								<td><b>Faiblesses</b></td>
 							</tr>
 							<tr>
 								<td>Isolation compléte !</td>
@@ -736,14 +769,14 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Architecture</h3>
-						La Cluster API permet d'installer un cluster en créant une infrastructure chez différents providers.<br />
-						Cela s'appuie sur un cluster kube d'administration qui sera en capacité de piloter l'infrastructure cible (créer des vm, vpc, ...) et bootstraper le cluster dans cette infrastructure.<br />
-						Il y aura de nouveaux CRDs pour définir au sein de ce cluster l'infrastruture et les clusters. Cela permettra de gérer des Cluster comme l'on gère un Deployement (ou presque).<br />
+						La Cluster API permet d'installer un cluster avec une infrastructure dédiée chez différents providers.<br />
+						Cela s'appuie sur un kube d'administration qui sera en capacité de piloter l'infrastructure cible (créer des vm, vpc, ...) et de bootstraper le cluster dans cette infrastructure comme étant une ressource k8s.<br />
 						<img src="https://cluster-api.sigs.k8s.io/images/management-cluster.svg" />
 						<!-- TODO local image -->
 						<div class="small">source: https://cluster-api.sigs.k8s.io/user/concepts.html</div>
 						<aside class="notes">
-							
+							Il y aura de nouveaux CRDs pour définir au sein de ce cluster l'infrastruture et les clusters. Cela permettra de gérer des Cluster comme l'on gère un Deployement (ou presque).<br />
+							=> magie des boucles de controle de kube, de la notion d'état désiré, ...
 						</aside>
 					</section>
 					
@@ -1700,8 +1733,32 @@ metadata:
 								<td>https://argo-cd.readthedocs.io/en/stable/</td>
 							</tr>
 							<tr>
-								<td>k3d 💚</td>
+								<td>k3d</td>
 								<td>https://github.com/k3d-io/k3d/<td>
+							</tr>
+							<tr>
+								<td>kind</td>
+								<td>https://kind.sigs.k8s.io/<td>
+							</tr>
+							<tr>
+								<td>Traefik 💝</td>
+								<td>https://traefik.io/<td>
+							</tr>
+							<tr>
+								<td>Capsule</td>
+								<td>https://capsule.clastix.io/<td>
+							</tr>
+							<tr>
+								<td>Vcluster 💚</td>
+								<td>https://www.vcluster.com/<td>
+							</tr>
+							<tr>
+								<td>Cluster API</td>
+								<td>https://cluster-api.sigs.k8s.io//<td>
+							</tr>
+							<tr>
+								<td>Google Cloud Plateform</td>
+								<td>https://cloud.google.com/<td>
 							</tr>
 							<tr>
 								<td>Présentation et démos</td>
