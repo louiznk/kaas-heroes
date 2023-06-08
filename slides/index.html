@@ -131,6 +131,19 @@
 				font-size: 0.8em;
 				color: beige;
 			}
+			.flex-container {
+				display: flex;
+				align-items: stretch;
+				
+			}
+
+			.flex-container > div {
+				margin: 10px;
+				padding: 10px;				
+				align-self: center;
+				text-align: center;
+				font-size: 35px;
+			}
 		</style>
 	</head>
 	<body>
@@ -259,25 +272,38 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<br />
 						<a href="#/4/1">Tentez de répondre aux questions de Gandalf</a>
 						<aside class="notes">
-							Il vous pose quelques questions en regardant un livre
+							Il vous pose quelques questions en ouvrant un livre
 						</aside>
 					</section>
 					<!-- 1 -->
 					<section>
 						<h3>Un petit didacticiel pour acquérir les connaissances de l'aventurier débutant</h3>
-						<p class="small">Dans ce quizz éducatif les bonnes réponses sont primées. <br />
-							Pour le contexte vous utilisez un k8s "standard" (sans configuration et sécurisation spécifiques)</p>
-						<p>Question 1/5: Qu'est ce qu'un Node ?</p>			
-						<ul>
-							<li><a href="#/4/2">A: Un truc en JS, mais moi je touche pas au JS donc je suis pas sûr</a></li>
-							<li><a href="#/4/2">B: C'est un container applicatif qui tourne dans une machine</a></li>
-							<li><a href="#/4/2">C: Comme le disque (C:)</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/3', 1, 1)">D: C'est une machine du cluster k8s</a></li>
-						</ul>
+						<br />
+						<p>
+							Dans ce quizz éducatif les bonnes réponses sont primées. <br />
+							Pour le contexte vous utilisez un k8s "standard" (sans configuration et sécurisation spécifiques)
+						</p>
+						<a href="#/4/2">Commencez le quizz</a>
 						<aside class="notes">					
 						</aside>
 					</section>
+
 					<!-- 2 -->
+					<section>
+						<h3>Question 1/5: Qu'est ce qu'un Node ?</h3>
+						<p>
+							<ul>
+								<li><a href="#/4/3">A: Un truc en JS, mais moi je touche pas au JS donc je suis pas sûr</a></li>
+								<li><a href="#/4/3">B: C'est un container applicatif qui tourne dans une machine</a></li>
+								<li><a href="#/4/3">C: Comme le disque (C:)</a></li>
+								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/4', 1, 1)">D: C'est une machine du cluster k8s</a></li>
+							</ul>
+						</p>
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<!-- 3 -->
 					<section>
 						<h3>Fail 🎃</h3>
 						<br />
@@ -285,7 +311,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<aside class="notes">
 						</aside>
 					</section>
-					<!-- 3 -->
+					
+					<!-- 4 -->
 					<section>
 						<h3>Win 💪</h3>
 						<br />
@@ -300,13 +327,14 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 0 -->
 					<section>
 						<h3>Question 2/5: Qu'est qu'un Namespace ?</h3>
-						<ul>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/5/2', 1, 1)">A: Une façon de séparer les ressources dans un cluster k8s</a></li>
-							<li><a href="#/5/2">B: Une façon de séparer les ressources dans Linux</a></li>
-							<li><a href="#/5/1">C: Le nom d'un amas de constellations dans l'univers de Star Trek</a></li>
-							<li><a href="#/5/1">D: Un mot anglais pour désigner le besoin d'espace quand vos proches voisins ont mangé des pattes au pistou</a></li>
-						</ul>
-
+						<p>
+							<ul>
+								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/5/2', 1, 1)">A: Une façon de séparer les ressources dans un cluster k8s</a></li>
+								<li><a href="#/5/2">B: Une façon de séparer les ressources dans Linux</a></li>
+								<li><a href="#/5/1">C: Le nom d'un amas de constellations dans l'univers de Star Trek</a></li>
+								<li><a href="#/5/1">D: Un mot anglais pour désigner le besoin d'espace quand vos proches voisins ont mangé des pattes au pistou</a></li>
+							</ul>
+						</p>
 						<aside class="notes">
 							Plusieurs réponses sont possibles, mais même si la réponse B est juste elle ne rapporte rien				
 						</aside>
@@ -332,7 +360,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 6 -->
 				<section data-background-image="images/livre.png" data-background-size="60%">
 					<section>
-						<h3>Question 3/5: Quelles ressources ne sont pas partagés/partageables entre Pods d'un même Node ?</h3>
+						<h3>Question 3/5: Quelles ressources ne sont pas partageables entre Pods d'un même Node ?</h3>
 						<p>
 							<ul>
 								<li><a href="#/6/1">A: Les processeurs</a></li>
@@ -342,7 +370,6 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/6/2', 1, 1)">E: L'adresse IP</a></li>
 							</ul>
 						</p>
-						<br />
 						<aside class="notes">
 						</aside>
 					</section>
@@ -423,7 +450,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Fail 🎃</h3>
-						<a href="#/9">Et sachez que</a>
+						<a href="#/9">Pour conclure jeune padawan...</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -431,7 +458,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Win 💪</h3>
 						<br />
-						<a href="#/9">Et sachez que</a>
+						<a href="#/9">Pour conclure jeune padawan...</a>
 						<aside class="notes">
 						</aside>
 					</section>
@@ -444,16 +471,16 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Un cluster à manager implique de grandes responsabilités</h3>
 						<br />
-						En plus des problématiques précédentes, il faut aussi réfléchir
+						En plus des problématiques précédentes, il faut aussi prendre en compte:
 						<p>
 							<ul>								
-								<li>À la gestion des montées de version des clusters</li>
-								<li>Aux conflits possible sur les ressources partager comme les urls pour les Ingress </li>
-								<li>Aux ressources des projets qui seraient globales pour le cluster (CRD, ....)? </li>
+								<li>La gestion des montées de version des clusters</li>
+								<li>Les conflits possible sur les ressources partager comme les urls pour les Ingress </li>
+								<li>Les ressources des projets qui seraient globales pour le cluster (CRD, ....)? </li>
 								<li>...</li>
 							</ul>
 						</p>
-						<a href="#/10">Retournez à la taverne pour commencer l'aventure</a>
+						Riche de ce nouveau savoir vous pouvez <a href="#/10">retourner à la taverne</a> pour commencer l'aventure
 						<aside class="notes">
 						</aside>
 					</section>
@@ -465,9 +492,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section data-background-image="images/tavern.png" data-background-size="75%">
 						<h3>De retour à la taverne</h3>
 						<br />
-						Heureusement, il y a des héros en devenir parmis vous.<br />
+						Le défi est trop important pour l'affronter seul dans le temps impartie, heureusement, il y a des héros en devenir parmis vous.<br />
 						<br />
-						Mais vous pouvez choisir un seul compagnon pour vous accompagner dans cette aventure.<br />
+						Vous pouvez choisir un compagnon pour vous accompagner dans cette aventure.<br />
 						Choissez bien parmis les 3 personnages prêt à vous suivre<br />
 						<br />
 						Chacun d'eux a des caractéristiques et capacités différentes.
@@ -477,8 +504,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					<!-- 10.1 -->
 					<section>
-						<h3>Kiosk, le hobit roublard</h3>
-						<img src="images/TODO.png" /> 
+						<h3>Capsule, le hobit roublard</h3>
+						<img src="images/pj-capsule.png" /> 
 						<!--
 							Dans une tavern médévial, seul à une table, il y a un hobbit, portant une cape, son visage est beau et est en partie dissimulé par sa cape, il a une dague à la ceinture, porte des vêtements sombre.
 
@@ -491,7 +518,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 10.2 -->
 					<section>
 						<h3>Vcluster, la magicienne elfe</h3>
-						<img src="images/TODO.png" /> 
+						<img src="images/pj-vcluster.png" /> 
 						<!--
 							Dans une tavern médévial, seul à une table, il y a une magicienne illusionniste elfe. Sa peau est dorée, elle a de long cheveux noir. Un bâton est posé à côté d'elle.
 
@@ -504,7 +531,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 10.3 -->
 					<section>
 						<h3>Capi, le guerrier nain</h3>
-						<img src="images/TODO.png" /> 
+						<img src="images/pj-capi.png" /> 
 						<!--
 							Dans une taverne médiévale, seul à une table, il y a un guerrier nain en armure, il est armé avec un bouclier et une hache, son visage est sérieux, il a des cicatrices de guerre et il est tatoué.
 							
@@ -541,22 +568,26 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Capsule, le hobit roublard</h3>
 						<br />
 						<table>
-							<tr>
-								<td><b>Forces</b></td>
-								<td><b>Faiblesses</b></td>
-							</tr>
-							<tr>
-								<td>Très Rapide</td>
-								<td>Faible isolation</td>
-							</tr>
-							<tr>
-								<td>Légèreté</td>
-								<td>Beaucoup de ressources clusters partagés</td>
-							</tr>
-							<tr>
-								<td>Simplicité</td>
-								<td>Gestion des droits limités</td>
-							</tr>
+							<thead>
+								<tr>
+									<th><b>Forces</b></th>
+									<th><b>Faiblesses</b></th>
+								</tr>
+							</thead>
+							<tbody class="small">
+								<tr>
+									<td>Très Rapide</td>
+									<td>Faible isolation</td>
+								</tr>
+								<tr>
+									<td>Légèreté</td>
+									<td>Beaucoup de ressources clusters partagés</td>
+								</tr>
+								<tr>
+									<td>Simplicité</td>
+									<td>Gestion des droits limités</td>
+								</tr>
+							</tbody>
 						</table>
 
 						<aside class="notes">
@@ -567,9 +598,17 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Architecture</h3>
-						Capsule offre du multitenant au sein d'un cluster en s'appuyant sur les namespaces.<br /> Il utilise notamment les règles RBAC, les Network Policies et les Resources Quotas pour protéger les tenants.<br />
-						<img src="https://capsule.clastix.io/assets/static/capsule-operator.d853076.ce76636fce3e3130134a6f768700f6f7.svg" />
-						<!-- TODO local image -->
+						<div class="flex-container">
+							<div style="flex-shrink: 10;">								
+								Capsule offre du multitenant au sein d'un cluster en s'appuyant sur les namespaces.<br />
+								Le tenant est porté par le namespace et il est vue comme tel pour la "personne" qui a accès au tenant.<br />
+								Capsule utilise des règles RBAC, des Network Policies et des Resources Quotas pour isoler les tenants.<br />
+							</div>
+							<div style="flex-grow:10">
+								<img src="images/capsule-operator.jpg" />
+							</div>
+						</div><br />
+
 						<div class="small">source: https://capsule.clastix.io/docs/</div>
 						       
 						<aside class="notes">														
@@ -577,7 +616,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 
 					<!-- 2 -->
-					<section>
+					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Initialisation</h3>
 						La première étape consiste à installer l'operator avec ses CRDs<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
@@ -587,7 +626,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					
 					<!-- 3 -->
-					<section>
+					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Instanciation du Tenant</h3>
 						<ul>
 							<li>Créer le "Tenant" (Tenant.capsule.clastix.io/v1beta2)</li>
@@ -599,7 +638,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					
 					<!-- 4 -->
-					<section>
+					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Mise en place de ArgoCD</h3>
 						Compte tenu de l'architecture il est trop compliqué d'avoir un ArgoCD dédié par Tenant, le plus simple est d'avoir un ArgoCD capable de deployer dans les différents Tenant.<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/5', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
@@ -612,9 +651,10 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					
 					<!-- 5 -->
-					<section>						
-						<h3>Déployer l'application de test</h3>
-						En utilisant l'Ingress Controller commun au cluster<br>
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Tests</h3>
+						En utilisant l'Ingress Controller commun au cluster<br />
+						Installez et testez l'application Hello Legacy ! <br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/6', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
 						</aside>
@@ -640,22 +680,26 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Vcluster, la magicienne elfe</h3>
 						<br />
 						<table>
-							<tr>
-								<td><b>Forces</b></td>
-								<td><b>Faiblesses</b></td>
-							</tr>
-							<tr>
-								<td>1 tenant = 1 controle plane</td>
-								<td>Réseau partagé</td>
-							</tr>
-							<tr>
-								<td>Rapide à mettre en place</td>
-								<td>Le cluster hôte a accès aux vclusters</td>
-							</tr>
-							<tr>
-								<td>Bonne isolation (à la carte)</td>
-								<td></td>
-							</tr>
+							<thead>
+								<tr>
+									<th><b>Forces</b></th>
+									<th><b>Faiblesses</b></th>
+								</tr>
+							</thead>
+							<tbody class="small">
+								<tr>
+									<td>1 tenant = 1 controle plane</td>
+									<td>Réseau partagé</td>
+								</tr>
+								<tr>
+									<td>Rapide à mettre en place</td>
+									<td>Le cluster hôte a accès aux vclusters</td>
+								</tr>
+								<tr>
+									<td>Bonne isolation (à la carte)</td>
+									<td></td>
+								</tr>
+							</tbody>
 						</table>
 						
 						<aside class="notes">
@@ -666,11 +710,16 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Architecture</h3>
-						Vcluster permet d'avoir dans un namespace dédié du "host" cluster un (ou plusieurs) "virtual" cluster. <br />
-						Ce virtual cluster à son control plane et ses propres ressources.<br />
-						Le network est partagé et l'on peut voir les pods du vcluster comme une "projection" des pods sur hôte<br />
-						<img src="https://www.vcluster.com/docs/media/diagrams/vcluster-architecture.svg" />
-						<!-- TODO local image -->
+						<div class="flex-container">
+							<div style="flex-shrink: 10;">								
+								Vcluster permet d'avoir par namespace dédié du "host" cluster un "virtual" cluster. <br />
+								Ce virtual cluster à son control plane et ses propres ressources.<br />
+								Le network est partagé et l'on peut voir les pods du vcluster comme une "projection" des pods sur l'hôte<br />
+							</div>
+							<div style="flex-grow:10">
+								<img src="images/vcluster-architecture.png" />
+							</div>
+						</div><br />
 						<div class="small">source: https://www.vcluster.com/docs/what-are-virtual-clusters</div>
 						       
 						<aside class="notes">
@@ -682,7 +731,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 
 					<!-- 2 -->
-					<section>
+					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Instanciation</h3>
 						Au commencement il y a eu la ligne de commande....<br /> 
 						Elle s'appelait vcluster.... <br />
@@ -697,7 +746,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					
 					<!-- 3 -->
-					<section>
+					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Mise en place de ArgoCD</h3>
 						Compte tenu de l'architecture on peut avoir un ArgoCD dédié par Tenant.<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
@@ -709,9 +758,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					
 					<!-- 4 -->
-					<section>
+					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Tests</h3>
-						En utilisant l'Ingress Controller commun au cluster, mais ce n'est pas une obligation, c'est un raccourci.<br>
+						En utilisant l'Ingress Controller commun au cluster (mais ce n'est pas une obligation, c'est un raccourci) installer l'application de test Hello Legacy.<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
 							Il faudrait installer un ingress controller et l'exposer à l'extérieur
@@ -742,22 +791,26 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Capi, le guerrier nain</h3>
 						<br />
 						<table>
-							<tr>
-								<td><b>Forces</b></td>
-								<td><b>Faiblesses</b></td>
-							</tr>
-							<tr>
-								<td>Isolation compléte !</td>
-								<td>Demande plus d'infrastructure</td>
-							</tr>
-							<tr>
-								<td>Projet prométeur</td>
-								<td>Lent à mettre en place</td>
-							</tr>
-							<tr>
-								<td>Un grand nombre de provider</td>
-								<td>Encore en alpha</td>
-							</tr>
+							<thead>
+								<tr>
+									<th><b>Forces</b></th>
+									<th><b>Faiblesses</b></th>
+								</tr>
+							</thead>
+							<tbody class="small">
+								<tr>
+									<td>Isolation compléte !</td>
+									<td>Demande plus d'infrastructure</td>
+								</tr>
+								<tr>
+									<td>Projet prométeur</td>
+									<td>Lent à mettre en place</td>
+								</tr>
+								<tr>
+									<td>Un grand nombre de provider</td>
+									<td>Encore en alpha</td>
+								</tr>
+							</tbody>
 						</table>
 						
 						<aside class="notes">
@@ -769,10 +822,15 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 1 -->
 					<section>
 						<h3>Architecture</h3>
-						La Cluster API permet d'installer un cluster avec une infrastructure dédiée chez différents providers.<br />
-						Cela s'appuie sur un kube d'administration qui sera en capacité de piloter l'infrastructure cible (créer des vm, vpc, ...) et de bootstraper le cluster dans cette infrastructure comme étant une ressource k8s.<br />
-						<img src="https://cluster-api.sigs.k8s.io/images/management-cluster.svg" />
-						<!-- TODO local image -->
+						<div class="flex-container">
+							<div style="flex-shrink: 10;">								
+								La Cluster API permet d'installer un cluster avec une infrastructure dédiée chez différents providers.<br />
+								Cela s'appuie sur un kube d'administration qui sera en capacité de piloter l'infrastructure cible (créer des vm, vpc, ...) et de bootstraper le cluster dans cette infrastructure comme étant une ressource k8s.<br />								
+							</div>
+							<div style="flex-grow:10">
+								<img src="./images/capi-management-cluster.jpg" />
+							</div>
+						</div><br />
 						<div class="small">source: https://cluster-api.sigs.k8s.io/user/concepts.html</div>
 						<aside class="notes">
 							Il y aura de nouveaux CRDs pour définir au sein de ce cluster l'infrastruture et les clusters. Cela permettra de gérer des Cluster comme l'on gère un Deployement (ou presque).<br />
@@ -780,934 +838,67 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						</aside>
 					</section>
 					
-					<!-- 1 -->
-					<section>
-						<h3>Initialisation</h3>
-						<aside class="notes">
-						</aside>
-					</section>
 					<!-- 2 -->
-					<section>
-						<h3>Instanciation</h3>
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Initialisation</h3>
+						Dans la mythologie Naine, à la naissance du monde, Dieu créa un cluster de management. Ce cluster père de tous les cluster initialisa ses providers.<br />
+						Puis il enfanta de nouveaux clusters pour peupler les zones, les régions et continents que lui offrait ses providers.<br />
+						<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 						</aside>
 					</section>
+
 					<!-- 3 -->
-					<section>
-						<h3>Tests</h3>
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Instanciation</h3>
+						Et après une longue gestation le cluster de management devient père d'un nouveau cluster.... <br />
+						<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 						</aside>
 					</section>
+
+					<!-- 3 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Mise en place des composants de base</h3>
+						Votre cluster est encore très jeune et peu expérimenter, il va falloir lui apprendre à marcher<br />
+						<ul>
+							<li>Installer Traefik (Ingress Controller)</li>
+							<li>Installer ArgoCD</li>
+						</ul> <br />
+						<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/5', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<aside class="notes">
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
+							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
+							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
+						</aside>
+					</section>
+
 					<!-- 4 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Tests</h3>
+						Installez et testez l'application Hello Legacy !<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/6', 1, 1)">👉 quand vous aurez finit 👈</a>
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<!-- 5 -->
 					<section>
 						<h3>Limitations</h3>
+						🛡️💫 Bravo vous avez réussit à mettre en place un système robuste et isolé qui vous permet d'offrir des clusters dédiés aux autres projets.<br />
+						<br />
+						Vous avez consommer cependant un peu plus d'infrastructure que prévu, mais rien de bloquant<br />
+						<a href="#/14">Allez fêter votre premier kube as a service</a>
 						<aside class="notes">
+							A noter que la solution est encore en alpha, c'est un peu risquer d'industrialiser cela tant que ce n'est à minima pas en beta.
 						</aside>
 					</section>
 				</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-
-				
-				<section data-background-image="images/richardson-kubecon-2.png" data-background-size="60%">
-
-					<section>
-						<h3>Une présentation de Legolas sur GitOps</h3>
-						A la fin de sa présentation, Legolas propose aux participants (donc à vous) un petit échauffement pour comprendre les 
-						concepts indispensable pour pouvoir se lancer dans l'aventure GitOps.<br />
-						<br />
-						<a href="#/5/1">Aller s'entrainer avec Legolas</a>
-						<aside class="notes">
-							Il vous pose quelques questions pour vous aider à comprendre GitOps
-						</aside>
-					</section>
-					<section>
-						<h3>Un petit didacticiel pour acquérir les règles du GitOps</h3>
-						<p class="small">Dans ce quizz éducatif les bonnes réponses sont primées</p>
-						<p>Question 1/5: GitOps c'est quoi d'après vous ?</p>
-						<ul>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/5/3', 1, 1)">A: Un plat réchauffé</a></li>
-							<li><a href="#/5/2">B: Un truc révolutionnaire</a></li>
-							<li><a href="#/5/2">C: Une nouvelle destination pour vos vacances</a></li>
-							<li><a href="#/5/2">D: Un nouveau framework web</a></li>
-						</ul>
-						<aside class="notes">
-						
-						</aside>
-					</section>
-					<section>
-						<h3>Fail 🎃</h3>
-						<br />
-						<a href="#/6">Aller à l'épreuve 2</a>
-						<aside class="notes">
-						GitOps n'a rien de nouveau, les objectifs et principes mis en œuvre dans GitOps existaient bien avant que le terme ne
-						soit inventé...<br />
-						Mais ce terme à la mode a permis de renouveler et de diffuser cette pratique. Ce terme est aussi lié avec
-						de nouveau outils mais GitOps ne veut pas dire nécessairement nouveaux outils
-						</aside>
-					</section>
-					<section>
-						<h3>Win 💪</h3>
-						<br />
-						<a href="#/6">Aller à l'épreuve 2</a>
-						<aside class="notes">
-						</aside>
-					</section>
-				</section>
-
-				<section data-background-image="images/richardson-kubecon-2.png" data-background-size="60%">
-					<section>
-						<h3>Quelles sont les 2 premiers principes GitOps ?</h3>
-						<p>
-							<ul>
-								<li><a href="#/6/1">A: Le principe, c'est de faire des valeurs</a></li>
-								<li><a href="#/6/1">B: On ne passe les commandes Git qu'en ligne de commande</a></li>
-								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/6/2', 1, 1)">C: Git est la seul source de vérité</a></li>
-								<li><a href="#/6/1">D: Chaque branche Git correspond à un environnement différent</a></li>
-								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/6/3', 1, 1)">E: Tout est décrit via des fichiers de manifest</a></li>
-								<li><a href="#/6/1">F: Le monde se divise en deux catégories : ceux qui ont un pistolet chargé et ceux qui creusent. Toi, tu creuses. ⛏️</a></li>
-							</ul>
-						</p>
-						<br />
-						<a href="#/7">Aller à l'épreuve 3</a>
-						<aside class="notes">
-							C & E permet d’opérer l’infrastructure en modifiant le code versionné dans Git
-							(4 principes : déclaratif (E) )
-						</aside>
-					</section>
-					<section>
-						<h3>Fail 🎃</h3>
-						<br />
-						<a href="#/6">revenir</a> ou 
-						<a href="#/7">aller à l'épreuve 3</a>
-						<aside class="notes">
-						</aside>
-					</section>
-					<section>
-						<h3>Win 💪</h3>
-						<br />
-						<a href="#/6">revenir</a> ou 
-						<a href="#/7">aller à l'épreuve 3</a>
-						<aside class="notes">
-							Quelle est l’outil majoritairement utilisé pour stocker, versionner, auditer et partager du code : git
-						</aside>
-					</section>
-					<section>
-						<h3>Win 💪</h3>
-						<br />
-						<a href="#/6">revenir</a> ou 
-						<a href="#/7">aller à l'épreuve 3</a>
-						<aside class="notes">
-							Dans l’IT toutes applications, infrastructures, tests, ... est définie par quelque chose d’interprétable par une machine
-							: donc par du code (et si ce n’est pas le cas pb). Et le YAML c’est aussi du code ;)
-						</aside>
-					</section>
-				</section>
-				<section data-background-image="images/richardson-kubecon-2.png" data-background-size="60%">
-					<section>
-						<h3>Qu’est ce qui est décrit dans nos repo Git ?</h3>
-						<p>
-						<ul>
-							<li><a href="#/7/1">A: Du YAML et rien que du YAML</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: L'état désiré de l’infrastructure</a></li>
-							<li><a href="#/7/1">C: Des scripts qui mettent à jours l'infrastructure</a></li>
-							<li><a href="#/7/1">D: Des images de chats en ASCII ART （＞◕ω◕＜）</a></li>
-						</ul>
-						</p>
-						<aside class="notes">
-						</aside>
-					</section>
-					<section>
-						<h3>Fail 🎃</h3>
-						<a href="#/8">Aller à l'épreuve 4</a>
-						<aside class="notes">
-							Nous exprimons l’état désiré que doivent avoir nos infrastructures sous une forme lisible par une machine.<br />
-							Il y aura donc un outil qui s’assurera que l’état désiré et la réalité de notre SI convergent. Cet outil va être branché
-							sur git. Il pourra être notifié des changements et les récupérer ou aller régulièrement récupérer ces changements.<br />
-							<br />
-							Un script ne pourra pas avoir toutes les combinatoires possible pour passer d'un état à un autre, alors qu'une
-							machine pourra calculer les opération à faire pour passer d'un état à un autre<br />
-							La notion d'état désiré permet en outre de détecter des divergences entre l'état désiré et l'état réel
-						</aside>
-					</section>
-					<section>
-						<h3>Win 💪</h3>
-						<a href="#/8">Aller à l'épreuve 4</a>
-						<aside class="notes">
-							Cela permettra d'avoir un outil qui s’assurera que l’état désiré et la réalité de notre SI convergent. Cet outil va être branché
-							sur git. Il pourra être notifié des changement et les récupérer ou aller régulièrement récupérer ces changements.
-						</aside>
-					</section>
-				</section>
-				<section data-background-image="images/richardson-kubecon-2.png" data-background-size="60%">
-					<section>
-						<h3>Est-ce que je peux opérer mon infrastructure sans passer par Git ?</h3>
-						<p>
-							<ul>
-								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/8/2', 1, 1)">A: Le monde se divise en deux catégories : ceux qui ont un pistolet chargé et ceux qui creusent. Toi, tu creuses ta tombe si tu touches à la main à l'infra.</a></li>
-								<li><a href="#/8/1">B: Bien sur, I am Groot</a></li>
-							</ul>
-						</p>
-						<aside class="notes">
-							La solution GitOps utilisée doit récupérer les descripteurs de l'état désirer et les appliquer
-						</aside>
-					</section>
-					<section>
-						<h3>Fail 🎃</h3>
-						<a href="#/9">Aller à l'épreuve 5</a>
-						<aside class="notes">
-						</aside>
-					</section>
-					<section>
-						<h3>Win 💪</h3>
-						<a href="#/9">Aller à l'épreuve 5</a>
-						<aside class="notes">
-						</aside>
-					</section>
-				</section>
-				<section data-background-image="images/richardson-kubecon-2.png" data-background-size="60%">
-					<section>
-						<h3>Qu'est ce qui se passe si j'ai mis les doigts dans l'infrastructure ?</h3>
-						<p>
-							<ul>
-								<li><a href="#/9/1">A: <span class="shell">$ sudo bash -c "echo 'Ni vu ni connu...' && whoami && history -c" && history -c</span></a></li>
-								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/9/2', 1, 1)">B: Le systeme essaillera de revenir à son état désiré</a></li>
-								<li><a href="#/9/1">C: Groot c'est pas moi, c'est lui 👉</a></li>
-							</ul>
-						</p>
-						<aside class="notes">
-							La solution GitOps utilisée doit récupérer les descripteurs de l'état désirer et les appliquer
-						</aside>
-					</section>
-					<section>
-						<h3>Fail 🎃</h3>
-						<a href="#/10">Aller au moment d'échange post meetup</a>
-						<aside class="notes">
-						</aside>
-					</section>
-					<section>
-						<h3>Win 💪</h3>
-						<a href="#/10">Aller au moment d'échange post meetup</a>
-						<aside class="notes">
-						</aside>
-					</section>
-				</section>
-				<section data-background-image="images/tavern.png" data-background-size="75%">
-					<section>
-						<h3>Au final GitOps c'est...</h3>
-						<img src="images/gitops-ring.png" /><br />
-						Un repo pour les gouverner tous. Un repo pour les détailler. Un repo pour les amener tous et dans kube les
-						déployer....<br />
-						<aside class="notes">
-						</aside>
-					</section>
-					<section>
-						<h3>La taverne</h3>
-						<p>Vous vous attablez avec Gimli, Legolas et si vous avez passé le niveau 1, vous avez droit à une 🍻.<br /></p>
-						<p>Vous leur demandez de l'aide pour mettre en place GitOps dans votre projet.<br /></p>
-						<ul>
-							<li><a href="#/11">A: Legolas vous propose son arme favorite : Argo CD</a></li>
-							<li><a href="#/12">B: Alors que Gimli vous conseil d'utiliser votre forge pour faire votre arme sur mesure</a></li>
-						</ul>
-						<br />
-						<br />
-						Dans tous les cas, Gandalf vous rejoint et vous offre un cluster kube pour pouvoir déployer, pour le remercier, c'est votre tournée <a href="javascript:void(0)" onclick="resolve(0, 0, -3)">[PAYEZ 3 🪙]</a>.
-						
-						<aside class="notes">
-							(Gandalf a créer le cluster) <br />
-							Maintenant il va falloir choisir l'outil ou créer l'outil. Plusieurs solutions possible : utiliser Argo CD ou créer son propre outil
-						</aside>
-					</section>
-				</section>
-			-->
-
-
-<!--
-				<section>
-					<section>
-						<h3>Argo CD</h3>
-						<blockquote style="margin-top: -5; margin-bottom: 0; align-content: center;">
-							<span style="margin-top: 0; margin-bottom: 0; font-size: 0.6em;">Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.<br /></span>
-							<img src="images/argocd_architecture.png" style="margin-top: 0; margin-bottom: 0;"/>
-						</blockquote>
-						<span style="font-size: 0.6em; margin: 0;">https://argoproj.github.io/cd</span>
-						
-						<aside class="notes">
-						Donné à la CNCF depuis 2 ansi (April 7, 2020), en status incubator https://www.cncf.io/projects/argo/<br />
-						Repos github avec environ 11.000 stars et 2300 forks<br />
-						En plus de Argo CD il y a plusieurs projets "Argo"=> Workflow : moteur de worflow; Rollout: deployement en blue-green,
-						canary, ...; Events : event driven workflow
-						</aside>
-					</section>
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Votre première mission</h3>
-						<br />
-						<ul>
-							<li>installer et configurer Argo CD,</li>
-							<li>s'assurer que la ligne de commande fonctionne,</li>
-							<li>s'assurer que l'interface web est accessible au travers d'un Ingress.</li>
-						</ul><br />
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/13', 1, 3, 3)">Après avoir résolu cette issue, passer à la prochaine</a>
-
-						<aside class="notes">
-							Pour la démo tout sera fait en local et l'on aura un seul cluster kube qui hébergera Argo CD et les déployements
-						</aside>
-					</section>
-					
-				</section>
-				<section>
-					<section>
-						<h3>Du "sur-mesure" avec la CI de GitLab</h3>
-						<aside class="notes">
-						</aside>
-					</section>
-
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Votre première mission</h3>
-						<br />
-						<ul>
-							<li>installer et configurer un runner GitLab (pour le "groupe" gitlab) qui tourne dans le cluster,</li>
-							<li>s'assurer que le runner fonctionne,</li>
-							<li>permettre au runner de piloter le cluster k8s.</li>
-						</ul><br />
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/13', 1, 1)">Après avoir PARTIELLEMENT cette issue, passer à la prochaine</a>
-					
-						<aside class="notes">
-							Le runner pourra lancer des jobs en injectant le kubeconfig local qui lui permettra d'accèder à l'API server de kube.  
-							Pour la démo tout sera fait en local et l'on aura un seul cluster kube qui hébergera GitLab et les déployements.  
-							C'est une solution à moitié faite, il manque la boucle de controle
-						</aside>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h3>Déployer en production des descripteurs versionnés</h3>
-						<br />
-						Allons nous enfin pouvoir <a href="#/13/1">déployer la production à partir du repository git</a> ? 🤞
-						<aside class="notes">
-							On va commencer avec un un simple manifest qui sera fournit
-						</aside>
-					</section>
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Go to prod depuis Git 😱 ?</h3>
-						<br />
-						L'équipe dev vous a fournit les manifests pour déployer l'Application dans la nouvelle infrastructure.<br />
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/14', 1, 3, 2)">Après avoir résolu cette issue, passer à la prochaine</a>
-						
-						<aside class="notes">
-							
-						</aside>
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h3>Et si l'on déployait d'autres environnements ?</h3>
-						<br />
-						<span class="big">👯‍♂️</span> <br />
-						Maintenant que vous savez déployer en production directement depuis git<br />
-						<br />
-						Comment gère-t-on les autres environnements ?
-            <br /><br />
-						<a href="#/14/1">Aller trouver l'inspiration à la taverne...</a>
-						<aside class="notes">
-							Non seulement ce serait bien mais ce serait indispensable, vous ne vous voyer pas gérer différent mode de deployement. <br/>
-							Mais cela pose pas mal de questions : comment gérer les différents env ? =>
-						</aside>
-					</section>
-					<section data-background-image="images/tavern.png" data-background-size="75%">
-						<h3>Quel modèle de configuration pour gérer nos différents environnements ?</h3>
-						<br />
-						Après avoir offert plusieurs 🍺 au barde <a href="javascript:void(0)" onclick="resolve(0, 0, -2)">[PAYEZ 2 🪙]</a>, il vous propose de suivre la voie de :
-						<br />
-						<p>
-							<ul>
-								<li><a href="#/14/2">A: Kustomize, le guerrier Nain qui refuse le templating</a></li>
-								<li><a href="#/14/5">B: Helm, le Démon du templating go</a></li>
-								<li><a href="#/14/9">C: Dhall, le Béornien qui compile vos configurations</a></li>
-							</ul>
-						</p>
-						<br />
-						Qui sera votre modèle ?
-						<aside class="notes">
-							Kustomize est un guerrier Nain légendaire par sa détermination et ses principes. 
-							Il déteste le templating qu'il considère comme non conforme à l'esprit de kube.<br />
-							A contrario, il y aussi le célèbre et démoniaque Helm qui a le templating qui fait partie de son âme, de son être.<br />
-							Et enfin moins connu mais puissant: Dhall, comme tout Beornien c'est un être rude, strict et solitaire, mais sur qui l'on peut compter.
-						</aside>
-					</section>
-					<section data-background-image="images/erebor.png" data-background-size="77%">
-						<h3>Kustomize</h3>
-						<br />
-						Une approche déclarative et sans template.<br />
-						<pre>
-
-	├── base
-	│   ├── deployment.yml
-	│   ├── ingress.yml
-	│   ├── kustomization.yml
-	│   └── svc.yml
-	└── overlays
-	    ├── moria
-	    │   ├── patch.yml
-	    │   └── kustomization.yml
-	    ├── erebor
-	    │   ├──
-		...
-
-						</pre>
-						<aside class="notes">
-							Les environnements sont representés par des dossiers dans overlays (mais on peut organiser cela autrement)
-						</aside>
-					</section>
-					<section data-background-image="images/erebor.png" data-background-size="77%">
-						<h3>Kustomize</h3>
-						<br />
-						Contenant les définitions de "base" et le(s) patch(s) de chaque environnement<br />
-						<pre>
-							<code data-line-numbers="2-4|8-11|5-7|14,20-21|18-19,22-23">
-								<script type="text/template">---
-# base kustomize.yml file
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-commonLabels:
-	race: dwarf
-	job: black-smith
-resources:
-- deployment.yml
-- svc.yml
-- ingress.yml
-
----
-# overlay kustomize.yml file for moria env
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: moria
-commonLabels:
-	env: moria
-bases:
-- ../../base
-patchesStrategicMerge:
-- patch.yml
-								</script>
-							</code>
-						</pre>
-						<aside class="notes">
-							La base et la notion de surcharge sous la forme de fichier(s) de patch sont pilotés par des fichiers <b>kustomize.yml</b>
-						</aside>
-					</section>
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Les mains dans le cambouis : Kustomize</h3>
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/15', 1, 3, 5)">Après avoir résolu cette issue, passer à la prochaine</a>
-					</section>
-					<section data-background-image="images/balrog.png" data-background-size="77%">
-						<h3 style="color: red;">Helm 🔥</h3>
-						<br />
-						<span><q>The package manager for Kubernetes</q> (https://helm.sh/)</span> <br />
-						
-						<span class="small red"><q>L'enfer est pavé de bonnes intentions</q> (Saint-Bernard)</span>
-						<br />
-						<p>
-						Helm, c'est à la fois un système de :<br />
-						<ul>
-							<li><a href="#/14/6">templating go pour yaml,</a></li> 
-							<li>un système de packaging et de partage d'applications kubernetes,</li>
-							<li>et un système de gestion de dépendances pour les applications kube.</li>
-						</ul>
-						</p>
-						<aside class="notes">
-							Amibitieu et complexe<br />
-							Avec un lourd passif avec Tiller 😱<br />
-							Où il faut aimer le templating GO<br />
-							Mais c'est votre choix
-						</aside>
-					</section>
-					<section data-background-image="images/balrog.png" data-background-size="77%">
-						<h3 style="color: red;">Helm 🔥</h3>
-						Un <b>Chart <span class="red">helm</span></b> cela ressemble à quoi ?<br />
-						<pre>
-				├── charts
-				├── Chart.yaml
-				├── templates
-				│   ├── deployment.yaml
-				│   ├── _helpers.tpl
-				│   ├── hpa.yaml
-				│   ├── ingress.yaml
-				│   ├── NOTES.txt
-				│   ├── serviceaccount.yaml
-				│   ├── service.yaml
-				│   ├── tests
-				│   └── test-connection.yaml
-				├── values-prod.yaml
-				├── values-staging.yaml
-				└── values-....yaml
-				
-						</pre>
-						<aside class="notes">
-							Les descripteurs des différents composants sont initializés par défaut.<br />
-							Ainsi qu'un fichier <b>values.yaml</b> avec les valeurs par défaut des templates.
-						</aside>
-					</section>
-					<section data-background-image="images/balrog.png" data-background-size="77%">
-						<h3 style="color: red;">H🔥lm</h3>
-						<pre>
-							<code data-line-numbers="2-4|29,30,34,36,37,40|44-46,53|78">
-								<script type="text/template">---
-## Chart.yaml file
-apiVersion: v2
-name: balrog
-description: A powerful demonic monster for Kubernetes
-
-# A chart can be either an 'application' or a 'library' chart.
-#
-# Application charts are a collection of templates that can be packaged into versioned archives
-# to be deployed.
-#
-# Library charts provide useful utilities or functions for the chart developer. They're included as
-# a dependency of application charts to inject those utilities and functions into the rendering
-# pipeline. Library charts do not define any templates and therefore cannot be deployed.
-type: application
-
-# This is the chart version. This version number should be incremented each time you make changes
-# to the chart and its templates, including the app version.
-# Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.1.0
-
-# This is the version number of the application being deployed. This version number should be
-# incremented each time you make changes to the application. Versions are not expected to
-# follow Semantic Versioning. They should reflect the version the application is using.
-# It is recommended to use it with quotes.
-appVersion: "1.16.0"
-
----
-## values.yaml file
-# Default values for balrog.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-replicaCount: 1
-
-image:
-	repository: registry.acdc.song/highway/to-hell
-	pullPolicy: IfNotPresent
-	# Overrides the image tag whose default is the chart appVersion.
-	tag: "666"
-# ...
-
----
-## deployement.yml file
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-name: {{ include "balrog.fullname" . }}
-labels:
-	{{- include "balrog.labels" . | nindent 4 }}
-spec:
-{{- if not .Values.autoscaling.enabled }}
-replicas: {{ .Values.replicaCount }}
-{{- end }}
-selector:
-	matchLabels:
-	{{- include "balrog.selectorLabels" . | nindent 6 }}
-template:
-	metadata:
-	{{- with .Values.podAnnotations }}
-	annotations:
-		{{- toYaml . | nindent 8 }}
-	{{- end }}
-	labels:
-		{{- include "balrog.selectorLabels" . | nindent 8 }}
-	spec:
-	{{- with .Values.imagePullSecrets }}
-	imagePullSecrets:
-		{{- toYaml . | nindent 8 }}
-	{{- end }}
-	serviceAccountName: {{ include "balrog.serviceAccountName" . }}
-	securityContext:
-		{{- toYaml .Values.podSecurityContext | nindent 8 }}
-	containers:
-		- name: {{ .Chart.Name }}
-		securityContext:
-			{{- toYaml .Values.securityContext | nindent 12 }}
-		image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-# ...
-
-								</script>
-							</code>
-						</pre>
-						<aside class="notes">
-							Les valeurs templétisés sont soient passées en args soit dans des fichiers
-							<b>values-....yml</b> (soit les 2)
-						</aside>
-					</section>
-
-
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Les mains dans le cambouis : <span class="red">H🔥lm</span> </h3>
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/15', 1, 5, 5)">Après avoir résolu cette issue, passer à la prochaine</a>
-						<aside class="notes">
-						</aside>
-					</section>
-
-					<section data-background-image="images/Beorn_by_JMKilpatrick.png" data-background-size="40%">
-						<h3>Dhall-lang</h3>
-						<br />
-						<span><q>Dhall is a programmable configuration language...</q> (https://dhall-lang.org/)</span> <br />
-
-						<br />
-						<p>
-						Dhall-lang est un langage de configuration <b>générique</b> :<br />
-						<ul>
-							<li>avec des types dédiés pour les descripteurs de kubernetes,</li> 
-							<li>safe (fonctionnel, typage, ...),</li>
-							<li>qui évite les répétions et facilite la refactorisation,</li>
-							<li>mais plus difficile à apprendre que Helm ou Kustomize.</li>
-						</ul>
-						</p>
-						<aside class="notes">
-							On peut voir cela comme : du JSON, des types, des fonctions et des imports, le tout validé par un "compilateur".
-							En résumé du JSON à la sauce Haskell. Soit quelque chose de complexe, de peu utilisé, mais fiable et robuste.
-							Ce langage est générique : on peut s'en servir pour kubernetes mais pas que.
-						</aside>
-					</section>
-
-					<section data-background-image="images/Beorn_by_JMKilpatrick.png" data-background-size="40%">
-						<h3>Dhall-lang</h3>
-						Du typage, du templating et un peu d'assemblage<br />
-						<pre>
-├── assembly-prod.dhall
-├── assembly-secret.dhall
-├── assembly-....dhall
-├── configs
-│   ├── prod.dhall
-│   ├── staging.dhall
-│   └── ....dhall
-├── templates
-│   ├── sith-all-template.dhall
-│   ├── sith-deploy-template.dhall
-│   ├── sith-ingress-template.dhall
-│   └── sith-svc-template.dhall
-├── tools
-│   └── converters.dhall
-└── types
-    ├── sith-config-deploy.dhall
-    ├── sith-config.dhall
-    ├── sith-config-ingress.dhall
-    ├── sith-config-ingress-rule.dhall
-    ├── ...
-    ├── sith-config-svc.dhall
-    └── unionType.dhall
-						</pre>
-						<aside class="notes">
-							Mais dhall n'impose aucune structure particulière, à chacun d'avoir son organsition...
-						</aside>
-						
-					</section>
-					
-					<section data-background-image="images/Beorn_by_JMKilpatrick.png" data-background-size="40%">
-						<h3>Dhall-lang</h3>
-						<br />
-						Mise en oeuvre d'un template simple (un service)<br />
-						<pre>
-							<code data-line-numbers="3,11|19|22-27|29|36,50|37,32|38,33-34|56">
-								<script type="text/template">-- types/sith-config-svc.dhall --
-{
-	Type =
-	{ 
-	name: Text,
-	app: Text,
-	port: Integer,
-	targetPort: Optional <Int: Integer | String: Text>,
-	portName: Optional Text,
-	},
-	default =
-	{
-	portName = None Text,
-	targetPort = None <Int: Integer | String: Text>,
-	}
-}
-
--- config/staging-svc.dhall --
-let ConfigSvc = ../types/sith-config-svc.dhall
-let Port : Type = < Int : Integer | String : Text >
-
-let service = ConfigSvc::{
-  name = "hello",
-  app = "world",
-  port = +80,
-  targetPort = Some (Port.String "web")
-}
-
-in service
-
--- templates/sith-svc-template.dhall --
-let ConfigSvc = ../types/sith-config-svc.dhall
-let kubernetes = https://raw.githubusercontent.com/dhall-lang/dhall-kubernetes/v6.0.0/1.21/package.dhall 
-		sha256:9d07ad4eff6d388aaf7c4715d3b83812a7eee8a6281a5e64098aaddb3551ce6a
-
-let svc =
-  λ(config : ConfigSvc.Type) →
-  kubernetes.Service::{
-    , metadata = kubernetes.ObjectMeta::{ 
-      name = Some config.name, labels = Some (toMap { app = config.app }) 
-      }
-    , spec = Some kubernetes.ServiceSpec::{
-      , ports = Some
-        [ kubernetes.ServicePort::{ 
-			name = config.portName , targetPort = config.targetPort , port = config.port }
-        ]
-      , selector = Some (toMap { app = config.app })
-    }
-  }
-in svc
-
--- ./assembly-demo.dhall --
-let configSvc = ./configs/staging-svc.dhall
-let templateSvc = ./templates/sith-svc-template.dhall
-
-in templateSvc configSvc
-									
-								</script>
-							</code>
-						</pre>
-					</section>
-
-
-					<section data-background-image="images/Beorn_by_JMKilpatrick.png" data-background-size="40%">
-						<h3>Dhall-lang</h3>
-						<br />
-						Utilisation de ce simple template(un service)<br />
-						<pre>
-							<code> $ dhall-to-yaml --documents --file assembly-demo.dhall 
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: hello
-  name: hello
-spec:
-  ports:
-    - port: 80
-      targetPort: web
-  selector:
-    app: hello 				</code>
-						</pre>
-					</section>
-
-					<section data-background-image="images/Beorn_by_JMKilpatrick.png" data-background-size="40%">
-						<h3>Dhall-lang : comment déployer ?</h3>
-						<br />
-						Pour résoudre cette issue vous allez avoir besoin d'invoquer l'aide d'un consultant Béornide. <br />
-						<p>
-						Ce puissant guerrier :
-						<ul>
-							<li>mettra en place les types, descripteurs et templates Dhall,</li>
-							<li>et intégrera Dhall dans votre solution de déploiement.</li>
-						</ul>
-						</p>
-						Cela vous coûtera de très nombreuses tournées <a href="javascript:void(0)" onclick="resolveAndGo('#/14/14', 0, 0, -10)">[PAYEZ 10 🪙]</a>.<br />
-						<br />
-						Si vous ne les avez pas faites un <a href="#/14/1">autre choix</a><br /> 
-						<br />
-						<aside class="notes">
-							Argocd gère plusieurs systèmes de deploiement : yaml "vanilla", kustomize, helm, jsonnet, mais pas dhall. 
-						</aside>
-					</section>
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Les mains dans le cambouis : trois tournées pour qu'ArgoCD intègre Dhall</h3>
-						<br />
-						ArgoCD ne comprend pas Dhall.... Mais notre amis Béornide peut lui "apprendre" en créant un CMP (Config Management Plugin). Cela consiste à :
-						<p>	
-						<ul>
-							<li>installer le plugin via "side-car container" associé à argo-repo-server,</li>
-							<li>configurer ce plugin pour qu'il traite les fichiers dhall,</li>
-							<li>configurer ArgoCD pour qu'il délègue les fichiers dhall à ce plugin.</li>
-						</ul>
-						</p>
-						Après cela, nous pourrons deployer les applications décrites en utilisant Dhall.<br /><br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/15', 1, 5, 5)">Après avoir résolu cette issue, passer à la prochaine</a>
-						<aside class="notes">
-							(Argocd gère plusieurs systèmes de deploiement : yaml "vanilla", kustomize, helm, jsonnet, mais pas dhall). 
-							
-							On peut étendre argocd via un mécanisme de plugin, avec ce que l'on appel des CMP ou Config Management Plugin.  
-							Il y a deux manière de faire cela, dans notre cas nous allons utilisé un mécanisme de side car avec un container side car qui sera ajouté au pod "argo-repo-server".  
-							voir https://argo-cd.readthedocs.io/en/stable/user-guide/config-management-plugins/
-						</aside>
-					</section>
-				</section>
-
-				<section>
-					<section data-background-image="images/secret.png" data-background-size="60%">
-						<h3>L'application présente des F🎃illes de sécurité</h3>
-						<br />
-						Entre autres, les secrets sont directement dans l'application.<br />
-						<br />
-						<a href="#/15/1">Demander à Gandalf s'il connaît un sort d'externalisation des mots de passe</a>
-						<aside class="notes">
-							Il n'y a pas que log4shell et spring4shell dans l'info...
-						</aside>
-					</section>
-					<section data-background-image="images/tavern.png" data-background-size="75%">
-						<h3>La voie du silence</h3>
-						Heureusement, Gandalf est là et vous donne plusieurs directions, choisissez bien...<br />
-						<br />
-						<ul>
-							<li><a href="#/15/2">A: Les "secrets" natifs de kube</a></li>
-							<li><a href="#/15/3">B: Le chiffrage dans Git avec bitnami sealed secrets</a></li>
-							<li><a href="#/15/4">C: La solution la plus avancée : Hashicorp Vault</a></li>
-							<li><a href="#/17">D: J'ai pas l'temps, pas l'choix faut y aller... 🏃</a></li>
-						</ul>
-						<aside class="notes">
-						</aside>
-					</section>
-					<section data-background-image="images/secret.png" data-background-size="60%">
-						<h3>Les "Secret" selon Kubernetes 🤡</h3>
-						🚨 Encoder n'est pas chiffrer<br />
-						<pre>
-							<code data-line-numbers="4">---
-apiVersion: v1
-data:
-	password: RW5jb2RlciBuJ2VzdCBwYXMgY2hpZmZyZXI=
-kind: Secret
-metadata:
-	name: it-s-a-joke
-							</code>
-						</pre>
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/16', 0, -2)">Après avoir fait semblant de résoudre cette issue, passer à la prochaine</a>
-						<aside class="notes">
-							Mais bon, cela répond au premier besoin d'externalisation. Après si kustomize on peut utiliser un generator
-						</aside>
-					</section>
-					<section data-background-image="images/secret.png" data-background-size="60%">
-						<h3>Sealed Secrets</h3>
-						<br />
-					  La sécurisation des secrets grâce à du chiffrement asymétrique.
-						<br />
-						<img src="images/crypto-asymetric-fr.png" />
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/16', 1, 3, 3)">Après avoir résolu cette issue, passer à la prochaine</a>
-						<aside class="notes">
-							https://github.com/bitnami-labs/sealed-secrets
-						</aside>
-					</section>
-					<section data-background-image="images/secret.png" data-background-size="60%">
-						<h3>Hashicorp Vault</h3>
-            On peut utiliser Vault <br />
-						<p>
-            			Depuis l'endroit qui déploie grâce à
-							<ul class="small">
-								<li>du templating,</li>
-								<li>des générateurs,</li>
-								<li>...</li>
-							</ul>
-						</p>
-						<p>
-            			Ou depuis le cluster où les secrets sont utilisés en
-							<ul class="small">
-								<li>utilisant un "Init" ou un "SideCar" Containers,</li>
-								<li>intégrant un client Vault dans l'application,</li>
-								<li><b>utilisant "Secrets Store CSI driver" de kube,</b></li>
-								<li>...</li>
-							</ul>
-						</p>
-						<br />
-						<p class="small">
-							Même si c'est la meilleure solution, vous n'avez pas encore le niveau pour cette epic.<br />
-							Mais si il vous reste 10po ou plus vous pouvez demander de l'aide à un consultant POC...
-						</p>
-						<a href="#/15/1">revenir en arrière</a> OU <a href="javascript:void(0)" onclick="resolveAndGo('#/15/5', 0, 0, -10)">[PAYEZ 10 🪙]</a>.<br />
-						<aside class="notes">
-							Quelque soit la solution choisit il faut bien évidement avoir Vault installé.
-						</aside>
-					</section>
-					<section data-background-image="images/secret.png" data-background-size="60%">
-						<h3>Hashicorp Vault</h3>
-            En utilisant les Secrets Store CSI driver de kube<br />
-						<p class="small">
-							Le consultant vous fournit un script permettant d'installer et configurer Vault en mode [DEV] dans votre cluster en mode "open bar" 
-							<b>🚫 Ne faites pas cela 🚫</b>
-						</p>
-						<p class="small">
-							Pour monter les secrets Vault utilisez un <b>SecretProviderClass</b> avec un volume <b>csi</b>
-						<pre>
-							<code data-line-numbers="2,3,7,10|5|12-14|20,21,24">---
-	apiVersion: secrets-store.csi.x-k8s.io/v1
-	kind: SecretProviderClass
-	metadata:
-		name: vault-secret-exemple
-	spec:
-		provider: vault
-		parameters:
-			roleName: "csi"
-			vaultAddress: "http://vault.vault:8200"
-			objects: |
-				- objectName: "bar"
-				  secretPath: "secret/data/foo"
-				  secretKey: "password"
----
-# pod spec...
-...
-		volumes:
-		- name: secrets-store-exemple
-			csi:
-				driver: secrets-store.csi.k8s.io
-				readOnly: true
-				volumeAttributes:
-					secretProviderClass: "vault-secret-exemple"
-							</code>
-						</pre>
-						</p>
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/16', 1, 3, 3)">Après avoir résolu cette issue, passer à la prochaine</a>
-						<aside class="notes">
-							<ul class="small">
-								<li>déclarer un "SecretProviderClass" qui sera associé à une plusieurs entrées Vault,</li>
-								<li>dans le pod monter en tant que volume ce volume de type "csi"</li>
-							</ul>
-						</aside>
-					</section>
-
-				</section>
-
-				<section data-background-image="images/des.png" data-background-size="50%">
-					<h3>Déployer la prod sur un tag au lieu de HEAD</h3>
-					<br />
-					Il s'agit de la dernière issue. Elle est optionnelle : <br />
-					<br />
-					<ul>
-						<li><a href="#/17">J'ai pas l'temps, pas l'choix faut y aller... 🏃</a></li>
-						<li><a href="javascript:void(0)" onclick="resolveAndGo('#/17', 1, 3, 2)">Trop fort, j'ai eu le temps de la résoudre</a></li>
-					</ul>
-					<aside class="notes">
-					</aside>
-				</section>
-
-				<!-- 17 -->
+				<!-- 14 -->
 				<section data-background-image="images/frodo-in-rivendell.png" data-background-size="70%">
 					<h3>Fin du second tome</h3>
 					<br />
@@ -1719,7 +910,7 @@ metadata:
           <br />
 				</section>
 
-				<!-- 18 -->
+				<!-- 15 -->
 				<section>
 					<table class="small">
 						<thead>
