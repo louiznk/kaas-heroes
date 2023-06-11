@@ -1,0 +1,1 @@
+Manifest des `Applications` ArgoCD qui définisse un repo le dossier de ce qui doit être déployé

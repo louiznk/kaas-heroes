@@ -833,8 +833,13 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						</div><br />
 						<div class="small">source: https://cluster-api.sigs.k8s.io/user/concepts.html</div>
 						<aside class="notes">
-							Il y aura de nouveaux CRDs pour définir au sein de ce cluster l'infrastruture et les clusters. Cela permettra de gérer des Cluster comme l'on gère un Deployement (ou presque).<br />
-							=> magie des boucles de controle de kube, de la notion d'état désiré, ...
+							CAPI fournit de nouveaux CRDs pour définir au sein de ce cluster l'infrastruture et les clusters. Cela permet de gérer des Cluster comme l'on gère un Deployement (ou presque).<br />
+							=> magie des boucles de controle de kube, de la notion d'état désiré, ... <br />
+							CAPI peut supporter de nombreuses implémentations (cf https://cluster-api.sigs.k8s.io/reference/providers.html)
+							<ul>
+								<li>Fournisseur d'infrastructure (AWS, GCP, Openstack, Vsphere, VCluster, ...)</li>
+								<li>Boostrap et control plane du cluster (kubeadm, k3s, talos, ...)</li>
+							</ul>
 						</aside>
 					</section>
 					
@@ -893,7 +898,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						Vous avez consommer cependant un peu plus d'infrastructure que prévu, mais rien de bloquant<br />
 						<a href="#/14">Allez fêter votre premier kube as a service</a>
 						<aside class="notes">
-							A noter que la solution est encore en alpha, c'est un peu risquer d'industrialiser cela tant que ce n'est à minima pas en beta.
+							A noter que la solution est encore en alpha et ou beta selon les ressources/implementations, c'est un peu risquer d'industrialiser cela tant que ce n'est à minima pas en beta.
 						</aside>
 					</section>
 				</section>
