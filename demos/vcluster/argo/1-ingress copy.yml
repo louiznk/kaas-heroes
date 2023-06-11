@@ -1,0 +1,26 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-server
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`argocd-demo.34.36.107.89.sslip.io`)
+      priority: 10
+      services:
+        - name: argocd-server-x-argocd-x-demo
+          namespace: vcluster-demo
+          port: 80
+    - kind: Rule
+      match: Host(`argocd-demo.34.36.107.89.sslip.io`) && Headers(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+#        - name: argocd-server
+#          namespace: argocd
+        - name: argocd-server-x-argocd-x-demo
+          namespace: vcluster-demo
+          port: 80
+          scheme: h2c
+  tls: {}

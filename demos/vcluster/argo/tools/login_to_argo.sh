@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Login to argocd"
 
 if [ -z "$IP" ]
 then
@@ -7,4 +8,11 @@ then
     echo "ADRESSE IP LB $IP"
 fi
 
-flatpak run org.chromium.Chromium --incognito https://argocd.$IP.sslip.io  2>/dev/null &
+set -x
+argocd login \
+    --insecure \
+    --username admin \
+    --grpc-web \
+    argocd.$IP.sslip.io
+
+

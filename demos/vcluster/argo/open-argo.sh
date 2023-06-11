@@ -7,4 +7,4 @@ then
     echo "ADRESSE IP LB $IP"
 fi
 
-flatpak run org.chromium.Chromium --incognito https://argocd.$IP.sslip.io  2>/dev/null &
+flatpak run org.chromium.Chromium --incognito https://argocd-$CLUSTER_NAME.$IP.sslip.io  2>/dev/null &
