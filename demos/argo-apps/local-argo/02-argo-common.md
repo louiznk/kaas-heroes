@@ -1,0 +1,1 @@
+../docs/exercices/02-argo-common.md
