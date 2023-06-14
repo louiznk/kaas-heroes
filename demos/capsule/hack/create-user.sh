@@ -95,7 +95,7 @@ kubectl apply -f ${TMPDIR}/${USER}-${TENANT}-csr.yaml
 
 # Approve and fetch the signed certificate
 kubectl certificate approve ${USER}-${TENANT}
-kubectl get csr ${USER}-${TENANT} -o jsonpath='{.status.certificate}' | base64 --decode > ${USER}-${TENANT}.crt
+CRT=$(kubectl get csr ${USER}-${TENANT} -o jsonpath='{.status.certificate}')
 
 # Create the kubeconfig file
 CONTEXT=$(kubectl config current-context)
@@ -121,9 +121,9 @@ preferences: {}
 users:
 - name: ${USER}
   user:
-    client-certificate: ${USER}-${TENANT}.crt
-    client-key: ${USER}-${TENANT}.key
+    client-certificate-data: ${CRT}
+    client-key-data: $(cat ${USER}-${TENANT}.key | base64 | tr -d '\n')
 EOF
-
+rm ${USER}-${TENANT}.key
 echo "kubeconfig file is:" ${USER}-${TENANT}.kubeconfig
 echo "to use it as" ${USER} "export KUBECONFIG="${USER}-${TENANT}.kubeconfig

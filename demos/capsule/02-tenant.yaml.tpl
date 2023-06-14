@@ -8,7 +8,7 @@ spec:
   - name: $USER_NAME
     kind: User
   namespaceOptions:
-    quota: 2
+    quota: 1 
 #  nodeSelector:
 #    dedicatedTo: $TENANT_NAME
 #    kubernetes.io/os: linux
@@ -32,3 +32,8 @@ spec:
           cpu: 100m
           memory: 10Mi
         type: Container
+# https://capsule.clastix.io/docs/general/tutorial/#assign-ingress-hostnames
+# but not work with ingress with CRD...
+  ingressOptions:
+    allowedHostnames:
+      allowedRegex: ^$TENANT_NAME.*\.slipp\.io$
