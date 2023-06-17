@@ -7,3 +7,7 @@ export CLUSTER_NAME=demo
 DIR=`dirname "$0"`
 REALPATH=`realpath $DIR`
 export "CLUSTER_KUBECONFIG"=$REALPATH/$CLUSTER_NAME.kubeconfig
+export WORKER_NB=2
+export CONTROL_PLANE_NB=1
+export GCP_CONTROL_PLANE_MACHINE_TYPE=n2d-standard-2
+export GCP_NODE_MACHINE_TYPE=n2d-standard-2

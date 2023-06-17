@@ -32,6 +32,8 @@ pei './hack/create-user.sh $USER_NAME $TENANT_NAME'
 prompt "Create namespace $TENANT_NAME-dev for $TENANT_NAME tenant with user $USER_NAME"
 line
 
-pei 'kubectl create ns ${TENANT_NAME}-dev --kubeconfig ${USER_NAME}-${TENANT_NAME}.kubeconfig'
+pei 'kubectl create ns $TENANT_NAME-dev --kubeconfig $USER_NAME-$TENANT_NAME.kubeconfig'
+
+pei 'kubectl get ns'
 
 popd

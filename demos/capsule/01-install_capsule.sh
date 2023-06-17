@@ -16,7 +16,9 @@ echo "For custom value see https://github.com/clastix/capsule/blob/master/charts
 
 pei 'helm repo add clastix https://clastix.github.io/charts'
 pei 'helm install capsule clastix/capsule -n capsule-system --create-namespace'
-prompt 'Check the logs'
-pei 'kubectl logs deployment/capsule-controller-manager -c manager -n capsule-system'
+#prompt 'Check the logs'
+#pei 'kubectl logs deployment/capsule-controller-manager -c manager -n capsule-system'
+
+prompt "Next create tenant"
 
 popd
