@@ -1,3 +1,5 @@
 demos/capi/offline/images
 *.kubeconfig
+*.crt
+*.key
 

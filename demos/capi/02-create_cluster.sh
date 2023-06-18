@@ -19,17 +19,19 @@ pei 'export GCP_REGION=europe-west1'
 pei 'export GCP_PROJECT=ltournayre-talks'
 pei 'export KUBERNETES_VERSION=1.25.10'
 pei 'export IMAGE_ID=projects/$GCP_PROJECT/global/images/cluster-api-ubuntu-2204-v1-25-10-1685208070'
-pei 'export GCP_CONTROL_PLANE_MACHINE_TYPE=n2d-standard-2'
-pei 'export GCP_NODE_MACHINE_TYPE=n2d-standard-2'
+pei "export GCP_CONTROL_PLANE_MACHINE_TYPE=$GCP_CONTROL_PLANE_MACHINE_TYPE"
+pei "export GCP_NODE_MACHINE_TYPE=$GCP_NODE_MACHINE_TYPE"
 pei 'export GCP_NETWORK_NAME=default'
-pei 'export CLUSTER_NAME=demo'
+pei "export CLUSTER_NAME=$CLUSTER_NAME"
+pei "export CONTROL_PLANE_NB=$CONTROL_PLANE_NB"
+pei "export WORKER_NB=$WORKER_NB"
 line
 prompt 'Use clusterctl to generate cluster manifest'
 
 pe 'clusterctl generate cluster $CLUSTER_NAME \
   --kubernetes-version v$KUBERNETES_VERSION \
-  --control-plane-machine-count=1 \
-  --worker-machine-count=2 \
+  --control-plane-machine-count=$CONTROL_PLANE_NB \
+  --worker-machine-count=$WORKER_NB \
   > $CLUSTER_NAME.yaml'
 
 prompt "🍹 Let's create $CLUSTER_NAME cluster"

@@ -600,9 +600,10 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Architecture</h3>
 						<div class="flex-container">
 							<div style="flex-shrink: 10;">								
-								Capsule offre du multitenant au sein d'un cluster en s'appuyant sur les namespaces.<br />
-								Le tenant est porté par le namespace et il est vue comme tel pour la "personne" qui a accès au tenant.<br />
-								Capsule utilise des règles RBAC, des Network Policies et des Resources Quotas pour isoler les tenants.<br />
+								Capsule offre une notion de Tenant au sein d'un cluster.<br />
+								Chaque Tenant est associé à un ou plusieurs users et permet de créer un ou plusieurs namespaces.<br />
+								Les uesrs du tenant n'ont des droits que dans ces namespaces.<br />
+								Capsule s'appuie sur : RBAC, les Network Policies, les Quotas, ... pour isoler/limiter les tenants.<br />
 							</div>
 							<div style="flex-grow:10">
 								<img src="images/capsule-operator.jpg" />
@@ -630,7 +631,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Instanciation du Tenant</h3>
 						<ul>
 							<li>Créer le "Tenant" (Tenant.capsule.clastix.io/v1beta2)</li>
-							<li>Créer le user du "Tenant" avec son kubeconfig</li>
+							<li>Créer le user du "Tenant" et créer son kubeconfig</li>
+							<li>Créer un namespace avec ce user</li>
 						</ul><br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
@@ -657,6 +659,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						Installez et testez l'application Hello Legacy ! <br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/6', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
+							Le tenant permet pour l'ingress classique de limiter via une regex les nom DNS des ingress rules... Mais si on utilise une CRD type traefik cela ne sert à rien.
 						</aside>
 					</section>
 					
@@ -740,7 +743,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<div class="small">ℹ️ pour ceux qui préfèrent il est possible d'utiliser Helm en lieu est place de la ligne de commande, c'est même mieux en terme de pratiques</div>
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
-							On pourrait aussi utiliser Helm
+							On pourrait aussi utiliser Helm, c'est ce qui est fait pour la création, par contre la cmd line offre plus de fonctionnalitées <br />
 							Ici on va pour se simplifier la partie réseau (exposition de l'IngressController) utiliser un ingress controller commun, mais ce n'est pas obligé
 						</aside>
 					</section>
@@ -761,9 +764,10 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Tests</h3>
 						En utilisant l'Ingress Controller commun au cluster (mais ce n'est pas une obligation, c'est un raccourci) installer l'application de test Hello Legacy.<br />
+						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik sur le host il y a mécanisme de synchronisation un peu complexe à mettre en place entre le vcluster et l'host.
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
-							Il faudrait installer un ingress controller et l'exposer à l'extérieur
+							Il faudrait installer un ingress controller et l'exposer à l'extérieur.<br />							
 						</aside>
 					</section>
 					

@@ -16,7 +16,7 @@ gcloud compute instance-groups unmanaged create $CLUSTER_NAME-workers-node-europ
   --zone europe-west1-b
 
 gcloud compute instance-groups unmanaged add-instances $CLUSTER_NAME-workers-node-europe-west1-b \
-  --instances $(kubectl get node --kubeconfig  demo.kubeconfig -l !"node-role.kubernetes.io/control-plane" \
+  --instances $(kubectl get node --kubeconfig  $CLUSTER_NAME.kubeconfig -l !"node-role.kubernetes.io/control-plane" \
     --output=jsonpath='{range .items[*]}{.metadata.name},{end}') \
   --zone europe-west1-b
 
