@@ -649,31 +649,21 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 4 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Mise en place de ArgoCD</h3>
-						Compte tenu de l'architecture il est trop compliqué d'avoir un ArgoCD dédié par Tenant, le plus simple est d'avoir un ArgoCD capable de deployer dans les différents Tenant.<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/5', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						Compte tenu de l'architecture il n'est pas possible d'avoir un ArgoCD installé pour chaque Tenant.<br />
+						Mais l'on peut avoir un ArgoCD externe (ou pas) qui déploie pour le(s) namespaces(s) en utilisant un compte avec des droits.<br />
+						Sauf que cela entraine une forte complexitée et une charge de mise en place plus importante (utilisation des Projects,...) . Et vous n'avez pas encore le niveau pour cela, aller directement 
+						<a href="#/11/5")">à la fin de l'histoire</a>
 						<aside class="notes">
-							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
-							Apparment Flux s'intégre dans des tenants Capsules<br />
-							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
-							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects"<br />
+							Une des limitations est notament que ArgoCD gère des clusters, pas des Tenant. Du coup il faut avoir un cluster et gérer les liens entres les "Server + NS" <=> "Repositories" via des "Projects"
 						</aside>
 					</section>
 					
 					<!-- 5 -->
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Tests</h3>
-						En utilisant l'Ingress Controller commun au cluster<br />
-						Installez et testez l'application Hello Legacy ! <br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/6', 1, 1)">👉 quand vous aurez finit 👈</a>
-						<aside class="notes">
-							Le tenant permet pour l'ingress classique de limiter via une regex les nom DNS des ingress rules... Mais si on utilise une CRD type traefik cela ne sert à rien.
-						</aside>
-					</section>
-					
-					<!-- 6 -->
 					<section>
 						<h3>Limitations</h3>
-						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais d'autres voies existent et sécurisent plus pour votre cluster....<br />
+						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais vous n'avez ni le niveau ni l'envie d'intégrer ArgoCD. <br />
+						Sachez que d'autres voies existent, elles sécurisent plus votre cluster et vous permettent d'intégrer facilement ArgoCD.<br />
 						<a href="#/14">Allez fêter votre premier pseudo kube as a service</a>
 						<aside class="notes">
 							Parlez des forces et faiblesses et des risques sur l'isolation et les mises à jours et les ressources partagées.
