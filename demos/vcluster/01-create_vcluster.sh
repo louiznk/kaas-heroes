@@ -13,7 +13,6 @@ clear
 prompt "🏗️ - Creation vcluster named 'demo' ..."
 line
 echo "We shared Ingress for simplicity, see values-share-traefik"
-line
 
 if [ -z "$IP" ]
 then

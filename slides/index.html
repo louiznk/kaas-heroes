@@ -118,6 +118,9 @@
 			.blue {
 				color: blue
 			}
+			.black {
+				color: black
+			}
 			.background-contrast {
 				background-color:  #e7ad52;
 				background-color:  grey;
@@ -166,6 +169,8 @@
 						Revue des lecteurs/joueurs <u class="red">https://bit.ly/kaas-heros</u> <br />
 					</p>
 					<aside class="notes">
+						-> Reminder sur le premier tome : vous réussit à sauver le site des problèmes de deploy en épousant la voie du GitOps<br />
+						-> Vous êtes maintenant un fan de gitops et tous vous déployements sont gérés via Argo. <br />
 					</aside>
 				</section>
 				<!-- 1 -->
@@ -183,7 +188,8 @@
 					</table>
 					<br>
 					<aside class="notes">
-						J'aurai le plaisir d'être le MJ de cette partie de Dev And Deploy
+						J'aurai le plaisir d'être le MJ de cette partie de Dev And Deploy pour cette nouvelle aventure. <br />
+						Car de nouveaux périples vous attendent : vos succès ont fait des envieux.
 					</aside>
 				</section>
 				<!-- 2 -->
@@ -744,7 +750,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						Et elle créa son premier virtual cluster<br />
 						<br />
 						<div class="small">ℹ️ pour ceux qui préfèrent il est possible d'utiliser Helm en lieu est place de la ligne de commande, c'est même mieux en terme de pratiques</div>
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/3', 1, 2)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							On pourrait aussi utiliser Helm, c'est ce qui est fait pour la création, par contre la cmd line offre plus de fonctionnalitées <br />
 							Ici on va pour se simplifier la partie réseau (exposition de l'IngressController) utiliser un ingress controller commun, mais ce n'est pas obligé
@@ -758,8 +764,6 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
-							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
-							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
 						</aside>
 					</section>
 					
@@ -820,7 +824,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								</tr>
 								<tr>
 									<td>Un grand nombre de provider</td>
-									<td>Encore en alpha</td>
+									<td>Encore en alpha (mais pas tout)</td>
 								</tr>
 							</tbody>
 						</table>
@@ -871,7 +875,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Instanciation</h3>
 						Et après une longue gestation le cluster de management devient père d'un nouveau cluster.... <br />
 						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/4', 1, 2, -5)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
 						</aside>
 					</section>
