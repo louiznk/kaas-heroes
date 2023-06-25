@@ -71,6 +71,19 @@
 				margin: 10px auto 20px;
     			display: block;
 			}
+			.reveal .slides section > section {
+				/* line-height: 1.3;
+				font-weight: inherit; */
+				text-shadow: 0.05em 0.05em 0.1em black
+			}
+			.reveal h3 {
+				font-size: var(--r-heading3-size);
+				text-shadow: 0.1em 0.1em 0.3em black
+			}
+			.reveal h6 {
+				font-size: var(--r-heading6-size);
+				text-shadow: 0.1em 0.1em 0.3em black
+			}
 			.hide {
 				display: none;
 				visibility: hidden;
@@ -111,6 +124,7 @@
 			.score {
 				color: rgb(250, 250, 250);
 				font-size: 1.1em;
+				text-shadow: 0.05em 0.05em 0.1em black
 			}
 			.red {
 				color: red
@@ -129,6 +143,9 @@
 			.white {
 				color: white
 			}
+			.black-shadow {
+				text-shadow: 0.1em 0.1em 0.2em black
+			}
 			.shell {
 				font-family: monospace;
 				font-size: 0.8em;
@@ -139,7 +156,6 @@
 				align-items: stretch;
 				
 			}
-
 			.flex-container > div {
 				margin: 10px;
 				padding: 10px;				
@@ -214,9 +230,9 @@
 					<section>
 						<h3>Contenir l'invasion du Legacy</h3>
 						<br />
-						La guilde des décideurs a décider que ce royaume sera occupé par... ses armées d'applications Legacy !<br />
+						La guilde des décideurs a décidé que ce royaume sera occupé par... ses armées d'applications Legacy !<br />
 
-						Tout en obeissant à la guilde des décideurs il va falloir protéger vos clusters et votre site qui vous ont demandé tant d'effort<br />
+						Tout en obéissant à la guilde des décideurs il va falloir protéger vos clusters et votre site qui vous ont demandé tant d'effort<br />
 						<br />
 						C'est décider, vous ne laisserez pas le général Legacy piller les ressources vos clusters<br />
 						<br />
@@ -227,7 +243,7 @@
 					</section>
 				</section>
 				<!-- 3 -->
-				<section data-background-image="images/midjourney-labo.png" data-background-size="50%">
+				<section data-background-image="images/midjourney-labo.png" data-background-size="50%" data-background-opacity="0.8">
 					<!--
 						source: https://www.midjourney.com/app/jobs/2309e9b9-a0fa-4081-ab37-5be6a11f5f52/
 						authors: midjourney, louidji
@@ -238,9 +254,9 @@
 					Vous allez trouver votre mentor et ami Gandalf dans son laboratoire.<br />
 					🧙‍♂️<br />
 					<pre>
-	Jeune ami, héberger des applications Legacy dans un cluster n'est pas sans risques.
+	Jeune ami, héberger des applications Legacy dans un cluster n'est pas sans risque.
 
-	Rassures toi, je vais t'aider, mais avant, j'aimerai que tu prennes conscience des dangers qui t'attendent.
+	Rassures-toi, je vais t'aider, mais avant, j'aimerais que tu prennes conscience des dangers qui t'attendent.
 					</pre>
 				</section>
 				
@@ -276,7 +292,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Formation accélérée</h3>
 						<br />
-						Avant de ce lancer Gandalf va vous éprouver.<br />
+						En guise d'entrainement Gandalf va vous mettre à l'épreuve.<br />
 						<br />
 						<a href="#/4/1">Tentez de répondre aux questions de Gandalf</a>
 						<aside class="notes">
@@ -301,7 +317,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Question 1/5: Qu'est ce qu'un Node ?</h3>
 						<p>
 							<ul>
-								<li><a href="#/4/3">A: Un truc en JS, mais moi je touche pas au JS donc je suis pas sûr</a></li>
+								<li><a href="#/4/3">A: Un truc en JS, mais moi je touche pas au JS donc je ne suis pas sûr</a></li>
 								<li><a href="#/4/3">B: C'est un container applicatif qui tourne dans une machine</a></li>
 								<li><a href="#/4/3">C: Comme le disque (C:)</a></li>
 								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/4', 1, 1)">D: C'est une machine du cluster k8s</a></li>
@@ -340,7 +356,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/5/2', 1, 1)">A: Une façon de séparer les ressources dans un cluster k8s</a></li>
 								<li><a href="#/5/2">B: Une façon de séparer les ressources dans Linux</a></li>
 								<li><a href="#/5/1">C: Le nom d'un amas de constellations dans l'univers de Star Trek</a></li>
-								<li><a href="#/5/1">D: Un mot anglais pour désigner le besoin d'espace quand vos proches voisins ont mangé des pattes au pistou</a></li>
+								<li><a href="#/5/1">D: Un mot anglais pour désigner le besoin d'espace quand vos proches voisins ont mangé des pâtes au pistou</a></li>
 							</ul>
 						</p>
 						<aside class="notes">
@@ -406,8 +422,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Question 4/5: Est-ce qu'un Pod peut ?</h3>
 						<p>
 							<ul>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">A: Faire des requêtes vers un autre pod dans le namespace ?</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: Faire des requêtes vers un pod dans un autre namespace ?</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">A: Faire des requêtes vers un autre pod dans le même namespace ?</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: Faire des requêtes vers un autre pod dans un autre namespace ?</a></li>
 							<li><a href="#/7/1">C: Partager l'ip d'un pod dans le namespace ?</a></li>
 							<li><a href="#/7/1">D: Devenir groot sur le Node ?</a></li>
 							</ul><br />
@@ -475,7 +491,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 
 
 				<!-- 9 -->
-				<section data-background-image="images/midjourney-labo.png" data-background-size="50%">
+				<section data-background-image="images/midjourney-labo.png" data-background-size="50%" data-background-opacity="0.8">
 					<section>
 						<h3>Un cluster à manager implique de grandes responsabilités</h3>
 						<br />
@@ -483,7 +499,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<p>
 							<ul>								
 								<li>La gestion des montées de version des clusters</li>
-								<li>Les conflits possible sur les ressources partager comme les urls pour les Ingress </li>
+								<li>Les conflits possibles sur les ressources partagées comme les urls pour les Ingress </li>
 								<li>Les ressources des projets qui seraient globales pour le cluster (CRD, ....)? </li>
 								<li>...</li>
 							</ul>
@@ -506,10 +522,10 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 						<h3>De retour à la taverne</h3>
 						<br />
-						Le défi est trop important pour l'affronter seul dans le temps impartie, heureusement, il y a des héros en devenir parmis vous.<br />
+						Le défi est trop important pour l'affronter seul dans le temps imparti, heureusement, il y a des héros en devenir parmi vous.<br />
 						<br />
 						Vous pouvez choisir un compagnon pour vous accompagner dans cette aventure.<br />
-						Choissez bien parmis les 3 personnages prêt à vous suivre<br />
+						Choisissez bien parmi les 3 personnages prêts à vous suivre<br />
 						<br />
 						Chacun d'eux a des caractéristiques et capacités différentes.
 						<!-- TODO Image des 3 perso en vignette -->
@@ -518,7 +534,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					<!-- 10.1 -->
 					<section>
-						<h3>Capsule, le hobit roublard</h3>
+						<h3>Capsule, le hobbit roublard</h3>
 						<img src="images/midjourney-capsule.png" /> 
 						<!--
 							source: https://www.midjourney.com/app/jobs/8398992a-19c9-41fd-95c7-176f39794325/
@@ -563,9 +579,14 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Qui vous aidera dans cette aventure ?</h3>
 						<table>
 							<tr>
-								<td><a href="#/11"><img src="images/midjourney-capsule-nobg.png" /></a></td>
+								<td><a href="#/11"><img src="images/midjourney-capsule-nobg.png" width="85%"/></a></td>
 								<td><a href="#/12"><img src="images/midjourney-vcluster-nobg.png" /></a></td>
 								<td><a href="#/13"><img src="images/midjourney-capi-nobg.png" /></a></td>
+							</tr>
+							<tr class="small">
+								<td>🪢 Il vous attache et vous limite dans un namespace</td>
+								<td>🪄 Elle provisionne des "virtual" cluster dans un cluster</td>
+								<td>🏗️ Il forge une infra et y provisionne un cluster</td>
 							</tr>
 						</table>
 						<br />
@@ -577,8 +598,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 11 -->
 				<section>
 					<!-- 0 -->
-					<section data-background-image="images/midjourney-capsule-nobg.png" data-background-size="55%">
-						<h3>Capsule, le hobit roublard</h3>
+					<section data-background-image="images/midjourney-capsule-nobg.png" data-background-size="48%" data-background-position="bottom">
+						<h3>Capsule, le hobbit roublard</h3>
 						<br />
 						<table>
 							<thead>
@@ -688,7 +709,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 12 -->
 				<section>
 					<!-- 0 -->
-					<section data-background-image="images/midjourney-vcluster-nobg-alt.png" data-background-size="55%">
+					<section data-background-image="images/midjourney-vcluster-nobg-alt.png" data-background-size="57%" data-background-position="bottom">
 						<h3>Vcluster, la magicienne elfe</h3>
 						<br />
 						<table>
@@ -803,7 +824,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 13 -->
 				<section>
 					<!-- 0 -->
-					<section data-background-image="images/midjourney-capi-nobg-alt.png" data-background-size="55%">
+					<section data-background-image="images/midjourney-capi-nobg-alt.png" data-background-size="54%" data-background-position="bottom">
 						<h3>Capi, le guerrier nain</h3>
 						<br />
 						<table>
@@ -936,10 +957,69 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
             Merci à vous pour votre participation 🤗<br />
 					<br />
 					<div id="final-score" class="score">vous devriez recommencer car rien n'est en production.</div>
-          <br />
+         			<br />
+				</section>
+				<!-- 15 -->
+				<section data-background-image="images/midjourney-resume-triptic.png" data-background-size="86%" data-background-opacity="0.4">
+					<h6>Ecran du MJ</h6>
+					<table class="small black-shadow">
+						<thead class="small">
+							<tr>
+								<th style="text-align: center;"></th>
+								<th style="text-align: center;">Capsule</th>
+								<th style="text-align: center;">VCluster</th>
+								<th style="text-align: center;">Cluster API</th>
+							</tr>
+						</thead>
+						<tbody class="small">
+							<tr>
+								<td><b>Stratégie</b></td>
+								<td class="small">Isolation dans un (ou plusieurs) namespace en s'appuyant sur les mécanismes classiques de kubernetes (RBAC, Quota, Limit, NetworkPolicy).<br />
+									Les users sont limités aux ressources "namespaces"</td>
+								<td class="small">Création d'un cluster dans un cluster avec ressources "low" et "high" level.<br />
+									Les ressources "low level" sont gérées par le cluster hôte, les ressource "high level" sont gérés par le cluster "virtuel"
+								</td>
+								<td class="small">Une nouvelle infrastructure est créée via un provider d'infrastructure (gcp, azure, aws, OpenStack, vSphere, vcluster 😜, ...).<br />
+									Le cluster est provisionné via un bootstrap provider (kubeadm, talos, ...) et un control plane provider (kubeadm, talos, ...) </td>
+							</tr>
+							<tr>
+								<td><b>Fonctionnalités 💪🏽</b></td>
+								<td class="small">🟩🟥🟥🟥<br/>
+									L'utilisateur du Tenant a accès aux ressources de son namespace, il n'a pas accès aux ressources "cluster" et ne peut pas ajouter de CRD ou autres ressources custom (il ne peut pas installer ArgoCD par exemple)</td>
+								<td class="small">🟩🟩🟩🟥<br/>
+									L'utilisateur peut quasiment tout faire en dehors de ce qui concerne les composants "d'infrastructure": CNI, hostpath,...</td>
+								<td class="small">🟩🟩🟩🟩<br/>
+									With great power comes great responsibility</td>
+							</tr>
+							<tr>
+								<td><b>Mutualisation/Optimisation des ressources 💰</b></td>
+								<td class="small">🟩🟩🟩🟩<br/>
+									Utilise un cluster existant et install un operateur en plus.</td>
+								<td class="small">🟩🟩🟩🟥<br/>
+									Utilise un cluster existant et install pour chaque vcluster les composants: k3s, coredns, syncer</td>
+								<td class="small">🟥🟥🟥🟥<br/>
+									Chaque nouveau cluster est un nouveau cluster. Il y a en plus un cluster de management (qui peut être mutualisé)</td>
+							</tr>
+							<tr>
+								<td><b>Isolation/Securité 🛡️</b></td>
+								<td class="small">🟩🟥🟥🟥<br/>
+									On partage le cluster mais l'on peut appliquer des contraintes à ce partage</td>
+								<td class="small">🟩🟩🟥🟥<br/>
+									On partage le cluster mais l'on peut gérer plus finement que Capsule les ressources que l'on veut partager</td>
+								<td class="small">🟩🟩🟩🟩<br/>
+									C'est un cluster dédié 😉</td>
+							</tr>
+							<tr>
+								<td><b>Vitesse de création 🚀</b></td>
+								<td class="small">🟩🟩🟩🟩</td>
+								<td class="small">🟩🟩🟩🟥</td>
+								<td class="small">🟩🟥🟥🟥</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 
-				<!-- 15 -->
+				<!-- 16 -->
 				<section>
 					<table class="small">
 						<thead>
@@ -982,7 +1062,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							</tr>
 							<tr>
 								<td>Midjourney 🤩</td>
-								<td>https://cloud.google.com/<td>
+								<td>https://www.midjourney.com/app/<td>
 							</tr>
 							<tr>
 								<td>Présentation et démos</td>
@@ -994,13 +1074,13 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							</tr>
 						</tbody>
 					</table>
-          <p>
-			<!--
-			<img src="images/openfeedback.png" style="max-width:50%;height: auto;width:10%; vertical-align: middle;">
-			-->
-			Merci de vos Feedback 💝 <!-- <u class="red">https://bit.ly/kaas-heros</u> -->
-		  	</img>
-          </p>
+          			<p>
+						<!--
+						<img src="images/openfeedback.png" style="max-width:50%;height: auto;width:10%; vertical-align: middle;">
+						-->
+						Merci de vos Feedback 💝 <!-- <u class="red">https://bit.ly/kaas-heros</u> -->
+						</img>
+					</p>
 				</section>
 			</div>
 			<div class="footer">
