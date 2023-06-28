@@ -17,7 +17,8 @@ echo "We shared Ingress for simplicity, see values-share-traefik"
 if [ -z "$IP" ]
 then
     ## GET IP
-    export IP=$(gcloud compute addresses describe $CLUSTER_NAME-https-lb-static-ipv4 --global | head -n 1 | cut -d ' ' -f 2)
+    echo "Look for https endpoints of 'base' cluster"
+    export IP=$(gcloud compute addresses describe base-https-lb-static-ipv4 --global | head -n 1 | cut -d ' ' -f 2)
 fi
 prompt "API SRV url https://vcluster-$CLUSTER_NAME.$IP.sslip.io"
 # change ip
