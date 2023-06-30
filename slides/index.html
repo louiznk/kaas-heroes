@@ -215,7 +215,7 @@
 					</aside>
 				</section>
 				<!-- 2 -->
-				<section data-background-image="images/midjourney-kubernetes-kingdom.png" data-background-size="50%">
+				<section data-background-image="images/midjourney-kubernetes-kingdom.png" data-background-size="50%" data-background-opacity="0.6">
 					<!-- 
 						source: https://www.midjourney.com/app/jobs/8fc23964-0b8e-484b-b29d-5efb36488c22/
 						authors: midjourney / louidji? / inspired|draw by Régis Loisel
@@ -230,17 +230,18 @@
 						Ce nouveau territoire inspire et fait des envieux dans le royaume de l'infrastructure...
 						
 						<aside class="notes">
+							Dont le terrible général Doflamingo
 							Vous avez un sprint soit moins de 50 min pour résoudre cela... 
 						</aside>
 					</section>
 					<section>
 						<h3>Contenir l'invasion du Legacy</h3>
 						<br />
-						La guilde des décideurs a décidé que ce royaume sera occupé par... ses armées d'applications Legacy !<br />
+						La guilde des décideurs a ordonné que ce royaume soit occupé par... son armée d'applications Legacy !<br />
 
-						Tout en obéissant à la guilde des décideurs il va falloir protéger vos clusters et votre site qui vous ont demandé tant d'effort<br />
+						Tout en obéissant à la guilde des décideurs il va falloir <b>protéger vos clusters</b> et votre site qui vous ont demandé tant d'effort.<br />
 						<br />
-						C'est décider, vous ne laisserez pas le général Legacy piller les ressources vos clusters<br />
+						C'est promis, vous ne laisserez pas le général <b>Doflamingo</b> et ses compagnies Legacies piller les ressources vos clusters.<br />
 						<br />
 						<a href="#/3">Aller demander conseil à Gandalf</a>
 						<aside class="notes">
@@ -428,10 +429,10 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Question 4/5: Est-ce qu'un Pod peut ?</h3>
 						<p>
 							<ul>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">A: Faire des requêtes vers un autre pod dans le même namespace ?</a></li>
-							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: Faire des requêtes vers un autre pod dans un autre namespace ?</a></li>
-							<li><a href="#/7/1">C: Partager l'ip d'un pod dans le namespace ?</a></li>
-							<li><a href="#/7/1">D: Devenir groot sur le Node ?</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">A: Faire des requêtes vers un autre pod dans le même namespace</a></li>
+							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: Faire des requêtes vers un autre pod dans un autre namespace</a></li>
+							<li><a href="#/7/1">C: Partager l'ip d'un pod dans le namespace</a></li>
+							<li><a href="#/7/1">D: Devenir groot sur le Node</a></li>
 							</ul><br />
 							(2 réponses)
 						</p>
@@ -621,11 +622,11 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								</tr>
 								<tr>
 									<td>Légèreté</td>
-									<td>Beaucoup de ressources clusters partagés</td>
+									<td>Pas accès aux ressources clusters partagés !</td>
 								</tr>
 								<tr>
 									<td>Simplicité</td>
-									<td>Gestion des droits limités</td>
+									<td>Gestion des droits limités à ce qui est "namespacé"</td>
 								</tr>
 							</tbody>
 						</table>
@@ -682,8 +683,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 4 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Mise en place de ArgoCD</h3>
-						Compte tenu de l'architecture il n'est pas possible d'avoir un ArgoCD installé pour chaque Tenant.<br />
+						😢 Compte tenu de l'architecture il n'est pas possible d'avoir un ArgoCD installé pour chaque Tenant.<br />
 						Mais l'on peut avoir un ArgoCD externe (ou pas) qui déploie pour le(s) namespaces(s) en utilisant un compte avec des droits.<br />
+						<br />
 						Sauf que cela entraine une forte complexitée et une charge de mise en place plus importante (utilisation des Projects,...) . Et vous n'avez pas encore le niveau pour cela, aller directement 
 						<a href="#/11/5")">à la fin de l'histoire</a>
 						<aside class="notes">
@@ -702,6 +704,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 
 						<h3>Limitations</h3>
 						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais vous n'avez ni le niveau ni l'envie d'intégrer ArgoCD. <br />
+						<br />
 						Sachez que d'autres voies existent, elles sécurisent plus votre cluster et vous permettent d'intégrer facilement ArgoCD.<br />
 						<a href="#/14">Allez fêter votre premier pseudo kube as a service</a>
 						<aside class="notes">
@@ -732,7 +735,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								</tr>
 								<tr>
 									<td>Rapide à mettre en place</td>
-									<td>Le cluster hôte a accès aux vclusters</td>
+									<td style="font-style: italic;">Le cluster hôte peut accèder aux vclusters</td>
 								</tr>
 								<tr>
 									<td>Bonne isolation (à la carte)</td>
@@ -752,8 +755,10 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<div class="flex-container">
 							<div style="flex-shrink: 10;">								
 								Vcluster permet d'avoir par namespace dédié du "host" cluster un "virtual" cluster. <br />
-								Ce virtual cluster à son control plane et ses propres ressources.<br />
-								Le network est partagé et l'on peut voir les pods du vcluster comme une "projection" des pods sur l'hôte<br />
+								<br />
+								Ce virtual cluster à son control plane et ses propres ressources de haut niveau.<br />
+								<br />
+								Le network est partagé et l'on peut voir les pods du vcluster comme une "projection" des pods qui tourne sur l'hôte (bas niveau)<br />
 							</div>
 							<div style="flex-grow:10">
 								<img src="images/vcluster-architecture.png" />
@@ -797,8 +802,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 4 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Tests</h3>
-						En utilisant l'Ingress Controller commun au cluster (mais ce n'est pas une obligation, c'est un raccourci) installer l'application de test Hello Legacy.<br />
-						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik sur le host il y a mécanisme de synchronisation un peu complexe à mettre en place entre le vcluster et l'host.
+						En utilisant l'Ingress Controller commun au cluster (mais ce n'est pas une obligation, c'est un raccourci) installer une application de test.<br />
+						<br />
+						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik sur le host il y a mécanisme de synchronisation à mettre en place entre le vcluster et l'host.
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
 							Il faudrait installer un ingress controller et l'exposer à l'extérieur.<br />							
@@ -868,7 +874,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<div class="flex-container">
 							<div style="flex-shrink: 10;">								
 								La Cluster API permet d'installer un cluster avec une infrastructure dédiée chez différents providers.<br />
-								Cela s'appuie sur un kube d'administration qui sera en capacité de piloter l'infrastructure cible (créer des vm, vpc, ...) et de bootstraper le cluster dans cette infrastructure comme étant une ressource k8s.<br />								
+								<br />
+								La Cluster API est installé dans un cluster d'administration. Ce cluster nous permettra piloter l'infrastructure cible (créer des vm, vpc, ...) et de bootstraper un nouveau cluster dans cette infrastructure.<br />
+								Les objets créés (infrastructure et cluster) sont des ressource k8s que l'on gère via la cluster d'administration.<br />
 							</div>
 							<div style="flex-grow:10">
 								<img src="./images/capi-management-cluster.jpg" />
@@ -890,6 +898,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Initialisation</h3>
 						Dans la mythologie Naine, à la naissance du monde, Dieu créa un cluster de management. Ce cluster père de tous les cluster initialisa ses providers.<br />
+						<br />
 						Puis il enfanta de nouveaux clusters pour peupler les zones, les régions et continents que lui offrait ses providers.<br />
 						<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
@@ -910,7 +919,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 3 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Mise en place des composants de base</h3>
-						Votre cluster est encore très jeune et peu expérimenter, il va falloir lui apprendre à marcher<br />
+						Votre cluster est encore très jeune et peu expérimenté, il va falloir lui apprendre à marcher<br />
 						<ul>
 							<li>Installer Traefik (Ingress Controller)</li>
 							<li>Installer ArgoCD</li>
@@ -927,7 +936,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 4 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Tests</h3>
-						Installez et testez l'application Hello Legacy !<br />
+						Installez et testez une application de test.<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/6', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
 						</aside>
@@ -1060,7 +1069,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							</tr>
 							<tr>
 								<td>Cluster API</td>
-								<td>https://cluster-api.sigs.k8s.io//<td>
+								<td>https://cluster-api.sigs.k8s.io/<td>
 							</tr>
 							<tr>
 								<td>Google Cloud Plateform</td>
@@ -1113,7 +1122,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				//width: 1400,
 				//height: 800,
 				width: 1600,
-				height: 920,
+				height: 900,
 
 				// Factor of the display size that should remain empty around
 				// the content
