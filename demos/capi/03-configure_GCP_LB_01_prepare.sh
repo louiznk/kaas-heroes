@@ -3,11 +3,13 @@
 
 DIR=$(dirname "$0")
 
+clear
+
 pushd $DIR
 
 
 
-echo "🏗️ - GCP Configuration for Network LB to Traefik Ingress Controller"
+echo "🏗️ - GCP Prepare configuration for Network LB to Traefik Ingress Controller"
 
 # $CLUSTER_NAME-node
 set -ex
@@ -15,10 +17,6 @@ set -ex
 gcloud compute instance-groups unmanaged create $CLUSTER_NAME-workers-node-europe-west1-b \
   --zone europe-west1-b
 
-gcloud compute instance-groups unmanaged add-instances $CLUSTER_NAME-workers-node-europe-west1-b \
-  --instances $(kubectl get node --kubeconfig  $CLUSTER_NAME.kubeconfig -l !"node-role.kubernetes.io/control-plane" \
-    --output=jsonpath='{range .items[*]}{.metadata.name},{end}') \
-  --zone europe-west1-b
 
 gcloud compute instance-groups set-named-ports $CLUSTER_NAME-workers-node-europe-west1-b \
   --named-ports=http:31080,https:31443 \

@@ -20,6 +20,6 @@ prompt "Install traefik"
 pe "kubectl --kubeconfig=$CLUSTER_KUBECONFIG apply -f ./traefik"
 ps1
 
-prompt "Next... Configure GCP LoadBalancer"
+prompt "Next... Configure GCP LoadBalancer if not done"
 
 popd

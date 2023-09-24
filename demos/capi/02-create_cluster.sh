@@ -10,7 +10,7 @@ pushd $DIR
 
 clear
 
-prompt "🏗️ - Preparing cluster definition v1.25.10 named 'demo' ..."
+prompt "🏗️ - Preparing cluster definition v1.25.10 named '$CLUSTER_NAME' ..."
 line
 echo "We use a GCP project allready configurate"
 echo "On this GCP project machine have to access to internet but not be expose, so we create en NAT Router for this (see gcloud compute routers ...)"
@@ -34,7 +34,7 @@ pe 'clusterctl generate cluster $CLUSTER_NAME \
   --worker-machine-count=$WORKER_NB \
   > $CLUSTER_NAME.yaml'
 
-prompt "🍹 Let's create $CLUSTER_NAME cluster"
+prompt "🍹 Let's create $CLUSTER_NAME cluster using this manifest"
 pe 'kubectl apply -f $CLUSTER_NAME.yaml'
 
 echo ""
@@ -48,5 +48,28 @@ echo "gcloud compute instances list"
 echo "kubectl get gcpmachine"
 
 pei 'clusterctl describe cluster $CLUSTER_NAME'
+
+prompt "Get kubeconfig for $CLUSTER_NAME cluster"
+echo "wait until 'kubeconfig' is ready"
+
+set +e
+RET=99
+while [ "$RET" != "0" ]
+do
+  clusterctl get kubeconfig $CLUSTER_NAME &>/dev/null
+  RET=$?
+  sleep 1
+  printf "."
+done
+set -e
+echo ""
+echo "'kubeconfig' is ready"
+
+pei 'clusterctl get kubeconfig $CLUSTER_NAME > $CLUSTER_KUBECONFIG'
+
+prompt "Create GCP network config for Ingress in background... (nohup...)"
+
+rm nohup.out -f
+nohup ./03-configure_GCP_LB_00_all_in_one.sh &
 
 popd
