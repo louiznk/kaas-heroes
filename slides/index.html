@@ -431,8 +431,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							<ul>
 							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">A: Faire des requêtes vers un autre pod dans le même namespace</a></li>
 							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/7/2', 1, 1)">B: Faire des requêtes vers un autre pod dans un autre namespace</a></li>
-							<li><a href="#/7/1">C: Partager l'ip d'un pod dans le namespace</a></li>
+							<li><a href="#/7/1">C: Partager la même ip qu'un autre pod dans le namespace</a></li>
 							<li><a href="#/7/1">D: Devenir groot sur le Node</a></li>
+							<li><a href="#/7/1">E: Tromper mille fois mille personnes</a></li>
 							</ul><br />
 							(2 réponses)
 						</p>
@@ -622,11 +623,11 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								</tr>
 								<tr>
 									<td>Légèreté</td>
-									<td>Pas accès aux ressources clusters partagés !</td>
+									<td>Pas accès aux ressources globale au cluster (CRD, ...)</td>
 								</tr>
 								<tr>
 									<td>Simplicité</td>
-									<td>Gestion des droits limités à ce qui est "namespacé"</td>
+									<td>Conflits possibles sur les ressources communes (URL ingress, ...)</td>
 								</tr>
 							</tbody>
 						</table>
@@ -804,8 +805,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Tests</h3>
 						En utilisant l'Ingress Controller commun au cluster (mais ce n'est pas une obligation, c'est un raccourci) installer une application de test.<br />
 						<br />
-						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik sur le host il y a mécanisme de synchronisation à mettre en place entre le vcluster et l'host.
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">👉 quand vous aurez finit 👈</a>
+						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik sur le host il faut configurer la synchronisation le vcluster et l'hôte ✅.<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">👉 Quand vous aurez finit 👈</a>
 						<aside class="notes">
 							Il faudrait installer un ingress controller et l'exposer à l'extérieur.<br />							
 						</aside>
@@ -857,7 +858,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								</tr>
 								<tr>
 									<td>Un grand nombre de provider</td>
-									<td>Encore en alpha (mais pas tout)</td>
+									<td>La peinture est encore fraiche</td>
 								</tr>
 							</tbody>
 						</table>

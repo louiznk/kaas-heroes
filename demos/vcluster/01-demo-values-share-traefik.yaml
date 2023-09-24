@@ -5,13 +5,13 @@
 sync:
   persistentvolumes:
     enabled: true
-  ## for enabled custom storage classes inside the vcluster.
+  # If you want to create custom storage classes
+  # inside the vcluster.
   #storageclasses:
   #  enabled: true
-  ## for sync node
-  #nodes:
-  #  enabled: true
-  #  syncAllNodes: true
+  nodes:
+    enabled: true
+    syncAllNodes: true
   ingresses:
     enabled: true
   ingressclasses:
@@ -37,7 +37,7 @@ sync:
               path: .spec.routes[*].services[*].name
             - op: replace
               path: .spec.routes[*].services[*].namespace
-              value: vcluster-$CLUSTER_NAME
+              value: vcluster-demo
         - apiVersion: traefik.containo.us/v1alpha1
           kind: IngressRouteTCP
           patches:
@@ -45,7 +45,7 @@ sync:
               path: .spec.routes[*].services[*].name
             - op: replace
               path: .spec.routes[*].services[*].namespace
-              value: vcluster-$CLUSTER_NAME
+              value: vcluster-demo
         - apiVersion: traefik.containo.us/v1alpha1
           kind: IngressRouteUDP
           patches:
@@ -53,7 +53,7 @@ sync:
               path: .spec.routes[*].services[*].name
             - op: replace
               path: .spec.routes[*].services[*].namespace
-              value: vcluster-$CLUSTER_NAME
+              value: vcluster-demo
         - apiVersion: traefik.containo.us/v1alpha1
           kind: Middleware 
         - apiVersion: traefik.containo.us/v1alpha1
@@ -68,4 +68,4 @@ sync:
           kind: TraefikService
 syncer:
   extraArgs:
-  - --tls-san=vcluster-$CLUSTER_NAME.$IP.sslip.io
+  - --tls-san=vcluster-demo.34.160.162.187.sslip.io

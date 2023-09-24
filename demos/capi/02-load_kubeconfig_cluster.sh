@@ -1,6 +1,8 @@
 #!/bin/bash
 ## 
 
+clear
+
 . demo-magic.sh
 
 set -e
