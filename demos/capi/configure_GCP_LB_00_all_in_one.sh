@@ -116,5 +116,7 @@ export LB_HTTP_IP=$(gcloud compute addresses describe $CLUSTER_NAME-http-lb-stat
 
 echo "ADRESSE IP LB HTTPS $LB_HTTPS_IP"
 echo "ADRESSE IP LB HTTP $LB_HTTP_IP"
+echo "🏁 GCP LBs are ready"
+
 
 popd

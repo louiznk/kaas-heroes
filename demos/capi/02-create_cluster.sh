@@ -63,13 +63,16 @@ do
 done
 set -e
 echo ""
-echo "'kubeconfig' is ready"
+echo "🎉 'kubeconfig' is ready"
+
+prompt 'Generate kubeconfig for this cluster'
 
 pei 'clusterctl get kubeconfig $CLUSTER_NAME > $CLUSTER_KUBECONFIG'
 
-prompt "Create GCP network config for Ingress in background... (nohup...)"
+prompt "Create GCP Load Balancers for K8S ingress in background  🪄✨ ..."
 
 rm nohup.out -f
-nohup ./03-configure_GCP_LB_00_all_in_one.sh &
+echo "launch configure_GCP_LB_00_all_in_one.sh in background"
+nohup ./configure_GCP_LB_00_all_in_one.sh &
 
 popd
