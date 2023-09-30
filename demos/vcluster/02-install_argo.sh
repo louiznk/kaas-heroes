@@ -15,8 +15,8 @@ DIR=$(dirname "$0")
 pushd $DIR
 if [ -z "$IP" ]
 then
-    ## GET IP
-    export IP=$(gcloud compute addresses describe $CLUSTER_NAME-https-lb-static-ipv4 --global | head -n 1 | cut -d ' ' -f 2)
+    ## GET IP from base cluster
+    export IP=$(gcloud compute addresses describe base-https-lb-static-ipv4 --global | head -n 1 | cut -d ' ' -f 2)
     echo "ADRESSE IP LB $IP"
 fi
 # change ip
