@@ -682,20 +682,60 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					
 					<!-- 4 -->
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Mise en place de ArgoCD</h3>
-						😢 Compte tenu de l'architecture il n'est pas possible d'avoir un ArgoCD installé pour chaque Tenant.<br />
-						Mais l'on peut avoir un ArgoCD externe (ou pas) qui déploie pour le(s) namespaces(s) en utilisant un compte avec des droits.<br />
-						<br />
-						Sauf que cela entraine une forte complexitée et une charge de mise en place plus importante (utilisation des Projects,...) . Et vous n'avez pas encore le niveau pour cela, aller directement 
-						<a href="#/11/5")">à la fin de l'histoire</a>
+					<section data-background-image="images/midjourney-choice.png" data-background-size="50%">
+						<h3>Mise en place de ArgoCD</h3></br>
+						Installer ArgoCD dans : </br>
+						<ul>
+							<li>
+								Le <a href="#/11/5">Tenant</a>
+							</li>
+							<li>
+								<a href="#/11/6">Le cluster </a> qui héberge le Tenant
+							</li>
+							<li>
+								Un <a href="#/11/7">cluster mutualisé</a> dédié à ArgoCD
+							</li>
+						</br>
+							A vous de choisir...
+						</ul>
+						
 						<aside class="notes">
-							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects"<br />
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects" https://argo-cd.readthedocs.io/en/stable/user-guide/projects/<br />
 							Une des limitations est notament que ArgoCD gère des clusters, pas des Tenant. Du coup il faut avoir un cluster et gérer les liens entres les "Server + NS" <=> "Repositories" via des "Projects"
 						</aside>
 					</section>
 					
 					<!-- 5 -->
+					<section data-background-image="images/midjourney-fail.png" data-background-size="50%">
+						<h3>Installer ArgoCD dans votre Tenant</h3>
+						ArgoCD à besoin de plus de droits que ceux que vous avez dans votre Tenant ⛔</br></br>
+						Mais comme tout filou qui se respecte, Capsule vous permez de  <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
+						<aside class="notes">
+							Notamment car il faut pouvoir installer les CRD de ArgoCD...
+						</aside>
+					</section>
+					
+					<!-- 6 -->
+					<section data-background-image="images/midjourney-fail.png" data-background-size="50%">
+						<h3>Installer ArgoCD dans le cluster du Tenant</h3>
+						Le geste est beau, mais si on vous isole dans un Tenant, ce n'est pas pour en sortir à la première occasion 👮</br></br>
+						Heureusement comme tout filou qui se respecte, Capsule vous permez de  <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
+						<aside class="notes">
+							Mais vous êtes un vrais filou
+						</aside>
+					</section>
+				
+					<!-- 7 -->
+					<section data-background-image="images/midjourney-not-the-level.png" data-background-size="50%">
+						<h3>Installer un ArgoCD mutualisé</h3>
+						L'idée est bonne, mais vous n'avez ni le niveau, ni d'ailleur le cluster pour cela.</br></br>
+						Capsule, avec ses capacités de filou vous permez de  <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
+						<aside class="notes">
+							Cela doit être possible en passant par les projets ArgoCD...	
+						</aside>
+					</section>
+
+					<!-- 8 -->
 					<section data-background-image="images/midjourney-kubernetes-kingdom-raining.png" data-background-size="50%">
 						<!--
 							source: https://www.midjourney.com/app/jobs/4f154822-cc28-455d-be4b-a4a4f140e212/
@@ -704,7 +744,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 
 						<h3>Limitations</h3>
-						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais vous n'avez ni le niveau ni l'envie d'intégrer ArgoCD. <br />
+						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais vous n'avez pas le niveau pour intégrer ArgoCD<br />
 						<br />
 						Sachez que d'autres voies existent, elles sécurisent plus votre cluster et vous permettent d'intégrer facilement ArgoCD.<br />
 						<a href="#/14">Allez fêter votre premier pseudo kube as a service</a>
