@@ -15,8 +15,8 @@ DIR=$(dirname "$0")
 pushd $DIR
 if [ -z "$IP" ]
 then
-    echo "Look for https endpoints of '${CLUSTER_HOST_NAME}' cluster"
-    IP=$(gcloud compute addresses describe ${CLUSTER_HOST_NAME}-https-lb-static-ipv4 --global | head -n 1 | cut -d ' ' -f 2)
+    echo "Look for https endpoints of '${CLUSTER_NAME}' cluster"
+    IP=$(gcloud compute addresses describe ${CLUSTER_NAME}-https-lb-static-ipv4 --global | head -n 1 | cut -d ' ' -f 2)
     echo "IP LB $IP"
 fi
 

@@ -27,7 +27,12 @@ RET=$?
 if [[ "$RET" == "0" ]]
 then
     HTTPS_IP=$(echo $DESC_LB_HTTPS_IP | head -n 1 | cut -d ' ' -f 2)
-    prompt "Next... test traefik (GCP LB is ready) https://$LB_HTTPS_IP:443 -k"
+    if [[ "$HTTPS_IP" != ""]]
+    then
+        prompt "Next... test traefik (GCP LB is ready) https://$LB_HTTPS_IP:443 -k"
+    else
+        prompt "Next... check GCP LB (will be ready soon)"
+    fi
 else
     prompt "Next... check GCP LB (not ready)"
 fi

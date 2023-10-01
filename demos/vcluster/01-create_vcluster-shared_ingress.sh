@@ -10,9 +10,9 @@ pushd $DIR
 
 clear
 
-prompt "🏗️ - Creation vcluster named 'demo' ..."
+prompt "🏗️ - Creation vcluster named '$CLUSTER_NAME' ..."
 line
-echo "We shared Ingress for simplicity, see values-share-traefik"
+echo "We shared Ingress, for details cat 01-$CLUSTER_NAME-values-share-traefik.yaml"
 
 if [ -z "$IP" ]
 then
@@ -27,7 +27,7 @@ cat 01-ingress-vcluster-api.yaml.tpl | envsubst > 01-ingress-$CLUSTER_NAME-vclus
 
 pe 'vcluster create $CLUSTER_NAME --connect=false -f 01-$CLUSTER_NAME-values-share-traefik.yaml'
 
-prompt "🍹 Let's expose vcluster $CLUSTER_NAME with our Ingress Route"
+prompt "🍹 Let's expose vcluster $CLUSTER_NAME using an Ingress Route from host cluster"
 
 pe 'kubectl apply -f 01-ingress-$CLUSTER_NAME-vcluster-api.yaml -n vcluster-$CLUSTER_NAME'
 
