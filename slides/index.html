@@ -230,7 +230,7 @@
 						Ce nouveau territoire inspire et fait des envieux dans le royaume de l'infrastructure...
 						
 						<aside class="notes">
-							Dont le terrible général Doflamingo
+							Dont le terrible général Morgomir
 							Vous avez un sprint soit moins de 50 min pour résoudre cela... 
 						</aside>
 					</section>
@@ -241,7 +241,7 @@
 
 						Tout en obéissant à la guilde des décideurs il va falloir <b>protéger vos clusters</b> et votre site qui vous ont demandé tant d'effort.<br />
 						<br />
-						C'est promis, vous ne laisserez pas le général <b>Doflamingo</b> et ses compagnies Legacies piller les ressources vos clusters.<br />
+						C'est promis, vous ne laisserez pas le général <b>Morgomir</b> et ses compagnies Legacies piller les ressources vos clusters.<br />
 						<br />
 						<a href="#/3">Aller demander conseil à Gandalf</a>
 						<aside class="notes">
@@ -596,6 +596,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								<td>🪄 Elle provisionne des "virtual" cluster dans un cluster</td>
 								<td>🏗️ Il forge une infra et y provisionne un cluster</td>
 							</tr>
+							TODO: slide de capture d'écran dérobé de l'écran du MJ
 						</table>
 						<br />
 						<aside class="notes">
@@ -709,7 +710,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section data-background-image="images/midjourney-fail.png" data-background-size="50%">
 						<h3>Installer ArgoCD dans votre Tenant</h3>
 						ArgoCD à besoin de plus de droits que ceux que vous avez dans votre Tenant ⛔<br /> <br /> 
-						Mais comme tout filou qui se respecte, Capsule vous permez de  <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
+						Mais comme tout filou qui se respecte, Capsule vous permez de <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
 						<aside class="notes">
 							Notamment car il faut pouvoir installer les CRD de ArgoCD...
 						</aside>
@@ -719,7 +720,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section data-background-image="images/midjourney-fail.png" data-background-size="50%">
 						<h3>Installer ArgoCD dans le cluster du Tenant</h3>
 						Le geste est beau, mais si on vous isole dans un Tenant, ce n'est pas pour en sortir à la première occasion 👮<br /> <br /> 
-						Heureusement comme tout filou qui se respecte, Capsule vous permez de  <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
+						Heureusement comme tout filou qui se respecte, Capsule vous permez de <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
 						<aside class="notes">
 							Mais vous êtes un vrais filou
 						</aside>
@@ -729,7 +730,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section data-background-image="images/midjourney-not-the-level.png" data-background-size="50%">
 						<h3>Installer un ArgoCD mutualisé</h3>
 						L'idée est bonne, mais vous n'avez ni le niveau, ni d'ailleur le cluster pour cela.<br /> <br /> 
-						Capsule, avec ses capacités de filou vous permez de  <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
+						Capsule, avec ses capacités de filou vous permez de <a href="#/11/4">revenir discrétement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
 						<aside class="notes">
 							Cela doit être possible en passant par les projets ArgoCD...	
 						</aside>
@@ -827,7 +828,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					<!-- 3 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Instanciation</h3>
+						<h3>Instanciation du VCluster avec un Ingress <u>partagé</u></h3>
 						Au commencement il y a eu la ligne de commande....<br /> 
 						Elle s'appelait vcluster.... <br />
 						Et elle créa son premier virtual cluster<br />
@@ -842,7 +843,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 					<!-- 4 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Instanciation</h3>
+						<h3>Instanciation du VCluster avec un Ingress <u>dédié</u></h3>
 						Au commencement il y a eu la ligne de commande....<br /> 
 						Elle s'appelait vcluster.... <br />
 						Et elle créa son premier virtual cluster<br />
@@ -874,30 +875,72 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 
 
 					
-					<!-- TODO story sur ArgoCD -->
 					<!-- 6 -->
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Mise en place de ArgoCD</h3>
-						Compte tenu de l'architecture on peut avoir un ArgoCD dédié par vcluster.<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/7', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+					<section data-background-image="images/midjourney-choice.png" data-background-size="50%">
+						<h3>Mise en place de ArgoCD</h3><br /> 
+						Installer ArgoCD dans : <br /> 
+						<ul>
+							<li>
+								Le <a href="#/12/7">VCluster</a>
+							</li>
+							<li>
+								<a href="#/12/8">Le cluster </a> qui héberge les VClusters
+							</li>
+							<li>
+								Un <a href="#/12/9">cluster mutualisé</a> dédié à ArgoCD
+							</li>
+						<br /> 
+							A vous de choisir...
+						</ul>
+						
 						<aside class="notes">
-							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects" https://argo-cd.readthedocs.io/en/stable/user-guide/projects/<br />
+							Une des limitations est notament que ArgoCD gère des clusters, pas des Tenant. Du coup il faut avoir un cluster et gérer les liens entres les "Server + NS" <=> "Repositories" via des "Projects"
 						</aside>
 					</section>
 					
 					<!-- 7 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Tests</h3>
-						En utilisant l'Ingress Controller commun au cluster (mais ce n'est pas une obligation, c'est un raccourci) installer une application de test.<br />
-						<br />
-						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik sur le host il faut configurer la synchronisation le vcluster et l'hôte ✅.<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/8', 1, 1)">👉 Quand vous aurez finit 👈</a>
+						<h3>Installer ArgoCD dans votre VCluster</h3>
+						Compte tenu de l'architecture et de l'isolation fournit, on peut avoir un ArgoCD dédié par vcluster.<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/10', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
-							Il faudrait installer un ingress controller et l'exposer à l'extérieur.<br />							
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
+						</aside>
+					</section>
+
+					<!-- 8 -->
+					<section data-background-image="images/midjourney-fail.png" data-background-size="50%">
+						<h3>Installer ArgoCD dans le cluster hôte</h3>
+						Le geste est beau, mais si on vous isole dans un VCluster, ce n'est pas pour en sortir à la première occasion 👮<br /> <br /> 
+						Heureusement vos pouvoir de magicienne vous permettent de <a href="javascript:void(0)" onclick="payAndGo('#/12/6', -2)">revenir en arrière 🪄, MAIS cela à un coût 🪙</a>, ou alors fuyez <a href="#/12/11">à la fin de l'histoire</a>
+						<aside class="notes">
+							Mais vous êtes un vrais filou
+						</aside>
+					</section>
+				
+					<!-- 9 -->
+					<section data-background-image="images/midjourney-not-the-level.png" data-background-size="50%">
+						<h3>Installer un ArgoCD mutualisé</h3>
+						L'idée est bonne, mais vous n'avez pas le niveau pour lancer ce sort.<br /> <br /> 
+						Heureusement vos pouvoir de magicienne vous permettent tout de même de <a href="javascript:void(0)" onclick="payAndGo('#/12/6', -2)">revenir en arrière 🪄, MAIS cela à un coût 🪙</a>, ou alors fuyez <a href="#/12/11">à la fin de l'histoire</a>
+						<aside class="notes">
+							Cela doit être possible en passant par les projets ArgoCD...	
 						</aside>
 					</section>
 					
-					<!-- 8 -->
+					<!-- 10 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Tests</h3>
+						En utilisant ArgoCD, installer le sith web.<br />
+						<br />
+						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik mutualisé sur le host il faut configurer la synchronisation le vcluster et l'hôte ✅.<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/11', 1, 1)">👉 Quand vous aurez finit 👈</a>
+						<aside class="notes">
+						</aside>
+					</section>
+					
+					<!-- 11 -->
 					<section data-background-image="images/midjourney-kubernetes-kingdom-rainbow.png" data-background-size="50%">
 						<!--
 							source: https://www.midjourney.com/app/jobs/784dcce3-a901-42ac-9949-c980c5ee48ce/
@@ -982,7 +1025,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					
 					<!-- 2 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Initialisation</h3>
+						<h3>Initialisation du cluster de management</h3>
 						Dans la mythologie Naine, à la naissance du monde, Dieu créa un cluster de management. Ce cluster père de tous les cluster initialisa ses providers.<br />
 						<br />
 						Puis il enfanta de nouveaux clusters pour peupler les zones, les régions et continents que lui offrait ses providers.<br />
@@ -994,7 +1037,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 
 					<!-- 3 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Instanciation</h3>
+						<h3>Venue au monde d'un nouveau Cluster</h3>
 						Et après une longue gestation le cluster de management devient père d'un nouveau cluster.... <br />
 						<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/4', 1, 2, -5)">Après avoir résolue cette issue, passer à la prochaine</a>
@@ -1002,33 +1045,71 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						</aside>
 					</section>
 
-					<!-- 3 -->
+					<!-- 4 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Mise en place des composants de base</h3>
 						Votre cluster est encore très jeune et peu expérimenté, il va falloir lui apprendre à marcher<br />
 						<ul>
+							<li>Installer Calico (CNI)</li>
 							<li>Installer Traefik (Ingress Controller)</li>
-							<li>Installer ArgoCD</li>
 						</ul> <br />
 						<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/5', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+					</section>
+
+
+
+					<!-- 5 -->
+					<section data-background-image="images/midjourney-choice.png" data-background-size="50%">
+						<h3>Mise en place de ArgoCD</h3><br /> 
+						Installer ArgoCD dans : <br /> 
+						<ul>
+							<li>
+								Le <a href="#/13/6">Cluster</a>
+							</li>
+							<li>
+								Un <a href="#/13/7">cluster mutualisé</a> dédié à ArgoCD
+							</li>
+						<br /> 
+							A vous de choisir...
+						</ul>
+						
 						<aside class="notes">
-							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
-							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
-							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects" https://argo-cd.readthedocs.io/en/stable/user-guide/projects/<br />
+							Une des limitations est notament que ArgoCD gère des clusters, pas des Tenant. Du coup il faut avoir un cluster et gérer les liens entres les "Server + NS" <=> "Repositories" via des "Projects"
 						</aside>
 					</section>
 
-					<!-- 4 -->
+					<!-- 6 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Installer ArgoCD dans votre Cluster</h3>
+						Rien de plus facile quand on est le maitre et forgeron de son propre cluster<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/8', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<aside class="notes">
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
+						</aside>
+					</section>
+
+					<!-- 7-->
+					<section data-background-image="images/midjourney-not-the-level.png" data-background-size="50%">
+						<h3>Installer un ArgoCD mutualisé</h3>
+						L'idée est bonne, mais vous n'avez pas assez d'or pour forger un cluster mutualisé.<br /> <br /> 
+						Heureusement vous pouvez encore <a href="javascript:void(0)" onclick="payAndGo('#/13/6', -3)">changer de choix, MAIS cela à un coût 🪙</a>, ou alors fuyez <a href="#/13/9">à la fin de l'histoire</a>
+						<aside class="notes">
+							Cela doit être possible en passant par les projets ArgoCD...	
+						</aside>
+					</section>							
+
+					<!-- 8 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Tests</h3>
 						Installez et testez une application de test.<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/6', 1, 1)">👉 quand vous aurez finit 👈</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/9', 1, 1)">👉 quand vous aurez finit 👈</a>
 						<aside class="notes">
 						</aside>
 					</section>
 
-					<!-- 5 -->
+					<!-- 9 -->
 					<section data-background-image="images/midjourney-kubernetes-kingdom-rainbow.png" data-background-size="50%">
 						<!--
 							source: https://www.midjourney.com/app/jobs/784dcce3-a901-42ac-9949-c980c5ee48ce/

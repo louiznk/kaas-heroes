@@ -6,6 +6,10 @@ const labelContainer = document.getElementById("label-container")
 const labelLevel = document.getElementById("label-level")
 const finalScore = document.getElementById("final-score")
 
+function payAndGo(link, coins) {
+    resolve(0, 0, coins)
+    location.assign(link)
+}
 function resolveAndGo(link, issuesResolved, difficulty, coins = 0) {
     resolve(issuesResolved, difficulty, coins)
     location.assign(link)
