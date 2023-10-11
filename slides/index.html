@@ -243,9 +243,9 @@
 						<br />
 						C'est promis, vous ne laisserez pas le général <b>Morgomir</b> et ses compagnies Legacies piller les ressources vos clusters.<br />
 						<br />
-						<a href="#/3">Aller demander conseil à Gandalf</a>
+						<a href="#/3">Aller chercher de l'aide</a> de votre mentor, le sage et puissant <b>Gandalf</b>
 						<aside class="notes">
-							Vous avez un sprint soit moins de 50 min pour résoudre cela... 
+							Vous avez un sprint soit moins de 45 min pour résoudre cela... 
 						</aside>
 					</section>
 				</section>
@@ -263,7 +263,8 @@
 					<pre>
 	Jeune ami, héberger des applications Legacy dans un cluster n'est pas sans risque.
 
-	Rassures-toi, je vais t'aider, mais avant, j'aimerais que tu prennes conscience des dangers qui t'attendent.
+	Rassures-toi, je vais t'aider, mais avant, j'aimerais à travers mes questions 
+	que tu prennes conscience des dangers qui t'attendent.
 					</pre>
 				</section>
 				
@@ -301,7 +302,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<br />
 						En guise d'entrainement Gandalf va vous mettre à l'épreuve.<br />
 						<br />
-						<a href="#/4/1">Tentez de répondre aux questions de Gandalf</a>
+						<a href="#/4/1">Tentez de progresser en répondant aux questions de Gandalf</a>
 						<aside class="notes">
 							Il vous pose quelques questions en ouvrant un livre
 						</aside>
@@ -391,7 +392,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 6 -->
 				<section data-background-image="images/midjourney-gandalf-reading.png" data-background-size="50%">
 					<section>
-						<h3>Question 3/5: Quelles ressources ne sont pas partageables entre Pods d'un même Node ?</h3>
+						<h3>Question 3/5: Quelles ressources <u>ne sont pas</u> partageables entre Pods d'un même Node ?</h3>
 						<p>
 							<ul>
 								<li><a href="#/6/1">A: Les processeurs</a></li>
@@ -552,6 +553,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 						<br />
 						<aside class="notes">
+							Il posera de nombreux pièges pour bloquer les armées du Legacy
 						</aside>
 					</section>
 					<!-- 10.2 -->
@@ -566,6 +568,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 						<br />
 						<aside class="notes">
+							Grâce à ses puissants sort, elle dressera des barrières magique qui protégeront votre cluster et isoleront les armées du Legacy dans leurs propre cluster
 						</aside>
 					</section>
 					<!-- 10.3 -->
@@ -580,6 +583,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 						<br />
 						<aside class="notes">
+							Il forgera de nouveaux cluster dans lequels finiront le Legacy, laissant ainsi votre propre cluster loin de cette horde
 						</aside>
 					</section>
 					<!-- 10.4 -->
@@ -592,24 +596,24 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								<td><a href="#/13"><img src="images/midjourney-capi-nobg.png" /></a></td>
 							</tr>
 							<tr class="small">
-								<td>🪢 Il vous attache et vous limite dans un namespace</td>
-								<td>🪄 Elle provisionne des "virtual" cluster dans un cluster</td>
+								<td>🪢 Il vous piège et vous limite dans des namespaces</td>
+								<td>🪄 Elle créer des clusters virtuels dans un cluster</td>
 								<td>🏗️ Il forge une infra et y provisionne un cluster</td>
 							</tr>
 						</table>
 						<br />
 						<span class="small">
-							Ou allez essayer <a href="javascript:void(0)" onclick="payAndGo('#/10/5', -2)">d'acheter quelques informations sur ces personnages 🪙</a>
+							Ou allez <a href="javascript:void(0)" onclick="payAndGo('#/10/5', -2)">soudoyer le barde 🪙</a> de la taverne pour obtenir d'autres informations</a>
 						</span>
 						<aside class="notes">
 						</aside>
 					</section>
 					<!-- 10.5 -->
 					<section>
-						<h3>Photocopie, le maitre espion ???</h3>
+						<h4>2 🪙 la photocopie annotée du verso de l'écran du MJ...</h4>
 						<img src="images/spying-gm.jpg" width="75%"/> 
 						<br />
-						<a href="#/10/4">Finir la discussion</a>
+						<a href="#/10/4">Revenir au choix</a>
 						<aside class="notes">
 							2 pièces d'or la photocopie de mauvaise qualité... c'est chère payé
 						</aside>
@@ -1038,19 +1042,20 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<!-- 2 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Initialisation du cluster de management</h3>
-						Dans la mythologie Naine, à la naissance du monde, Dieu créa un cluster de management. Ce cluster père de tous les cluster initialisa ses providers.<br />
-						<br />
-						Puis il enfanta de nouveaux clusters pour peupler les zones, les régions et continents que lui offrait ses providers.<br />
+						Dans la mythologie Naine, à la naissance du monde, Dieu créa un cluster de management.<br />
+						Ce cluster père de tous les cluster initialisa un premier provider.<br />
 						<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
+							Et comme il nous sommes dans la mythologie, ce provider est un provider dans les nuages.
 						</aside>
 					</section>
 
 					<!-- 3 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Venue au monde d'un nouveau Cluster</h3>
-						Et après une longue gestation le cluster de management devient père d'un nouveau cluster.... <br />
+						Puis il enfanta de nouveaux clusters pour peupler les zones, les régions et continents que lui offrait ses providers.<br />
+						Et après une longue, très longue gestation le cluster de management devient père d'un nouveau cluster.... <br />
 						<br />
 						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/4', 1, 2, -5)">Après avoir résolue cette issue, passer à la prochaine</a>
 						<aside class="notes">
