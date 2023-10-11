@@ -12,29 +12,21 @@ DIR=$(dirname "$0")
 
 pushd $DIR
 
-prompt "Install CALICO CNI"
-pe "kubectl --kubeconfig=$CLUSTER_KUBECONFIG apply -f ./calico"
-ps1
+# prompt "Install CALICO CNI"
+# pe 'kubectl --kubeconfig=$CLUSTER_KUBECONFIG apply -f ./calico'
+# ps1
 
-prompt "Install traefik"
-pe "kubectl --kubeconfig=$CLUSTER_KUBECONFIG apply -f ./traefik"
-ps1
+# prompt "Install traefik"
+# pe 'kubectl --kubeconfig=$CLUSTER_KUBECONFIG apply -f ./traefik'
+# ps1
 
 set +e
-
-DESC_LB_HTTPS_IP=$(gcloud compute addresses describe $CLUSTER_NAME-https-lb-static-ipv4 --global)
-RET=$?
-if [[ "$RET" == "0" ]]
+HTTPS_IP=$(gcloud compute addresses list --filter="name=$CLUSTER_NAME-https-lb-static-ipv4" --format="csv(address)" 2>/dev/null | tail -n 1)
+if [[ "$HTTPS_IP" != "" ]]
 then
-    HTTPS_IP=$(echo $DESC_LB_HTTPS_IP | head -n 1 | cut -d ' ' -f 2)
-    if [[ "$HTTPS_IP" != ""]]
-    then
-        prompt "Next... test traefik (GCP LB is ready) https://$LB_HTTPS_IP:443 -k"
-    else
-        prompt "Next... check GCP LB (will be ready soon)"
-    fi
+    prompt "Next... test traefik (GCP LB is ready) https://$HTTPS_IP:443 -k"
 else
-    prompt "Next... check GCP LB (not ready)"
+    prompt "Next... check GCP LB (will be ready soon)"
 fi
 
 

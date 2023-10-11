@@ -2,6 +2,8 @@
 ## 
 . demo-magic.sh
 
+
+
 set -e
 
 DIR=$(dirname "$0")
@@ -11,6 +13,7 @@ pushd $DIR
 clear
 
 prompt "🏗️ - Preparing cluster definition v1.25.10 named '$CLUSTER_NAME' ..."
+export TYPE_SPEED=40
 line
 echo "We use a GCP project allready configurate"
 echo "On this GCP project machine have to access to internet but not be expose, so we create en NAT Router for this (see gcloud compute routers ...)"
@@ -28,6 +31,7 @@ pei "export WORKER_NB=$WORKER_NB"
 line
 prompt 'Use clusterctl to generate cluster manifest'
 
+export TYPE_SPEED=22
 pe 'clusterctl generate cluster $CLUSTER_NAME \
   --kubernetes-version v$KUBERNETES_VERSION \
   --control-plane-machine-count=$CONTROL_PLANE_NB \

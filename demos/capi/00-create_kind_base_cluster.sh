@@ -13,7 +13,7 @@ clear
 export clustername=capi-management-gcp
 
 prompt "🏗️ - Creating management cluster with kind for demo"
-pe "kind create cluster --image kindest/node:v1.25.9 --name $clustername --wait 5s"
+pe "kind create cluster --image kindest/node:v1.25.11 --name $clustername --wait 5s"
 echo "beep beep... preloading image"
 ./offline/import_kind.sh $clustername
 prompt "Test the cluster"

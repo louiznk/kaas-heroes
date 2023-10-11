@@ -96,8 +96,9 @@ do
     sleep 1
 done
 
-echo "Sleep until 3 workers nodes are ready"
-while [ "3" != "$(kubectl get node -l '!node-role.kubernetes.io/control-plane' --kubeconfig  $CLUSTER_NAME.kubeconfig --output=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | wc -l)" ]
+echo "Sleep until $WORKER_NB workers nodes are ready"
+
+while [ "$WORKER_NB" != "$(kubectl get node -l '!node-role.kubernetes.io/control-plane' --kubeconfig  $CLUSTER_NAME.kubeconfig --output=jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | wc -l)" ]
 do
     printf "."
     sleep 1
