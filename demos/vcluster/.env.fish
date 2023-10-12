@@ -8,6 +8,7 @@ set DIR (dirname "$0")
 set REALPATH (realpath $DIR)
 set -x "CLUSTER_KUBECONFIG" $REALPATH/$CLUSTER_NAME.kubeconfig
 set -x KUBECONFIG_HOST_CLUSTER "$REALPATH/../capi/base.kubeconfig"
+set -x KUBECONFIG $KUBECONFIG_HOST_CLUSTER
 set -x CLUSTER_HOST_NAME base
 set -x HTTP_PORT 32080
 set -x HTTPS_PORT 32443

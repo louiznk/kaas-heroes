@@ -21,7 +21,7 @@ pe "kubectl --kubeconfig=$CLUSTER_KUBECONFIG apply -f ./traefik"
 
 prompt "🏗️ - GCP Configuration for Network LB to Traefik Ingress Controller  🪄✨"
 echo "Using HOST CLUSTER KUBE CONFIG : $KUBECONFIG_HOST_CLUSTER"
-echo "press enter when ready to launch some magic gcloud commands"
+echo "PRESS [enter] when ready to launch some magic gcloud commands for creating LB on traefik NodePort..."
 wait
 
 set +e
@@ -30,7 +30,7 @@ set +e
 # Warning => on utilise l'instance group existante, on ajouter de nouvelles règles dessus ainsi que de nouvelles adresses
 
 # Warning il faut ajouter les nouveaux named-port (le set est un update full)
-NAMED_PORTS=$(gcloud compute instance-groups get-named-ports $CLUSTER_HOST_NAME-workers-node-europe-west1-b --zone europe-west1-b --format json | jq '.[] | "\(.name)=\(.port)"' | tr '\n' ',' | tr -d '"')
+NAMED_PORTS=$(gcloud compute instance-groups get-named-ports $CLUSTER_HOST_NAME-workers-node-europe-west1-b --zone europe-west1-b --format json | jq '.[] | "\(.name):\(.port)"' | tr '\n' ',' | tr -d '"')
 
 echo $NAMED_PORTS | grep http-$CLUSTER_NAME
 RET=$?
@@ -39,7 +39,7 @@ then
     # On ajoute
     set -x
     gcloud compute instance-groups set-named-ports $CLUSTER_HOST_NAME-workers-node-europe-west1-b \
-    --named-ports=$NAMED_PORTS,http-$CLUSTER_NAME:$HTTP_PORT,https-$CLUSTER_NAME:$HTTPS_PORT \
+    --named-ports=${NAMED_PORTS}http-$CLUSTER_NAME:$HTTP_PORT,https-$CLUSTER_NAME:$HTTPS_PORT \
     --zone europe-west1-b
 else
     # rien à faire
