@@ -15,7 +15,7 @@
 
 		<style>
 			body, .reveal {
-				background-image: url(images/slide-background-sunny-tech.png);
+				background-image: url(images/slide-background-volcamp.png);
 				background-size: auto 100%;
 				background-repeat: no-repeat;
 			}
@@ -179,16 +179,16 @@
 				<section>
 					<h2>Votre propre kube as a service ?</h2>
 					<h3>Une aventure dont vous êtes le héros...</h3>
-					<img src="images/midjourney-jdr-flamingo.png"/>
+					<img src="images/midjourney-jdr-volcamp-kube.png"/>
 					<!-- 
-						source: https://www.midjourney.com/app/jobs/e94b7abb-f716-445d-94a1-381f05091707/
+						source: https://www.midjourney.com/app/jobs/f13dd595-1e9e-4cc6-b506-804c106c40e3/
 						authors: midjourney / louidji? / inspired|draw by Régis Loisel
-						prompt: a mascot logo of a pink flamingo playing with dice, black backgroung, draw by Régis Loisel --no text
+						prompt: A friendly mascot logo of a volcamp and montains, emetting dice, black backgroung, draw by Régis Loisel --no text
 					-->
 					<br>
 					Une collection Folio DevOps
 					<p class="small">
-						Revue des lecteurs/joueurs <u class="red">https://links.zenika.com/link/kaas-heros/sunny</u> <br />
+						Revue des lecteurs/joueurs <u class="red">https://links.zenika.com/link/kaas-heros/volcamp</u> <br />
 					</p>
 					<aside class="notes">
 						-> Reminder sur le premier tome : vous réussit à sauver le site des problèmes de deploy en épousant la voie du GitOps<br />
@@ -230,7 +230,7 @@
 						Ce nouveau territoire inspire et fait des envieux dans le royaume de l'infrastructure...
 						
 						<aside class="notes">
-							Dont le terrible général Doflamingo
+							Dont le terrible général Morgomir
 							Vous avez un sprint soit moins de 50 min pour résoudre cela... 
 						</aside>
 					</section>
@@ -241,11 +241,11 @@
 
 						Tout en obéissant à la guilde des décideurs il va falloir <b>protéger vos clusters</b> et votre site qui vous ont demandé tant d'effort.<br />
 						<br />
-						C'est promis, vous ne laisserez pas le général <b>Doflamingo</b> et ses compagnies Legacies piller les ressources vos clusters.<br />
+						C'est promis, vous ne laisserez pas le général <b>Morgomir</b> et ses compagnies Legacies piller les ressources vos clusters.<br />
 						<br />
-						<a href="#/3">Aller demander conseil à Gandalf</a>
+						<a href="#/3">Aller chercher de l'aide</a> de votre mentor, le sage et puissant <b>Gandalf</b>
 						<aside class="notes">
-							Vous avez un sprint soit moins de 50 min pour résoudre cela... 
+							Vous avez un sprint soit moins de 45 min pour résoudre cela... 
 						</aside>
 					</section>
 				</section>
@@ -263,7 +263,8 @@
 					<pre>
 	Jeune ami, héberger des applications Legacy dans un cluster n'est pas sans risque.
 
-	Rassures-toi, je vais t'aider, mais avant, j'aimerais que tu prennes conscience des dangers qui t'attendent.
+	Rassures-toi, je vais t'aider, mais avant, j'aimerais à travers mes questions 
+	que tu prennes conscience des dangers qui t'attendent.
 					</pre>
 				</section>
 				
@@ -299,9 +300,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Formation accélérée</h3>
 						<br />
-						En guise d'entrainement Gandalf va vous mettre à l'épreuve.<br />
+						Pour vous exercer Gandalf va vous mettre à l'épreuve.<br />
 						<br />
-						<a href="#/4/1">Tentez de répondre aux questions de Gandalf</a>
+						<a href="#/4/1">Tentez de progresser en répondant aux questions de Gandalf</a>
 						<aside class="notes">
 							Il vous pose quelques questions en ouvrant un livre
 						</aside>
@@ -311,8 +312,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Un petit didacticiel pour acquérir les connaissances de l'aventurier débutant</h3>
 						<br />
 						<p>
-							Dans ce quizz éducatif les bonnes réponses sont primées. <br />
-							Pour le contexte vous utilisez un k8s "standard" (sans configuration et sécurisation spécifiques)
+							Dans ce quiz éducatif les bonnes réponses sont primées. <br />
+							Dans ces questions, vous utilisez un k8s "standard" (sans configuration et sécurisation spécifiques)
 						</p>
 						<a href="#/4/2">Commencez le quizz</a>
 						<aside class="notes">					
@@ -324,7 +325,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Question 1/5: Qu'est ce qu'un Node ?</h3>
 						<p>
 							<ul>
-								<li><a href="#/4/3">A: Un truc en JS, mais moi je touche pas au JS donc je ne suis pas sûr</a></li>
+								<li><a href="#/4/3">A: Un truc en JS, mais je ne touche pas au JS donc je ne suis pas sûr</a></li>
 								<li><a href="#/4/3">B: C'est un container applicatif qui tourne dans une machine</a></li>
 								<li><a href="#/4/3">C: Comme le disque (C:)</a></li>
 								<li><a href="javascript:void(0)" onclick="resolveAndGo('#/4/4', 1, 1)">D: C'est une machine du cluster k8s</a></li>
@@ -391,7 +392,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 				<!-- 6 -->
 				<section data-background-image="images/midjourney-gandalf-reading.png" data-background-size="50%">
 					<section>
-						<h3>Question 3/5: Quelles ressources ne sont pas partageables entre Pods d'un même Node ?</h3>
+						<h3>Question 3/5: Quelles ressources <u>ne sont pas</u> partageables entre Pods d'un même Node ?</h3>
 						<p>
 							<ul>
 								<li><a href="#/6/1">A: Les processeurs</a></li>
@@ -471,7 +472,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							<li><a href="#/8/1">A: Oui, grâce à l'article 47-1</a></li>
 							<li><a href="#/8/1">B: Non, kube c'est l'anarchie</a></li>
 							<li><a href="javascript:void(0)" onclick="resolveAndGo('#/8/2', 1, 1)">C: Oui, les quotas et les limites ça existe aussi dans kube</a></li>
-							<li><a href="#/8/2">D: Vous voulez pas un whisky avant ?</a></li>
+							<li><a href="#/8/2">D: Vous ne voulez pas un whisky d'abord ?</a></li>
 							</ul>
 						</p>
 						<br />
@@ -503,7 +504,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section>
 						<h3>Un cluster à manager implique de grandes responsabilités</h3>
 						<br />
-						En plus des problématiques précédentes, il faut aussi prendre en compte:
+						En plus des problématiques précédentes, il faut aussi prendre en compte :
 						<p>
 							<ul>								
 								<li>La gestion des montées de version des clusters</li>
@@ -512,7 +513,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								<li>...</li>
 							</ul>
 						</p>
-						Riche de ce nouveau savoir vous pouvez <a href="#/10">retourner à la taverne</a> pour commencer l'aventure
+						Riche de ce nouveau savoir, vous pouvez <a href="#/10">retourner à la taverne</a> pour commencer l'aventure
 						<aside class="notes">
 						</aside>
 					</section>
@@ -533,7 +534,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						Le défi est trop important pour l'affronter seul dans le temps imparti, heureusement, il y a des héros en devenir parmi vous.<br />
 						<br />
 						Vous pouvez choisir un compagnon pour vous accompagner dans cette aventure.<br />
-						Choisissez bien parmi les 3 personnages prêts à vous suivre<br />
+						Choisissez bien parmi les 3 personnages prêts à vous suivre.<br />
 						<br />
 						Chacun d'eux a des caractéristiques et capacités différentes.
 						<!-- TODO Image des 3 perso en vignette -->
@@ -552,6 +553,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 						<br />
 						<aside class="notes">
+							Il posera de nombreux pièges pour bloquer les armées du Legacy
 						</aside>
 					</section>
 					<!-- 10.2 -->
@@ -566,6 +568,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 						<br />
 						<aside class="notes">
+							Grâce à ses puissants sort, elle dressera des barrières magique qui protégeront votre cluster et isoleront les armées du Legacy dans leurs propre cluster
 						</aside>
 					</section>
 					<!-- 10.3 -->
@@ -580,6 +583,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 						<br />
 						<aside class="notes">
+							Il forgera de nouveaux cluster dans lequels finiront le Legacy, laissant ainsi votre propre cluster loin de cette horde
 						</aside>
 					</section>
 					<!-- 10.4 -->
@@ -592,13 +596,26 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								<td><a href="#/13"><img src="images/midjourney-capi-nobg.png" /></a></td>
 							</tr>
 							<tr class="small">
-								<td>🪢 Il vous attache et vous limite dans un namespace</td>
-								<td>🪄 Elle provisionne des "virtual" cluster dans un cluster</td>
+								<td>🪢 Il vous piège et vous limite dans des namespaces</td>
+								<td>🪄 Elle créer des clusters virtuels dans un cluster</td>
 								<td>🏗️ Il forge une infra et y provisionne un cluster</td>
 							</tr>
 						</table>
 						<br />
+						<span class="small">
+							Ou allez <a href="javascript:void(0)" onclick="payAndGo('#/10/5', -2)">soudoyer le barde 🪙</a> de la taverne pour obtenir d'autres informations</a>
+						</span>
 						<aside class="notes">
+						</aside>
+					</section>
+					<!-- 10.5 -->
+					<section>
+						<h4>2 🪙 la photocopie annotée du verso de l'écran du MJ...</h4>
+						<img src="images/spying-gm.jpg" width="75%"/> 
+						<br />
+						<a href="#/10/4">Revenir au choix</a>
+						<aside class="notes">
+							2 pièces d'or la photocopie de mauvaise qualité... c'est chère payé
 						</aside>
 					</section>
 				</section>
@@ -623,7 +640,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								</tr>
 								<tr>
 									<td>Légèreté</td>
-									<td>Pas accès aux ressources globale au cluster (CRD, ...)</td>
+									<td>Pas accès aux ressources globales au cluster (CRD, ...)</td>
 								</tr>
 								<tr>
 									<td>Simplicité</td>
@@ -644,7 +661,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							<div style="flex-shrink: 10;">								
 								Capsule offre une notion de Tenant au sein d'un cluster.<br />
 								Chaque Tenant est associé à un ou plusieurs users et permet de créer un ou plusieurs namespaces.<br />
-								Les uesrs du tenant n'ont des droits que dans ces namespaces.<br />
+								Les users du tenant n'ont des droits que dans ces namespaces.<br />
 								Capsule s'appuie sur : RBAC, les Network Policies, les Quotas, ... pour isoler/limiter les tenants.<br />
 							</div>
 							<div style="flex-grow:10">
@@ -662,7 +679,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Initialisation</h3>
 						La première étape consiste à installer l'operator avec ses CRDs<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/3', 1, 1)">Après avoir résolu cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							https://capsule.clastix.io/docs/general/getting-started
 						</aside>
@@ -676,26 +693,66 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							<li>Créer le user du "Tenant" et créer son kubeconfig</li>
 							<li>Créer un namespace avec ce user</li>
 						</ul><br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/11/4', 1, 1)">Après avoir résolu cette issue, passer à la prochaine</a>
 						<aside class="notes">
 						</aside>
 					</section>
 					
 					<!-- 4 -->
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Mise en place de ArgoCD</h3>
-						😢 Compte tenu de l'architecture il n'est pas possible d'avoir un ArgoCD installé pour chaque Tenant.<br />
-						Mais l'on peut avoir un ArgoCD externe (ou pas) qui déploie pour le(s) namespaces(s) en utilisant un compte avec des droits.<br />
-						<br />
-						Sauf que cela entraine une forte complexitée et une charge de mise en place plus importante (utilisation des Projects,...) . Et vous n'avez pas encore le niveau pour cela, aller directement 
-						<a href="#/11/5")">à la fin de l'histoire</a>
+					<section data-background-image="images/midjourney-choice.png" data-background-size="50%">
+						<h3>Mise en place de ArgoCD</h3><br /> 
+						Installer ArgoCD dans : <br /> 
+						<ul>
+							<li>
+								Le <a href="#/11/5">Tenant</a>
+							</li>
+							<li>
+								<a href="#/11/6">Le cluster </a> qui héberge le Tenant
+							</li>
+							<li>
+								Un <a href="#/11/7">cluster mutualisé</a> dédié à ArgoCD
+							</li>
+						<br /> 
+							À vous de choisir...
+						</ul>
+						
 						<aside class="notes">
-							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects"<br />
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects" https://argo-cd.readthedocs.io/en/stable/user-guide/projects/<br />
 							Une des limitations est notament que ArgoCD gère des clusters, pas des Tenant. Du coup il faut avoir un cluster et gérer les liens entres les "Server + NS" <=> "Repositories" via des "Projects"
 						</aside>
 					</section>
 					
 					<!-- 5 -->
+					<section data-background-image="images/midjourney-fail.png" data-background-size="50%">
+						<h3>Installer ArgoCD dans votre Tenant</h3>
+						ArgoCD à besoin de plus de droits que ceux que vous avez dans votre Tenant ⛔<br /> <br /> 
+						Mais comme tout filou qui se respecte, Capsule vous permet de <a href="#/11/4">revenir discrètement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
+						<aside class="notes">
+							Notamment car il faut pouvoir installer les CRD de ArgoCD...
+						</aside>
+					</section>
+					
+					<!-- 6 -->
+					<section data-background-image="images/midjourney-fail.png" data-background-size="50%">
+						<h3>Installer ArgoCD dans le cluster du Tenant</h3>
+						Le geste est beau, mais si on vous isole dans un Tenant, ce n'est pas pour en sortir à la première occasion 👮<br /> <br /> 
+						Heureusement comme tout filou qui se respecte, Capsule vous permet de <a href="#/11/4">revenir discrètement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire</a>
+						<aside class="notes">
+							Mais vous êtes un vrais filou
+						</aside>
+					</section>
+				
+					<!-- 7 -->
+					<section data-background-image="images/midjourney-not-the-level.png" data-background-size="50%">
+						<h3>Installer un ArgoCD mutualisé</h3>
+						L'idée est bonne, mais vous n'avez ni le niveau, ni d'ailleurs le cluster pour cela.<br /> <br /> 
+						Capsule, avec ses capacités de filou vous permet de <a href="#/11/4">revenir discrètement en arrière 🤫</a>, ou d'aller <a href="#/11/8">à la fin de l'histoire.</a>
+						<aside class="notes">
+							Cela doit être possible en passant par les projets ArgoCD...	
+						</aside>
+					</section>
+
+					<!-- 8 -->
 					<section data-background-image="images/midjourney-kubernetes-kingdom-raining.png" data-background-size="50%">
 						<!--
 							source: https://www.midjourney.com/app/jobs/4f154822-cc28-455d-be4b-a4a4f140e212/
@@ -704,10 +761,11 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						-->
 
 						<h3>Limitations</h3>
-						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais vous n'avez ni le niveau ni l'envie d'intégrer ArgoCD. <br />
+						Bravo vous avez réussit à mettre en place un système léger de Tenant au sein de kubernetes, mais vous n'avez pas le niveau pour intégrer ArgoCD<br />
 						<br />
 						Sachez que d'autres voies existent, elles sécurisent plus votre cluster et vous permettent d'intégrer facilement ArgoCD.<br />
-						<a href="#/14">Allez fêter votre premier pseudo kube as a service</a>
+						<br />
+						<a href="#/14">Allez fêter votre premier pseudo kube as a service.</a>
 						<aside class="notes">
 							Parlez des forces et faiblesses et des risques sur l'isolation et les mises à jours et les ressources partagées.
 							Regarder la partie avancé : https://capsule.clastix.io/docs/general/mtb/#allow-self-service-management-of-roles (permet d'avoir par tenant ses netpol, ...)
@@ -757,9 +815,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							<div style="flex-shrink: 10;">								
 								Vcluster permet d'avoir par namespace dédié du "host" cluster un "virtual" cluster. <br />
 								<br />
-								Ce virtual cluster à son control plane et ses propres ressources de haut niveau.<br />
+								Ce virtual cluster a son control plane et ses propres ressources de haut niveau.<br />
 								<br />
-								Le network est partagé et l'on peut voir les pods du vcluster comme une "projection" des pods qui tourne sur l'hôte (bas niveau)<br />
+								Le réseau est partagé et l'on peut voir les pods du vcluster comme une "projection" des pods qui tournent sur l'hôte (bas niveau)<br />
 							</div>
 							<div style="flex-grow:10">
 								<img src="images/vcluster-architecture.png" />
@@ -776,43 +834,130 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					</section>
 
 					<!-- 2 -->
+					<section data-background-image="images/midjourney-choice.png" data-background-size="50%">
+						<h3>Création d'un vcluster</h3>
+						Est-ce que ce vcluster utilisera :<br />
+						<ul>
+							<li>L'ingress controller de <a href="#/12/3">l'hôte</a></li>
+							<li>Ou installera <a href="#/12/4">son propre ingress controller avec un nouveau load balancer</a></li>
+						</ul>
+						<br />
+					</section>
+					<!-- 3 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Instanciation</h3>
-						Au commencement il y a eu la ligne de commande....<br /> 
+						<h3>Instanciation du VCluster avec un Ingress <u>partagé</u></h3>
+						Au commencement, il y a eu la ligne de commande....<br /> 
 						Elle s'appelait vcluster.... <br />
 						Et elle créa son premier virtual cluster<br />
 						<br />
-						<div class="small">ℹ️ pour ceux qui préfèrent il est possible d'utiliser Helm en lieu est place de la ligne de commande, c'est même mieux en terme de pratiques</div>
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/3', 1, 2)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<div class="small">ℹ️ pour ceux qui préfèrent, il est possible d'utiliser Helm en lieu est place de la ligne de commande, c'est même mieux en termes de pratique</div>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/6', 1, 2)">Après avoir résolu cette issue, passer à la prochaine</a>
+						<aside class="notes">
+							On pourrait aussi utiliser Helm, c'est ce qui est fait pour la création, par contre la cmd line offre plus de fonctionnalitées <br />
+							Ici on va pour se simplifier la partie réseau (exposition de l'IngressController) utiliser un ingress controller commun, mais ce n'est pas obligé <br />
+							=> 01-create_vcluster-shared_ingress.sh
+						</aside>
+					</section>
+					<!-- 4 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Instanciation du VCluster avec un Ingress <u>dédié</u></h3>
+						Au commencement, il y a eu la ligne de commande....<br /> 
+						Elle s'appelait vcluster.... <br />
+						Et elle créa son premier virtual cluster<br />
+						<br />
+						Mais ce cluster n'a pas d'ingress ni de LoadBalancer, il ne peut rien exposer à l'extérieur.<br />
+						<div class="small">ℹ️ pour ceux qui préfèrent, il est possible d'utiliser Helm en lieu est place de la ligne de commande, c'est même mieux en termes de pratique</div>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">Après avoir résolu cette issue, allez installer et exposer votre ingress controller</a>
+						<aside class="notes">
+							On pourrait aussi utiliser Helm, c'est ce qui est fait pour la création, par contre la cmd line offre plus de fonctionnalitées <br />
+							=> 01-create_vcluster-own_ingress.sh
+						</aside>
+					</section>
+					<!-- 5 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Mise en place de traefik</h3>
+						<br />
+						<ul>
+							<li>Installer Traefik</li>
+							<li>Et l'exposer au monde (LB=💸)</li>
+						</ul>
+						<br />
+						<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/6', 0, 2, -2)">Après avoir installé votre Ingress Controller, votre LoadBalancer et payé 💸 pour cette infra en plus, continuez votre aventure</a>
 						<aside class="notes">
 							On pourrait aussi utiliser Helm, c'est ce qui est fait pour la création, par contre la cmd line offre plus de fonctionnalitées <br />
 							Ici on va pour se simplifier la partie réseau (exposition de l'IngressController) utiliser un ingress controller commun, mais ce n'est pas obligé
 						</aside>
 					</section>
+
+
 					
-					<!-- 3 -->
+					<!-- 6 -->
+					<section data-background-image="images/midjourney-choice.png" data-background-size="50%">
+						<h3>Mise en place de ArgoCD</h3><br /> 
+						Installer ArgoCD dans : <br /> 
+						<ul>
+							<li>
+								Le <a href="#/12/7">VCluster</a>
+							</li>
+							<li>
+								<a href="#/12/8">Le cluster </a> qui héberge les VClusters
+							</li>
+							<li>
+								Un <a href="#/12/9">cluster mutualisé</a> dédié à ArgoCD
+							</li>
+						<br /> 
+							À vous de choisir...
+						</ul>
+						
+						<aside class="notes">
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects" https://argo-cd.readthedocs.io/en/stable/user-guide/projects/<br />
+							Une des limitations est notament que ArgoCD gère des clusters, pas des Tenant. Du coup il faut avoir un cluster et gérer les liens entres les "Server + NS" <=> "Repositories" via des "Projects"
+						</aside>
+					</section>
+					
+					<!-- 7 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Mise en place de ArgoCD</h3>
-						Compte tenu de l'architecture on peut avoir un ArgoCD dédié par Tenant.<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/4', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<h3>Installer ArgoCD dans votre VCluster</h3>
+						Compte tenu de l'architecture et de l'isolation fournit, on peut avoir un ArgoCD dédié par vcluster.<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/10', 1, 1)">Après avoir résolu cette issue, passer à la prochaine</a>
 						<aside class="notes">
 							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
 						</aside>
 					</section>
-					
-					<!-- 4 -->
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Tests</h3>
-						En utilisant l'Ingress Controller commun au cluster (mais ce n'est pas une obligation, c'est un raccourci) installer une application de test.<br />
-						<br />
-						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik sur le host il faut configurer la synchronisation le vcluster et l'hôte ✅.<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/5', 1, 1)">👉 Quand vous aurez finit 👈</a>
+
+					<!-- 8 -->
+					<section data-background-image="images/midjourney-fail.png" data-background-size="50%">
+						<h3>Installer ArgoCD dans le cluster hôte</h3>
+						Le geste est beau, mais si on vous isole dans un VCluster, ce n'est pas pour en sortir à la première occasion 👮<br /> <br /> 
+						Heureusement, vos pouvoirs de magicienne vous permettent de <a href="javascript:void(0)" onclick="payAndGo('#/12/6', -2)">revenir en arrière 🪄, MAIS cela à un coût 🪙</a>, ou alors fuyez <a href="#/12/11">à la fin de l'histoire</a>
 						<aside class="notes">
-							Il faudrait installer un ingress controller et l'exposer à l'extérieur.<br />							
+							Mais vous êtes un vrais filou
+						</aside>
+					</section>
+				
+					<!-- 9 -->
+					<section data-background-image="images/midjourney-not-the-level.png" data-background-size="50%">
+						<h3>Installer un ArgoCD mutualisé</h3>
+						L'idée est bonne, mais vous n'avez pas le niveau pour lancer ce sort.<br /> <br /> 
+						Heureusement, vos pouvoirs de magicienne vous permettent tout de même de <a href="javascript:void(0)" onclick="payAndGo('#/12/6', -2)">revenir en arrière 🪄, MAIS cela à un coût 🪙</a>, ou alors fuyez <a href="#/12/11">à la fin de l'histoire</a>
+						<aside class="notes">
+							Cela doit être possible en passant par les projets ArgoCD...	
 						</aside>
 					</section>
 					
-					<!-- 5 -->
+					<!-- 10 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Tests</h3>
+						En utilisant ArgoCD, installer le sith web.<br />
+						<br />
+						Si l'on veut utiliser les CRD (IngressRoute, ...) d'un traefik mutualisé sur le host il faut configurer la synchronisation le vcluster et l'hôte ✅.<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/12/11', 1, 1)">👉 Quand vous aurez fini 👈</a>
+						<aside class="notes">
+						</aside>
+					</section>
+					
+					<!-- 11 -->
 					<section data-background-image="images/midjourney-kubernetes-kingdom-rainbow.png" data-background-size="50%">
 						<!--
 							source: https://www.midjourney.com/app/jobs/784dcce3-a901-42ac-9949-c980c5ee48ce/
@@ -822,7 +967,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Limitations</h3>
 						🪄 Bravo vous avez réussit à mettre en place un système léger, qui réutilise votre infrastructure et vous permet d'offrir des clusters dédiés aux autres projets.<br />
 						<br />
-						Vous avez cependant quelques ressources communes mais rien de bloquant<br />
+						Vous avez cependant quelques ressources communes, mais rien de bloquant.<br />
+						<br />
 						<a href="#/14">Allez fêter votre premier kube as a service</a>
 						<aside class="notes">
 							Les ressources communes sont les nodes et le réseau mais : l'on peut avoir des quotas, de networkpolicy et l'on peut même avoir des nodes spécialisés. La seul choses que l'on ne peut pas vraiement avoir en dédié c'est le CNI.
@@ -858,7 +1004,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 								</tr>
 								<tr>
 									<td>Un grand nombre de provider</td>
-									<td>La peinture est encore fraiche</td>
+									<td>La peinture est encore fraîche</td>
 								</tr>
 							</tbody>
 						</table>
@@ -876,8 +1022,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 							<div style="flex-shrink: 10;">								
 								La Cluster API permet d'installer un cluster avec une infrastructure dédiée chez différents providers.<br />
 								<br />
-								La Cluster API est installé dans un cluster d'administration. Ce cluster nous permettra piloter l'infrastructure cible (créer des vm, vpc, ...) et de bootstraper un nouveau cluster dans cette infrastructure.<br />
-								Les objets créés (infrastructure et cluster) sont des ressource k8s que l'on gère via la cluster d'administration.<br />
+								La Cluster API est installée dans un cluster d'administration. Ce cluster nous permettra piloter l'infrastructure cible (créer des vm, vpc, ...) et de bootstraper un nouveau cluster dans cette infrastructure.<br />
+								Les objets créés (infrastructure et cluster) sont des ressource k8s que l'on gère via le cluster d'administration.<br />
 							</div>
 							<div style="flex-grow:10">
 								<img src="./images/capi-management-cluster.jpg" />
@@ -897,53 +1043,92 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					
 					<!-- 2 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Initialisation</h3>
-						Dans la mythologie Naine, à la naissance du monde, Dieu créa un cluster de management. Ce cluster père de tous les cluster initialisa ses providers.<br />
+						<h3>Initialisation du cluster de management</h3>
+						Dans la mythologie Naine, à la naissance du monde, Dieu créa un cluster de management.<br />
+						Ce cluster père de tous les cluster initialisa un premier provider.<br />
 						<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/3', 1, 1)">Après avoir résolu cette issue, passer à la prochaine</a>
+						<aside class="notes">
+							Et comme il nous sommes dans la mythologie, ce provider est un provider dans les nuages.
+						</aside>
+					</section>
+
+					<!-- 3 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Venue au monde d'un nouveau Cluster</h3>
 						Puis il enfanta de nouveaux clusters pour peupler les zones, les régions et continents que lui offrait ses providers.<br />
+						Et après une longue, très longue gestation le cluster de management devient père d'un nouveau cluster.... <br />
 						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/3', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/4', 1, 2, -5)">Après avoir résolu cette issue, passer à la prochaine</a>
 						<aside class="notes">
-						</aside>
-					</section>
-
-					<!-- 3 -->
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Instanciation</h3>
-						Et après une longue gestation le cluster de management devient père d'un nouveau cluster.... <br />
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/4', 1, 2, -5)">Après avoir résolue cette issue, passer à la prochaine</a>
-						<aside class="notes">
-						</aside>
-					</section>
-
-					<!-- 3 -->
-					<section data-background-image="images/des.png" data-background-size="50%">
-						<h3>Mise en place des composants de base</h3>
-						Votre cluster est encore très jeune et peu expérimenté, il va falloir lui apprendre à marcher<br />
-						<ul>
-							<li>Installer Traefik (Ingress Controller)</li>
-							<li>Installer ArgoCD</li>
-						</ul> <br />
-						<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/5', 1, 1)">Après avoir résolue cette issue, passer à la prochaine</a>
-						<aside class="notes">
-							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
-							Attention si kube >=1.24 et selon la version de argocd on peut avoir un soucis avec le service account (plus de secret avec le token par défault) => créer un SA avec le token qui va bien 
-							https://foxutech.medium.com/how-to-add-external-cluster-to-argocd-eba2a70f9368 vers 13:00
 						</aside>
 					</section>
 
 					<!-- 4 -->
 					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Mise en place des composants de base</h3>
+						Votre cluster est encore très jeune et peu expérimenté, il va falloir lui apprendre à marcher<br />
+						<ul>
+							<li>Installer Calico (CNI)</li>
+							<li>Installer Traefik (Ingress Controller)</li>
+						</ul> <br />
+						<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/5', 1, 1)">Après avoir résolu cette issue, passer à la prochaine</a>
+					</section>
+
+
+
+					<!-- 5 -->
+					<section data-background-image="images/midjourney-choice.png" data-background-size="50%">
+						<h3>Mise en place de ArgoCD</h3><br /> 
+						Installer ArgoCD dans : <br /> 
+						<ul>
+							<li>
+								Le <a href="#/13/6">Cluster</a>
+							</li>
+							<li>
+								Un <a href="#/13/7">cluster mutualisé</a> dédié à ArgoCD
+							</li>
+						<br /> 
+							À vous de choisir...
+						</ul>
+						
+						<aside class="notes">
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre même si cela pourrait ce faire via les "Projects" https://argo-cd.readthedocs.io/en/stable/user-guide/projects/<br />
+							Une des limitations est notament que ArgoCD gère des clusters, pas des Tenant. Du coup il faut avoir un cluster et gérer les liens entres les "Server + NS" <=> "Repositories" via des "Projects"
+						</aside>
+					</section>
+
+					<!-- 6 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Installer ArgoCD dans votre Cluster</h3>
+						Rien de plus facile quand on est le maître et forgeron de son propre cluster<br />
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/8', 1, 1)">Après avoir résolu cette issue, passer à la prochaine</a>
+						<aside class="notes">
+							La sécurisation d'ArgoCD n'est pas traité ici. C'est hors périmètre<br />
+						</aside>
+					</section>
+
+					<!-- 7-->
+					<section data-background-image="images/midjourney-not-the-level.png" data-background-size="50%">
+						<h3>Installer un ArgoCD mutualisé</h3>
+						L'idée est bonne, mais vous n'avez pas assez d'or pour forger un cluster mutualisé.<br /> <br /> 
+						Heureusement, vous pouvez encore <a href="javascript:void(0)" onclick="payAndGo('#/13/6', -3)">changer de choix, MAIS cela à un coût 🪙</a>, ou alors fuyez <a href="#/13/9">à la fin de l'histoire</a>
+						<aside class="notes">
+							Cela doit être possible en passant par les projets ArgoCD...	
+						</aside>
+					</section>							
+
+					<!-- 8 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
 						<h3>Tests</h3>
 						Installez et testez une application de test.<br />
-						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/6', 1, 1)">👉 quand vous aurez finit 👈</a>
+						<a href="javascript:void(0)" onclick="resolveAndGo('#/13/9', 1, 1)">👉 quand vous aurez fini 👈</a>
 						<aside class="notes">
 						</aside>
 					</section>
 
-					<!-- 5 -->
+					<!-- 9 -->
 					<section data-background-image="images/midjourney-kubernetes-kingdom-rainbow.png" data-background-size="50%">
 						<!--
 							source: https://www.midjourney.com/app/jobs/784dcce3-a901-42ac-9949-c980c5ee48ce/
@@ -953,7 +1138,8 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						<h3>Limitations</h3>
 						🛡️💫 Bravo vous avez réussit à mettre en place un système robuste et isolé qui vous permet d'offrir des clusters dédiés aux autres projets.<br />
 						<br />
-						Vous avez consommer cependant un peu plus d'infrastructure que prévu, mais rien de bloquant<br />
+						Vous avez consommé cependant un peu plus d'infrastructure que prévu, mais rien de bloquant.<br />
+						<br />
 						<a href="#/14">Allez fêter votre premier kube as a service</a>
 						<aside class="notes">
 							A noter que la solution est encore en alpha et ou beta selon les ressources/implementations, c'est un peu risquer d'industrialiser cela tant que ce n'est à minima pas en beta.
@@ -972,7 +1158,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 					<br />
             Merci à vous pour votre participation 🤗<br />
 					<br />
-					<div id="final-score" class="score">vous devriez recommencer car rien n'est en production.</div>
+					<div id="final-score" class="score">Vous devriez recommencer, car rien n'est en production.</div>
          			<br />
 				</section>
 				<!-- 15 -->
@@ -1091,10 +1277,9 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						</tbody>
 					</table>
           			<p>
-						
-						<img src="images/url_links.zenika.com.png" style="max-width:50%;height: auto;width:10%; vertical-align: middle;">
+						<img src="images/url_links.zenika.com.png" style="max-width:60%;height: auto;width:12%; vertical-align: middle;">
 						<br />
-						Merci de vos Feedback 💝 <u class="red">https://links.zenika.com/link/kaas-heros/sunny</u>
+						Merci de vos Feedback 💝 <u class="red">https://links.zenika.com/link/kaas-heros/volcamp</u>
 						</img>
 					</p>
 				</section>

@@ -4,10 +4,13 @@ pushd $DIR
 
 while read -r line
 do 
-  short="${line##*/}.tar"
-  echo "Download $line docker image as $short"
-  docker pull "$line"
-  docker save --output "images/$short" "$line"
+  if ! [[ "$line" =~ ^#.* ]]
+  then
+    short="${line##*/}.tar"
+    echo "Download $line docker image as $short"
+    docker pull "$line"
+    docker save --output "images/$short" "$line"
+  fi
 done < images.txt
 
 popd

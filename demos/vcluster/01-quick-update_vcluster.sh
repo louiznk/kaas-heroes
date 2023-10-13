@@ -24,7 +24,7 @@ cat 01-ingress-vcluster-api.yaml.tpl | envsubst > 01-ingress-$CLUSTER_NAME-vclus
 
 vcluster create $CLUSTER_NAME --upgrade --connect=false -f 01-$CLUSTER_NAME-values-share-traefik.yaml
 
-echo "🍹 Let's expose vcluster $CLUSTER_NAME with our Ingress Route"
+echo "🍹 Let's expose vcluster kube api srv $CLUSTER_NAME with our Ingress Route"
 
 kubectl apply -f 01-ingress-$CLUSTER_NAME-vcluster-api.yaml -n vcluster-$CLUSTER_NAME
 

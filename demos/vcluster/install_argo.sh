@@ -13,12 +13,13 @@ set -e
 DIR=$(dirname "$0")
 
 pushd $DIR
-if [ -z "$IP" ]
+
+if [[ "$1" == "" ]]
 then
-    ## GET IP
-    export IP=$(gcloud compute addresses describe $CLUSTER_NAME-https-lb-static-ipv4 --global | head -n 1 | cut -d ' ' -f 2)
-    echo "ADRESSE IP LB $IP"
+    echo "Ip du LB HTTPS attendu en paramêtre"
+    exit 1
 fi
+export IP=$1
 # change ip
 cat argo/1-ingress.tpl | envsubst > argo/1-ingress.yml
 
