@@ -15,7 +15,7 @@
 
 		<style>
 			body, .reveal {
-				background-image: url(images/slide-background-volcamp.png);
+				background-image: url(images/slide-background-snowcamp.png);
 				background-size: auto 100%;
 				background-repeat: no-repeat;
 			}
@@ -609,9 +609,19 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						</aside>
 					</section>
 					<!-- 10.5 -->
+					<section data-background-image="images/des.png" data-background-size="50%">
+						<h3>Après quelques verres d'hydromel accompagné de whisky...</h3>
+						Le barde est déjà beaucoup plus locace. Il est même prêt à vous montrer un trésor de connaissance qui pourrait vous aider dans votre quête. <br />
+						<br />
+						Mais pour cela il va falloir faire un test de resistance à l'alcool. <br />
+						<br />
+						Jetez les 1D10. Si vous faites moins de 5 : <a href="#/10/4">vous perdez</a>, sinon <a href="#/10/6">vous gagnez</a>
+					</section>
+					<!-- 10.6-->
 					<section>
-						<h4>2 🪙 la photocopie annotée du verso de l'écran du MJ...</h4>
-						<img src="images/spying-gm.jpg" width="75%"/> 
+						<h3>Un trésor de connaissance :</h3>
+						<h6>Une photocopie annotée du verso de l'écran du MJ...</h6>
+						<img src="images/spying-gm.jpg" width="70%"/> 
 						<br />
 						<a href="#/10/4">Revenir au choix</a>
 						<aside class="notes">
@@ -1175,7 +1185,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 						</thead>
 						<tbody class="small">
 							<tr>
-								<td><b>Stratégie</b></td>
+								<td style="vertical-align: middle;"><b>Stratégie</b></td>
 								<td class="small">Isolation dans un (ou plusieurs) namespace en s'appuyant sur les mécanismes classiques de kubernetes (RBAC, Quota, Limit, NetworkPolicy).<br />
 									Les users sont limités aux ressources "namespaces"</td>
 								<td class="small">Création d'un cluster dans un cluster avec ressources "low" et "high" level.<br />
@@ -1185,7 +1195,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 									Le cluster est provisionné via un bootstrap provider (kubeadm, talos, ...) et un control plane provider (kubeadm, talos, ...) </td>
 							</tr>
 							<tr>
-								<td><b>Fonctionnalités 💪🏽</b></td>
+								<td style="vertical-align: middle;"><b>Fonctionnalités 💪🏽</b></td>
 								<td class="small">🟩🟥🟥🟥<br/>
 									L'utilisateur du Tenant a accès aux ressources de son namespace, il n'a pas accès aux ressources "cluster" et ne peut pas ajouter de CRD ou autres ressources custom (il ne peut pas installer ArgoCD par exemple)</td>
 								<td class="small">🟩🟩🟩🟥<br/>
@@ -1194,7 +1204,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 									With great power comes great responsibility</td>
 							</tr>
 							<tr>
-								<td><b>Mutualisation/Optimisation des ressources 💰</b></td>
+								<td style="vertical-align: middle;"><b>Mutualisation/Optimisation des ressources 💰</b></td>
 								<td class="small">🟩🟩🟩🟩<br/>
 									Utilise un cluster existant et install un operateur en plus.</td>
 								<td class="small">🟩🟩🟩🟥<br/>
@@ -1203,7 +1213,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 									Chaque nouveau cluster est un nouveau cluster. Il y a en plus un cluster de management (qui peut être mutualisé)</td>
 							</tr>
 							<tr>
-								<td><b>Isolation/Securité 🛡️</b></td>
+								<td style="vertical-align: middle;"><b>Isolation/Securité 🛡️</b></td>
 								<td class="small">🟩🟥🟥🟥<br/>
 									On partage le cluster mais l'on peut appliquer des contraintes à ce partage</td>
 								<td class="small">🟩🟩🟥🟥<br/>
@@ -1212,7 +1222,7 @@ Mise en place de règles qui impose des bonnes pratiques (tag des images, sondes
 									C'est un cluster dédié 😉</td>
 							</tr>
 							<tr>
-								<td><b>Vitesse de création 🚀</b></td>
+								<td style="vertical-align: middle;"><b>Vitesse de création 🚀</b></td>
 								<td class="small">🟩🟩🟩🟩</td>
 								<td class="small">🟩🟩🟩🟥</td>
 								<td class="small">🟩🟥🟥🟥</td>
