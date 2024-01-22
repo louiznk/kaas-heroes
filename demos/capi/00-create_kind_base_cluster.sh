@@ -22,6 +22,7 @@ pei "kubectl ctx kind-$clustername"
 pei "kubectl version"
 ps1
 pei "kubectl get --raw='/readyz'"
+echo
 ps1
 
 popd
