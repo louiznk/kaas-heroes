@@ -36,4 +36,4 @@ spec:
 # but not work with ingress with CRD...
   ingressOptions:
     allowedHostnames:
-      allowedRegex: ^$TENANT_NAME.*\.slipp\.io$
+      allowedRegex: ^$TENANT_NAME.*\.sslip\.io$

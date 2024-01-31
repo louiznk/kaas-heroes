@@ -1,6 +1,4 @@
-## pour avoir le traefik partagée (pas par défaut)
-# fait la sync entre l'objet créer dans le vcluster et l'objet dans le namespace vcluster de l'hôte
-# applique certaines translations de nom et namespaces (pour les ressources utilisés...)
+## pour avoir son propre traefik
 ---
 sync:
   persistentvolumes:
